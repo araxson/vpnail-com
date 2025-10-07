@@ -9,6 +9,7 @@ import { StickyBottomNav } from '@/components/layouts/sticky-bottom-nav';
 import { GoogleAnalytics, GoogleTagManager, GoogleTagManagerNoScript } from '@/components/seo';
 import { StructuredData } from '@/components/seo';
 import { rootMetadata } from '@/lib/config/metadata.config';
+import { analyticsConfig } from '@/lib/config/analytics.config';
 
 const lato = Lato({
   subsets: ['latin'],
@@ -69,13 +70,18 @@ export default function RootLayout({
         <StructuredData type="SiteNavigationElement" />
         
         {/* Google Analytics */}
-        {process.env.NEXT_PUBLIC_GA_ID && (
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        {analyticsConfig.shouldLoadGa && analyticsConfig.gaId && (
+          <GoogleAnalytics gaId={analyticsConfig.gaId} />
         )}
         
         {/* Google Tag Manager */}
-        {process.env.NEXT_PUBLIC_GTM_ID && (
-          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+        {analyticsConfig.shouldLoadGtm && analyticsConfig.gtmId && (
+          <GoogleTagManager
+            gtmId={analyticsConfig.gtmId}
+            dataLayerName={analyticsConfig.dataLayerName}
+            gtmAuth={analyticsConfig.gtmAuth}
+            gtmPreview={analyticsConfig.gtmPreview}
+          />
         )}
       </head>
       <body className={cn(
@@ -84,8 +90,12 @@ export default function RootLayout({
         playfair.variable
       )}>
         {/* Google Tag Manager (noscript) */}
-        {process.env.NEXT_PUBLIC_GTM_ID && (
-          <GoogleTagManagerNoScript gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+        {analyticsConfig.shouldLoadGtm && analyticsConfig.gtmId && (
+          <GoogleTagManagerNoScript
+            gtmId={analyticsConfig.gtmId}
+            gtmAuth={analyticsConfig.gtmAuth}
+            gtmPreview={analyticsConfig.gtmPreview}
+          />
         )}
         
         {/* Skip Links */}

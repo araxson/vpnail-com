@@ -1,11 +1,22 @@
 'use client'
 
 import { useEffect } from 'react'
+import { usePathname, useSearchParams } from 'next/navigation'
+import { analyticsConfig } from '@/lib/config/analytics.config'
+import { gtag } from '@/components/seo/google-analytics'
 
 export function AnalyticsEvents() {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  const search = searchParams?.toString()
+  const analyticsActive = analyticsConfig.shouldLoadGtm || analyticsConfig.shouldLoadGa
+
   useEffect(() => {
-    const w = window as Window & { dataLayer?: Record<string, unknown>[] }
-    const dl = w.dataLayer || (w.dataLayer = [])
+    if (!analyticsConfig.shouldLoadGtm) return
+
+    const w = window as Window & { [key: string]: Array<Record<string, unknown>> | undefined }
+    const layerName = analyticsConfig.dataLayerName
+    const dataLayer = w[layerName] || (w[layerName] = [])
 
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null
@@ -27,7 +38,7 @@ export function AnalyticsEvents() {
       else if (/maps\.google\.com/i.test(href) || href.startsWith('#location')) eventName = 'map_click'
 
       if (eventName) {
-        dl.push({
+        dataLayer.push({
           event: eventName,
           href,
           link_text: text,
@@ -40,6 +51,29 @@ export function AnalyticsEvents() {
     document.addEventListener('click', handleClick)
     return () => document.removeEventListener('click', handleClick)
   }, [])
+
+  useEffect(() => {
+    if (!analyticsActive) return
+
+    const pagePath = search ? `${pathname}?${search}` : pathname
+
+    if (analyticsConfig.shouldLoadGtm) {
+      const w = window as Window & { [key: string]: Array<Record<string, unknown>> | undefined }
+      const layerName = analyticsConfig.dataLayerName
+      const dataLayer = w[layerName] || (w[layerName] = [])
+
+      dataLayer.push({
+        event: 'page_view',
+        page_path: pagePath,
+        page_location: window.location.href,
+        page_title: document.title,
+      })
+    }
+
+    if (analyticsConfig.shouldLoadGa && analyticsConfig.gaId) {
+      gtag.pageview(pagePath)
+    }
+  }, [analyticsActive, pathname, search])
 
   return null
 }

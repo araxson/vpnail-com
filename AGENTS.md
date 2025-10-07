@@ -31,4 +31,4 @@ Current history is sparse (`Initial commit from Create Next App`); keep future m
 - List verification steps (lint, build, manual QA) or note gaps.
 
 ## Environment & Configuration Notes
-Set `NEXT_PUBLIC_GA_ID` and `NEXT_PUBLIC_GTM_ID` for analytics before shipping. Secrets belong in `.env.local`, never in version control. Review `middleware.ts` for routing logic whenever adding new marketing pages or updating locale rules.
+Set `NEXT_PUBLIC_GA_ID` and `NEXT_PUBLIC_GTM_ID` for analytics before shipping. Optional overrides live in `lib/config/analytics.config.ts`—use `NEXT_PUBLIC_ENABLE_ANALYTICS` to allow tracking in development, `NEXT_PUBLIC_LOAD_GA_DIRECT` if you need Google Analytics outside GTM, and `NEXT_PUBLIC_GTM_AUTH` / `NEXT_PUBLIC_GTM_PREVIEW` for tag manager environments. Customize the data layer name with `NEXT_PUBLIC_GTM_DATALAYER`. Secrets belong in `.env.local`, never in version control. Review `middleware.ts` for routing logic whenever adding new marketing pages or updating locale rules.

@@ -33,6 +33,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 Run `npm run build` and `npm run start` locally to smoke test.
 
+## Analytics & Google Services
+
+Analytics configuration lives in `lib/config/analytics.config.ts`. Google Tag Manager and GA4 load only when the environment variables are present and the environment is production (or you opt in with `NEXT_PUBLIC_ENABLE_ANALYTICS=true`). Route changes automatically dispatch `page_view` events to both gtag and the GTM data layer, and click tracking for phone, email, booking, and map links is centralized in `components/providers/analytics-events.tsx`.
+
+Set the following environment variables in `.env.local`:
+
+- `NEXT_PUBLIC_GTM_ID` (required for GTM)
+- `NEXT_PUBLIC_GA_ID` (optional for direct GA4 tagging when GTM is absent)
+- `NEXT_PUBLIC_GTM_AUTH` / `NEXT_PUBLIC_GTM_PREVIEW` (optional for GTM environments)
+- `NEXT_PUBLIC_GTM_DATALAYER` (optional custom dataLayer name)
+- `NEXT_PUBLIC_ENABLE_ANALYTICS` (set to `true` to allow analytics outside production)
+- `NEXT_PUBLIC_LOAD_GA_DIRECT` (set to `true` to load GA alongside GTM if needed)
+
 ### One‑click Vercel Provisioning (Automated)
 
 This repo includes a workflow to create/link the Vercel project, set env vars, and add your domain automatically via the Vercel API.
