@@ -23,6 +23,12 @@ export function HoursSection() {
             </div>
           ))}
         </div>
+        {hoursData.holiday?.hours && (
+          <div className="mt-6 rounded-md border bg-primary/5 p-4">
+            <p className="font-semibold">{hoursData.holiday.title}</p>
+            <p className="text-muted-foreground">{hoursData.holiday.hours}</p>
+          </div>
+        )}
       </CardContent>
     </Card>
   )
