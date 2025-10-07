@@ -43,7 +43,7 @@ export function TeamSection() {
               {teamData.members.map((member) => (
                 <CarouselItem key={member.id} className="pl-4 pr-4 basis-[calc(85%-1rem)] sm:basis-[calc(70%-1rem)] md:basis-1/2">
                   <Card className="flex flex-col overflow-hidden p-0 border border-border h-full">
-                    <div className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-secondary p-4">
+                    <div className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-secondary/1 p-4">
                       <div className="flex items-start gap-4">
                         <Avatar className="w-20 h-20 border border-background flex-shrink-0">
                           <AvatarImage

@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
 import { heroData } from './hero.data'
+import { H1, Lead, P } from '@/components/ui/typography'
 
 export function HeroSection() {
   return (
@@ -14,15 +15,9 @@ export function HeroSection() {
               <div className="flex justify-center">
                 <Badge variant="outline">{heroData.badge}</Badge>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                {heroData.title}
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground">
-                {heroData.subtitle}
-              </p>
-              <p className="text-base text-muted-foreground">
-                {heroData.description}
-              </p>
+              <H1>{heroData.title}</H1>
+              <Lead>{heroData.subtitle}</Lead>
+              <P className="text-muted-foreground">{heroData.description}</P>
             </div>
           </Container>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

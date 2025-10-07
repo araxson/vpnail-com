@@ -4,6 +4,7 @@ import { Section, Container } from '@/components/layouts'
 import Link from 'next/link'
 import Image from 'next/image'
 import { heroData } from './hero.data'
+import { H1, Lead, P } from '@/components/ui/typography'
 
 export function HeroSection() {
   return (
@@ -12,15 +13,9 @@ export function HeroSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <Badge className="w-fit" variant="outline">{heroData.badge}</Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              {heroData.title}
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground">
-              {heroData.subtitle}
-            </p>
-            <p className="text-base text-muted-foreground">
-              {heroData.description}
-            </p>
+            <H1>{heroData.title}</H1>
+            <Lead>{heroData.subtitle}</Lead>
+            <P className="text-muted-foreground">{heroData.description}</P>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="rounded-full px-10 py-6 text-lg font-semibold" asChild>
                 <Link href={heroData.cta.primary.href}>{heroData.cta.primary.text}</Link>

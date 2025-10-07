@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Info } from 'lucide-react'
 import { heroData } from './hero.data'
+import { H1, Lead, P } from '@/components/ui/typography'
 
 export function HeroSection() {
   return (
@@ -22,15 +23,9 @@ export function HeroSection() {
               <div className="flex justify-center">
                 <Badge variant="outline">{heroData.badge}</Badge>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                {heroData.title}
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground">
-                {heroData.subtitle}
-              </p>
-              <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-                {heroData.description}
-              </p>
+              <H1>{heroData.title}</H1>
+              <Lead>{heroData.subtitle}</Lead>
+              <P className="text-muted-foreground max-w-2xl mx-auto">{heroData.description}</P>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>

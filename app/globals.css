@@ -131,8 +131,4 @@
     @apply bg-background text-foreground;
     font-family: var(--font-lato), system-ui, -apple-system, sans-serif;
   }
-  h1,
-  h2 {
-    font-family: var(--font-playfair), Georgia, serif;
-  }
 }

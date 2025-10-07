@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
 import Image from 'next/image'
 import { heroData } from './hero.data'
+import { H1, Lead, P } from '@/components/ui/typography'
 
 export function HeroSection() {
   return (
@@ -22,15 +23,9 @@ export function HeroSection() {
           <div className="space-y-6">
             <div className="space-y-4">
               <Badge className="w-fit" variant="outline">{heroData.badge}</Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                {heroData.title}
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground">
-                {heroData.subtitle}
-              </p>
-              <p className="text-base text-muted-foreground">
-                {heroData.description}
-              </p>
+              <H1>{heroData.title}</H1>
+              <Lead>{heroData.subtitle}</Lead>
+              <P className="text-muted-foreground">{heroData.description}</P>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild>
