@@ -8,6 +8,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselDots } from '@/compone
 import { Star } from 'lucide-react'
 import Autoplay from 'embla-carousel-autoplay'
 import { aboutTestimonialsData } from './testimonials.data'
+import { H2, Lead, Small } from '@/components/ui/typography'
 
 export function TestimonialsSection() {
   const plugin = React.useRef(Autoplay({ delay: 3000, stopOnInteraction: true }))
@@ -18,15 +19,11 @@ export function TestimonialsSection() {
         <div className="text-center mb-16 px-4 md:px-0">
           <Container size="sm">
             <div className="space-y-4">
-              <p className="text-sm font-medium text-primary uppercase tracking-wider">
+              <Small className="text-primary uppercase tracking-[0.3em]">
                 {aboutTestimonialsData.subtitle}
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold">
-                {aboutTestimonialsData.title}
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                {aboutTestimonialsData.description}
-              </p>
+              </Small>
+              <H2>{aboutTestimonialsData.title}</H2>
+              <Lead>{aboutTestimonialsData.description}</Lead>
             </div>
           </Container>
         </div>

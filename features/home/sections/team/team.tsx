@@ -12,6 +12,7 @@ import { Star, GraduationCap, Calendar } from 'lucide-react'
 import Autoplay from 'embla-carousel-autoplay'
 import Link from 'next/link'
 import { teamData } from './team.data'
+import { H2, H4, Lead, P, Small } from '@/components/ui/typography'
 
 export function TeamSection() {
   const plugin = React.useRef(Autoplay({ delay: 3000, stopOnInteraction: true }))
@@ -22,8 +23,8 @@ export function TeamSection() {
         <div className="text-center mb-16 px-4 md:px-0">
           <Container size="sm">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">{teamData.title}</h2>
-              <p className="text-muted-foreground text-lg">{teamData.description}</p>
+              <H2>{teamData.title}</H2>
+              <Lead>{teamData.description}</Lead>
             </div>
           </Container>
         </div>
@@ -59,8 +60,12 @@ export function TeamSection() {
                         </Avatar>
 
                         <div className="flex-1 min-w-0">
-                          <h2 className="text-lg font-semibold text-primary mb-1">{member.name}</h2>
-                          <p className="text-sm font-medium text-muted-foreground mb-2">{member.position}</p>
+                          <H4 className="text-lg font-semibold text-primary mb-1">
+                            {member.name}
+                          </H4>
+                          <Small className="text-muted-foreground mb-2 block">
+                            {member.position}
+                          </Small>
 
                           <div className="flex items-center gap-1 mb-3">
                             <Star className="h-3.5 w-3.5 text-amber-500 fill-amber-500" />
@@ -86,12 +91,12 @@ export function TeamSection() {
                       <div className="space-y-4">
                         {member.certifications && member.certifications.length > 0 && (
                           <div>
-                            <h4 className="text-xs font-medium uppercase tracking-wide mb-2 text-muted-foreground">
+                            <Small className="text-muted-foreground uppercase tracking-wide mb-2 block">
                               <span className="flex items-center gap-1">
                                 <GraduationCap className="h-3.5 w-3.5 text-primary" />
                                 Certifications
                               </span>
-                            </h4>
+                            </Small>
                             <div className="flex flex-wrap gap-1.5">
                               {member.certifications.map((cert, index) => (
                                 <Badge key={index} variant="secondary" className="text-xs font-normal">
@@ -103,10 +108,12 @@ export function TeamSection() {
                         )}
 
                         <div>
-                          <h4 className="text-xs font-medium uppercase tracking-wide mb-2 text-muted-foreground">About</h4>
-                          <p className="text-xs text-foreground/80">
+                          <Small className="text-muted-foreground uppercase tracking-wide mb-2 block">
+                            About
+                          </Small>
+                          <P className="text-xs text-foreground/80">
                             {member.bio}
-                          </p>
+                          </P>
                         </div>
                       </div>
                     </CardContent>

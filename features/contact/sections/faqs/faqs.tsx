@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { MessageCircle } from 'lucide-react'
 import Link from 'next/link'
 import { faqsData } from './faqs.data'
+import { H2, Lead, Small, P } from '@/components/ui/typography'
 
 export function FaqsSection() {
   return (
@@ -15,8 +16,8 @@ export function FaqsSection() {
           <Container size="sm">
             <div className="space-y-4">
               <Badge variant="outline">{faqsData.badge}</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold">{faqsData.title}</h2>
-              <p className="text-lg text-muted-foreground">{faqsData.description}</p>
+              <H2>{faqsData.title}</H2>
+              <Lead>{faqsData.description}</Lead>
             </div>
           </Container>
         </div>
@@ -45,10 +46,16 @@ export function FaqsSection() {
             <CardHeader>
               <div className="flex items-center justify-center mb-2">
                 <MessageCircle className="h-6 w-6 text-primary mr-2" />
-                <CardTitle className="text-lg">{faqsData.cta.title}</CardTitle>
+                <CardTitle>
+                  <Small className="text-base font-semibold uppercase tracking-wide">
+                    {faqsData.cta.title}
+                  </Small>
+                </CardTitle>
               </div>
-              <CardDescription className="text-sm text-center">
-                {faqsData.cta.description}
+              <CardDescription className="text-center">
+                <P className="text-sm text-muted-foreground">
+                  {faqsData.cta.description}
+                </P>
               </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col sm:flex-row gap-3 justify-center">

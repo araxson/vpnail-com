@@ -5,6 +5,7 @@ import { Section, Container } from '@/components/layouts'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { servicesData } from './services.data'
+import { H2, H4, Lead, P, Small } from '@/components/ui/typography'
 
 export function ServicesSection() {
   return (
@@ -14,8 +15,8 @@ export function ServicesSection() {
           <Container size="sm">
             <div className="space-y-4">
               <Badge variant="outline" className="text-sm">{servicesData.subtitle}</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold">{servicesData.title}</h2>
-              <p className="text-muted-foreground text-lg">{servicesData.description}</p>
+              <H2>{servicesData.title}</H2>
+              <Lead>{servicesData.description}</Lead>
             </div>
           </Container>
         </div>
@@ -24,12 +25,18 @@ export function ServicesSection() {
             <Card key={category.id} className="flex flex-col h-full border">
               <CardHeader>
                 <Badge variant="outline" className="w-fit mb-2">
-                  {category.serviceCount} services
+                  <Small className="tracking-wide uppercase text-xs">
+                    {category.serviceCount} services
+                  </Small>
                 </Badge>
-                <CardTitle className="text-xl">{category.title}</CardTitle>
+                <CardTitle>
+                  <H4 className="text-lg">{category.title}</H4>
+                </CardTitle>
               </CardHeader>
               <CardContent className="flex-grow">
-                <p className="text-muted-foreground">{category.description}</p>
+                <P className="text-muted-foreground text-sm sm:text-base">
+                  {category.description}
+                </P>
               </CardContent>
               <CardFooter>
                 <Button asChild variant="outline" size="lg" className="w-full">

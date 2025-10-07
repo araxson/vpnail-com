@@ -2,6 +2,7 @@ import { Section, Container } from '@/components/layouts'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { Phone, Mail, MapPin, Calendar, Clock } from 'lucide-react'
 import { methodsData } from './methods.data'
+import { H2, Lead, Small, P } from '@/components/ui/typography'
 
 const iconMap = {
   Phone,
@@ -17,8 +18,8 @@ export function MethodsSection() {
         <div className="text-center mb-16">
           <Container size="sm">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">{methodsData.title}</h2>
-              <p className="text-muted-foreground text-lg">{methodsData.description}</p>
+              <H2>{methodsData.title}</H2>
+              <Lead>{methodsData.description}</Lead>
             </div>
           </Container>
         </div>
@@ -34,14 +35,16 @@ export function MethodsSection() {
                       <IconComponent className="h-6 w-6 text-primary" />
                     </div>
                   </div>
-                  <CardTitle className="text-lg">{method.title}</CardTitle>
-                  <CardDescription className="text-sm">
-                    {method.description}
+                  <CardTitle>
+                    <Small className="text-base font-semibold">{method.title}</Small>
+                  </CardTitle>
+                  <CardDescription>
+                    <P className="text-sm text-muted-foreground">{method.description}</P>
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-2">
-                  <p className="font-medium text-sm">{method.contact}</p>
-                  <p className="text-xs text-muted-foreground">{method.hours}</p>
+                  <P className="font-medium text-sm">{method.contact}</P>
+                  <Small className="text-muted-foreground block">{method.hours}</Small>
                 </CardContent>
               </Card>
             )
@@ -53,11 +56,13 @@ export function MethodsSection() {
             <CardContent className="pt-6">
               <div className="flex items-center justify-center mb-4">
                 <Clock className="h-5 w-5 text-primary mr-2" />
-                <span className="font-medium">{methodsData.availability.title}</span>
+                <Small className="font-semibold text-primary">
+                  {methodsData.availability.title}
+                </Small>
               </div>
-              <p className="text-sm text-muted-foreground text-center">
+              <P className="text-sm text-muted-foreground text-center">
                 {methodsData.availability.description}
-              </p>
+              </P>
             </CardContent>
           </Card>
         </div>

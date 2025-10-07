@@ -8,6 +8,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import Link from 'next/link'
 import { Clock, ArrowRight } from 'lucide-react'
 import { servicesGridData } from './services-grid.data'
+import { H3, H4, Lead, P, Small } from '@/components/ui/typography'
 
 export function ServicesGridSection() {
   return (
@@ -34,14 +35,12 @@ export function ServicesGridSection() {
             <TabsContent key={category.id} value={category.id} className="mt-0 space-y-12">
               {/* Category description */}
               <div className="text-center mb-8">
-                <h3 className="text-3xl md:text-4xl font-semibold tracking-tight mb-2">
-                  {category.title}
-                </h3>
-                <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+                <H3 className="mb-2">{category.title}</H3>
+                <Lead className="text-muted-foreground max-w-2xl mx-auto">
                   {category.id === 'nail-services' && 'Professional nail care services including manicures, pedicures, and artistic nail enhancements.'}
                   {category.id === 'massage-spa' && 'Luxurious spa treatments designed to relax, rejuvenate, and restore your body and mind.'}
                   {category.id === 'waxing' && 'Professional waxing services for smooth, hair-free skin using gentle, effective techniques.'}
-                </p>
+                </Lead>
               </div>
 
               {/* Subcategories */}
@@ -49,8 +48,10 @@ export function ServicesGridSection() {
                 <div key={`${category.id}-${subcategory.name}`} className="mb-12">
                   {/* Subcategory Header */}
                   <div className="text-center mb-6">
-                    <Badge variant="secondary" className="py-2 px-4 mb-4 text-sm font-medium bg-primary/5 text-primary border-primary/20">
-                      {subcategory.name}
+                    <Badge variant="secondary" className="py-2 px-4 mb-4 bg-primary/5 text-primary border-primary/20">
+                      <Small className="text-primary font-semibold tracking-wide uppercase">
+                        {subcategory.name}
+                      </Small>
                     </Badge>
                     <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent mx-auto"></div>
                   </div>
@@ -62,13 +63,13 @@ export function ServicesGridSection() {
                         <div className="flex items-start justify-between gap-3 mb-2">
                           {/* Service Info */}
                           <div className="flex-1 min-w-0">
-                            <h3 className="font-semibold text-base leading-tight mb-1">
+                            <H4 className="text-base leading-tight mb-1 font-semibold">
                               {service.title}
-                            </h3>
+                            </H4>
                             {service.description && (
-                              <p className="text-xs text-muted-foreground leading-snug">
+                              <P className="text-xs text-muted-foreground leading-snug">
                                 {service.description}
-                              </p>
+                              </P>
                             )}
                           </div>
 

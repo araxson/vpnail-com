@@ -10,6 +10,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselDots } from '@/compone
 import { Check, Sparkles } from 'lucide-react'
 import Autoplay from 'embla-carousel-autoplay'
 import { combinationsData } from './combinations.data'
+import { H2, H4, Lead, P, Small } from '@/components/ui/typography'
 
 export function CombinationsSection() {
   const plugin = React.useRef(Autoplay({ delay: 4000, stopOnInteraction: true }))
@@ -21,12 +22,10 @@ export function CombinationsSection() {
           <Badge variant="outline" className="text-sm">
             {combinationsData.badge}
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-            {combinationsData.title}
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <H2>{combinationsData.title}</H2>
+          <Lead className="text-muted-foreground max-w-2xl mx-auto">
             {combinationsData.description}
-          </p>
+          </Lead>
         </div>
 
         <Carousel
@@ -56,8 +55,10 @@ export function CombinationsSection() {
                               <Icon className="h-5 w-5" />
                             </div>
                             <div>
-                              <h3 className="font-semibold text-xl">{pkg.name}</h3>
-                              <p className="text-sm text-muted-foreground">{pkg.duration}</p>
+                              <H4 className="text-lg font-semibold">{pkg.name}</H4>
+                              <Small className="text-muted-foreground text-xs sm:text-sm">
+                                {pkg.duration}
+                              </Small>
                             </div>
                           </div>
                           {pkg.popular && (
@@ -77,24 +78,24 @@ export function CombinationsSection() {
                           </div>
                         </div>
 
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <P className="text-sm text-muted-foreground leading-relaxed">
                           {pkg.description}
-                        </p>
+                        </P>
                       </CardHeader>
 
                       <Separator />
 
                       <CardContent className="flex-1 pt-6">
                         <div className="space-y-3">
-                          <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
+                          <Small className="text-muted-foreground font-semibold uppercase tracking-wide">
                             Included Services
-                          </p>
+                          </Small>
                           {pkg.services.map((service, idx) => (
                             <div key={idx} className="flex items-start gap-3">
                               <div className="mt-0.5 p-0.5 rounded-full bg-primary/10">
                                 <Check className="h-3.5 w-3.5 text-primary" />
                               </div>
-                              <span className="text-sm leading-relaxed">{service.name}</span>
+                              <P className="text-sm leading-relaxed">{service.name}</P>
                             </div>
                           ))}
                         </div>

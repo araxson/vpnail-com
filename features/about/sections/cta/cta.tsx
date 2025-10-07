@@ -2,6 +2,7 @@ import { Section, Container } from '@/components/layouts'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { ctaData } from './cta.data'
+import { H2, Lead, P } from '@/components/ui/typography'
 
 export function CtaSection() {
   return (
@@ -10,9 +11,9 @@ export function CtaSection() {
         <div className="text-center space-y-6">
           <Container size="sm">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">{ctaData.title}</h2>
-              <p className="text-lg text-muted-foreground">{ctaData.subtitle}</p>
-              <p className="text-muted-foreground">{ctaData.description}</p>
+              <H2>{ctaData.title}</H2>
+              <Lead>{ctaData.subtitle}</Lead>
+              <P className="text-muted-foreground">{ctaData.description}</P>
             </div>
           </Container>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

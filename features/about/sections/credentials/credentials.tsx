@@ -2,6 +2,7 @@ import { Section, Container } from '@/components/layouts'
 import { credentialsData } from './credentials.data'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { H2, H4, Lead, P } from '@/components/ui/typography'
 
 export function CredentialsSection() {
   return (
@@ -11,8 +12,8 @@ export function CredentialsSection() {
           <Container size="sm">
             <div className="space-y-4">
               <Badge>{credentialsData.badge}</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold">{credentialsData.title}</h2>
-              <p className="text-xl md:text-2xl text-muted-foreground">{credentialsData.description}</p>
+              <H2>{credentialsData.title}</H2>
+              <Lead>{credentialsData.description}</Lead>
             </div>
           </Container>
         </div>
@@ -21,10 +22,16 @@ export function CredentialsSection() {
           {credentialsData.credentials.map((credential, index) => (
             <Card key={index}>
               <CardHeader>
-                <CardTitle className="text-xl">{credential.title}</CardTitle>
+                <CardTitle>
+                  <H4 className="text-balance text-lg">{credential.title}</H4>
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>{credential.description}</CardDescription>
+                <CardDescription>
+                  <P className="text-sm sm:text-base text-muted-foreground">
+                    {credential.description}
+                  </P>
+                </CardDescription>
               </CardContent>
             </Card>
           ))}

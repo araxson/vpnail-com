@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { H2, H3, Lead, Small } from '@/components/ui/typography'
 
 export function FaqsSection() {
   return (
@@ -14,15 +15,11 @@ export function FaqsSection() {
         <div className="text-center mb-16">
           <Container size="sm">
             <div className="space-y-4">
-              <p className="text-sm font-medium text-primary uppercase tracking-wider">
+              <Small className="text-primary uppercase tracking-[0.3em]">
                 {faqsData.subtitle}
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold">
-                {faqsData.title}
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                {faqsData.description}
-              </p>
+              </Small>
+              <H2>{faqsData.title}</H2>
+              <Lead>{faqsData.description}</Lead>
             </div>
           </Container>
         </div>
@@ -30,9 +27,7 @@ export function FaqsSection() {
         <div className="space-y-12">
           {faqsData.categories.map((category) => (
             <div key={category.id}>
-              <h3 className="text-xl font-semibold mb-6">
-                {category.title}
-              </h3>
+              <H3 className="mb-6">{category.title}</H3>
               <Accordion type="single" collapsible className="space-y-4">
                 {category.faqs.map((faq) => (
                   <AccordionItem

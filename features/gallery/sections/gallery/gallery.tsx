@@ -5,6 +5,7 @@ import { Section, Container } from '@/components/layouts'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 import Image from 'next/image'
 import { galleryData } from './gallery.data'
+import { H2, Lead, P } from '@/components/ui/typography'
 
 export function GallerySection() {
   const [selectedImage, setSelectedImage] = useState<{ image: string; alt: string } | null>(null)
@@ -15,9 +16,9 @@ export function GallerySection() {
         <div className="text-center mb-16">
           <Container size="sm">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">{galleryData.title}</h2>
-              <p className="text-xl md:text-2xl text-muted-foreground">{galleryData.subtitle}</p>
-              <p className="text-muted-foreground">{galleryData.description}</p>
+              <H2>{galleryData.title}</H2>
+              <Lead>{galleryData.subtitle}</Lead>
+              <P className="text-muted-foreground">{galleryData.description}</P>
             </div>
           </Container>
         </div>

@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { CheckCircle } from 'lucide-react'
 import { typesData } from './types.data'
+import { H2, Lead, H4, P, Small } from '@/components/ui/typography'
 
 export function TypesSection() {
   return (
@@ -11,8 +12,8 @@ export function TypesSection() {
         <div className="text-center mb-16">
           <Container size="sm">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">{typesData.title}</h2>
-              <p className="text-muted-foreground text-lg">{typesData.description}</p>
+              <H2>{typesData.title}</H2>
+              <Lead>{typesData.description}</Lead>
             </div>
           </Container>
         </div>
@@ -22,24 +23,30 @@ export function TypesSection() {
             <Card key={index} className="h-full">
               <CardHeader>
                 <div className="flex items-start justify-between mb-2">
-                  <CardTitle className="text-lg flex items-center gap-2">
+                  <CardTitle className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
-                    <span>{type.title}</span>
+                    <H4 className="text-lg font-semibold">{type.title}</H4>
                   </CardTitle>
                   <Badge variant="secondary" className="flex-shrink-0">
-                    {type.duration}
+                    <Small className="font-medium">{type.duration}</Small>
                   </Badge>
                 </div>
-                <CardDescription>{type.description}</CardDescription>
+                <CardDescription>
+                  <P className="text-sm sm:text-base text-muted-foreground">
+                    {type.description}
+                  </P>
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <div>
-                  <h4 className="font-medium mb-3">What&apos;s Included:</h4>
+                  <Small className="font-semibold uppercase tracking-wide mb-3 block">
+                    What&apos;s Included:
+                  </Small>
                   <ul className="space-y-2">
                     {type.includes.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{item}</span>
+                        <P className="text-sm leading-relaxed">{item}</P>
                       </li>
                     ))}
                   </ul>
