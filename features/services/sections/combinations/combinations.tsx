@@ -91,11 +91,11 @@ export function CombinationsSection() {
                             Included Services
                           </Small>
                           {pkg.services.map((service, idx) => (
-                            <div key={idx} className="flex items-start gap-3">
-                              <div className="mt-0.5 p-0.5 rounded-full bg-primary/10">
+                            <div key={idx} className="flex gap-3">
+                              <div className="mt-1 p-1 rounded-full bg-primary/10">
                                 <Check className="h-3.5 w-3.5 text-primary" />
                               </div>
-                              <P className="text-sm leading-relaxed">{service.name}</P>
+                              <P className="text-sm leading-relaxed mt-0">{service.name}</P>
                             </div>
                           ))}
                         </div>
