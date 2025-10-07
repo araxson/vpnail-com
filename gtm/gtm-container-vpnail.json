@@ -1,0 +1,139 @@
+{
+  "exportFormatVersion": 2,
+  "containerVersion": {
+    "container": {
+      "name": "www.vpnail.com",
+      "publicId": "GTM-PPQ6WBNQ",
+      "usageContext": ["WEB"]
+    },
+    "variable": [
+      {"name":"dlv - link_text","type":"v","variableId":"31","parameter":[{"type":"INTEGER","key":"dataLayerVersion","value":"2"},{"type":"TEMPLATE","key":"name","value":"link_text"}]},
+      {"name":"dlv - href","type":"v","variableId":"32","parameter":[{"type":"INTEGER","key":"dataLayerVersion","value":"2"},{"type":"TEMPLATE","key":"name","value":"href"}]},
+      {"name":"dlv - page_path","type":"v","variableId":"33","parameter":[{"type":"INTEGER","key":"dataLayerVersion","value":"2"},{"type":"TEMPLATE","key":"name","value":"page_path"}]},
+      {"name":"dlv - page_title","type":"v","variableId":"34","parameter":[{"type":"INTEGER","key":"dataLayerVersion","value":"2"},{"type":"TEMPLATE","key":"name","value":"page_title"}]},
+      {"name":"dlv - form_id","type":"v","variableId":"35","parameter":[{"type":"INTEGER","key":"dataLayerVersion","value":"2"},{"type":"TEMPLATE","key":"name","value":"form_id"}]},
+      {"name":"dlv - form_name","type":"v","variableId":"36","parameter":[{"type":"INTEGER","key":"dataLayerVersion","value":"2"},{"type":"TEMPLATE","key":"name","value":"form_name"}]},
+      {"name":"dlv - service","type":"v","variableId":"37","parameter":[{"type":"INTEGER","key":"dataLayerVersion","value":"2"},{"type":"TEMPLATE","key":"name","value":"service"}]},
+      {"name":"dlv - error","type":"v","variableId":"38","parameter":[{"type":"INTEGER","key":"dataLayerVersion","value":"2"},{"type":"TEMPLATE","key":"name","value":"error"}]}
+    ],
+    "trigger": [
+      {"name":"PV - All Pages","type":"PAGEVIEW","triggerId":"100"},
+      {"name":"CE - call_click","type":"CUSTOM_EVENT","triggerId":"101","customEventFilter":[{"type":"EQUALS","parameter":[{"type":"TEMPLATE","key":"arg0","value":"{{_event}}"},{"type":"TEMPLATE","key":"arg1","value":"call_click"}]}]},
+      {"name":"CE - email_click","type":"CUSTOM_EVENT","triggerId":"102","customEventFilter":[{"type":"EQUALS","parameter":[{"type":"TEMPLATE","key":"arg0","value":"{{_event}}"},{"type":"TEMPLATE","key":"arg1","value":"email_click"}]}]},
+      {"name":"CE - book_now_click","type":"CUSTOM_EVENT","triggerId":"103","customEventFilter":[{"type":"EQUALS","parameter":[{"type":"TEMPLATE","key":"arg0","value":"{{_event}}"},{"type":"TEMPLATE","key":"arg1","value":"book_now_click"}]}]},
+      {"name":"CE - map_click","type":"CUSTOM_EVENT","triggerId":"104","customEventFilter":[{"type":"EQUALS","parameter":[{"type":"TEMPLATE","key":"arg0","value":"{{_event}}"},{"type":"TEMPLATE","key":"arg1","value":"map_click"}]}]},
+      {"name":"CE - generate_lead","type":"CUSTOM_EVENT","triggerId":"105","customEventFilter":[{"type":"EQUALS","parameter":[{"type":"TEMPLATE","key":"arg0","value":"{{_event}}"},{"type":"TEMPLATE","key":"arg1","value":"generate_lead"}]}]},
+      {"name":"CE - form_submit_error","type":"CUSTOM_EVENT","triggerId":"106","customEventFilter":[{"type":"EQUALS","parameter":[{"type":"TEMPLATE","key":"arg0","value":"{{_event}}"},{"type":"TEMPLATE","key":"arg1","value":"form_submit_error"}]}]}
+    ],
+    "tag": [
+      {
+        "name": "GA4 - Configuration",
+        "type": "gaawc",
+        "tagId": "201",
+        "parameter": [
+          {"type":"TEMPLATE","key":"measurementId","value":"G-P523NP1LDS"},
+          {"type":"BOOLEAN","key":"sendPageView","value":"true"}
+        ],
+        "firingTriggerId": ["100"]
+      },
+      {
+        "name": "GA4 - call_click",
+        "type": "gaawe",
+        "tagId": "202",
+        "parameter": [
+          {"type":"TEMPLATE","key":"measurementIdOverride","value":"G-P523NP1LDS"},
+          {"type":"TEMPLATE","key":"eventName","value":"call_click"},
+          {"type":"LIST","key":"eventParameters","list":[
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"link_text"},{"type":"TEMPLATE","key":"value","value":"{{dlv - link_text}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"link_url"},{"type":"TEMPLATE","key":"value","value":"{{dlv - href}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"page_location"},{"type":"TEMPLATE","key":"value","value":"{{dlv - page_path}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"page_title"},{"type":"TEMPLATE","key":"value","value":"{{dlv - page_title}}"}]}
+          ]}
+        ],
+        "firingTriggerId": ["101"]
+      },
+      {
+        "name": "GA4 - email_click",
+        "type": "gaawe",
+        "tagId": "203",
+        "parameter": [
+          {"type":"TEMPLATE","key":"measurementIdOverride","value":"G-P523NP1LDS"},
+          {"type":"TEMPLATE","key":"eventName","value":"email_click"},
+          {"type":"LIST","key":"eventParameters","list":[
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"link_text"},{"type":"TEMPLATE","key":"value","value":"{{dlv - link_text}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"link_url"},{"type":"TEMPLATE","key":"value","value":"{{dlv - href}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"page_location"},{"type":"TEMPLATE","key":"value","value":"{{dlv - page_path}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"page_title"},{"type":"TEMPLATE","key":"value","value":"{{dlv - page_title}}"}]}
+          ]}
+        ],
+        "firingTriggerId": ["102"]
+      },
+      {
+        "name": "GA4 - book_now_click",
+        "type": "gaawe",
+        "tagId": "204",
+        "parameter": [
+          {"type":"TEMPLATE","key":"measurementIdOverride","value":"G-P523NP1LDS"},
+          {"type":"TEMPLATE","key":"eventName","value":"book_now_click"},
+          {"type":"LIST","key":"eventParameters","list":[
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"link_text"},{"type":"TEMPLATE","key":"value","value":"{{dlv - link_text}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"link_url"},{"type":"TEMPLATE","key":"value","value":"{{dlv - href}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"page_location"},{"type":"TEMPLATE","key":"value","value":"{{dlv - page_path}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"page_title"},{"type":"TEMPLATE","key":"value","value":"{{dlv - page_title}}"}]}
+          ]}
+        ],
+        "firingTriggerId": ["103"]
+      },
+      {
+        "name": "GA4 - map_click",
+        "type": "gaawe",
+        "tagId": "205",
+        "parameter": [
+          {"type":"TEMPLATE","key":"measurementIdOverride","value":"G-P523NP1LDS"},
+          {"type":"TEMPLATE","key":"eventName","value":"map_click"},
+          {"type":"LIST","key":"eventParameters","list":[
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"link_text"},{"type":"TEMPLATE","key":"value","value":"{{dlv - link_text}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"link_url"},{"type":"TEMPLATE","key":"value","value":"{{dlv - href}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"page_location"},{"type":"TEMPLATE","key":"value","value":"{{dlv - page_path}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"page_title"},{"type":"TEMPLATE","key":"value","value":"{{dlv - page_title}}"}]}
+          ]}
+        ],
+        "firingTriggerId": ["104"]
+      },
+      {
+        "name": "GA4 - generate_lead",
+        "type": "gaawe",
+        "tagId": "206",
+        "parameter": [
+          {"type":"TEMPLATE","key":"measurementIdOverride","value":"G-P523NP1LDS"},
+          {"type":"TEMPLATE","key":"eventName","value":"generate_lead"},
+          {"type":"LIST","key":"eventParameters","list":[
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"form_id"},{"type":"TEMPLATE","key":"value","value":"{{dlv - form_id}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"form_name"},{"type":"TEMPLATE","key":"value","value":"{{dlv - form_name}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"service"},{"type":"TEMPLATE","key":"value","value":"{{dlv - service}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"page_location"},{"type":"TEMPLATE","key":"value","value":"{{dlv - page_path}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"page_title"},{"type":"TEMPLATE","key":"value","value":"{{dlv - page_title}}"}]}
+          ]}
+        ],
+        "firingTriggerId": ["105"]
+      },
+      {
+        "name": "GA4 - form_submit_error",
+        "type": "gaawe",
+        "tagId": "207",
+        "parameter": [
+          {"type":"TEMPLATE","key":"measurementIdOverride","value":"G-P523NP1LDS"},
+          {"type":"TEMPLATE","key":"eventName","value":"form_submit_error"},
+          {"type":"LIST","key":"eventParameters","list":[
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"error_message"},{"type":"TEMPLATE","key":"value","value":"{{dlv - error}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"form_id"},{"type":"TEMPLATE","key":"value","value":"{{dlv - form_id}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"form_name"},{"type":"TEMPLATE","key":"value","value":"{{dlv - form_name}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"page_location"},{"type":"TEMPLATE","key":"value","value":"{{dlv - page_path}}"}]},
+            {"type":"MAP","map":[{"type":"TEMPLATE","key":"name","value":"page_title"},{"type":"TEMPLATE","key":"value","value":"{{dlv - page_title}}"}]}
+          ]}
+        ],
+        "firingTriggerId": ["106"]
+      }
+    ]
+  }
+}

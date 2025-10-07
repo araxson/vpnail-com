@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# google reviews data (keep private, manually curate for testimonials)
+scripts/reviews-output.json
+scripts/reviews-summary.txt

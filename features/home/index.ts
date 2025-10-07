@@ -1,0 +1,7 @@
+export { HomePage } from './home-page'
+export { homeMetadata } from './home.seo'
+export * from './sections/hero'
+export * from './sections/features'
+export * from './sections/services'
+export * from './sections/testimonials'
+export * from './sections/cta'
