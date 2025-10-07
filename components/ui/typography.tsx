@@ -32,25 +32,25 @@ export const H2 = createComponent<HTMLHeadingElement>(
 
 export const H3 = createComponent<HTMLHeadingElement>(
   'h3',
-  'scroll-m-20 font-[var(--font-playfair)] font-bold tracking-tight leading-snug text-[clamp(1.5rem,1.1rem+1.2vw,2rem)]',
+  'scroll-m-20 font-[var(--font-lato)] font-bold tracking-tight leading-snug text-[clamp(1.5rem,1.1rem+1.2vw,2rem)]',
   'H3'
 );
 
 export const H4 = createComponent<HTMLHeadingElement>(
   'h4',
-  'scroll-m-20 font-[var(--font-playfair)] font-semibold tracking-tight leading-snug text-[clamp(1.25rem,1rem+0.8vw,1.5rem)]',
+  'scroll-m-20 font-[var(--font-lato)] font-semibold tracking-tight leading-snug text-[clamp(1.25rem,1rem+0.8vw,1.5rem)]',
   'H4'
 );
 
 export const H5 = createComponent<HTMLHeadingElement>(
   'h5',
-  'scroll-m-20 font-[var(--font-playfair)] font-semibold leading-snug text-[1.125rem]',
+  'scroll-m-20 font-[var(--font-lato)] font-semibold leading-snug text-[1.125rem]',
   'H5'
 );
 
 export const H6 = createComponent<HTMLHeadingElement>(
   'h6',
-  'scroll-m-20 font-[var(--font-playfair)] font-semibold leading-snug text-[1rem]',
+  'scroll-m-20 font-[var(--font-lato)] font-semibold leading-snug text-[1rem]',
   'H6'
 );
 
