@@ -29,8 +29,34 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Run `npm run build` and `npm run start` locally to smoke test.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### One‑click Vercel Provisioning (Automated)
+
+This repo includes a workflow to create/link the Vercel project, set env vars, and add your domain automatically via the Vercel API.
+
+1. In GitHub → Settings → Secrets and variables → Actions → Secrets, add:
+   - `VERCEL_TOKEN` (Vercel Personal Token)
+   - `VERCEL_TEAM_ID` (optional, for team scope)
+   - `GTM_ID` = `GTM-PPQ6WBNQ`
+   - `GSC_TOKEN` = `ui2QmsBUe9UxFkSEGhEoVgoy_V2K-qRywpR7hLEMZko`
+2. Go to Actions → "Provision Vercel" → Run workflow
+   - `project_name`: `vpnail-ca` (default)
+   - `domain`: `vpnail.com` (default)
+3. Ensure the Vercel GitHub App is installed and has access to `araxson/vpnail.ca`.
+4. On push to `main`, Vercel will auto‑deploy and attach the domain.
+
+Alternatively, you can run the provisioning script locally:
+
+```
+export VERCEL_TOKEN=...          # required
+export VERCEL_TEAM_ID=team_...   # optional
+export VERCEL_PROJECT_NAME=vpnail-ca
+export VERCEL_DOMAIN=vpnail.com
+export GH_REPO=araxson/vpnail.ca
+export GTM_ID=GTM-PPQ6WBNQ
+export GSC_TOKEN=ui2QmsBUe9UxFkSEGhEoVgoy_V2K-qRywpR7hLEMZko
+node scripts/provision-vercel.mjs
+```
