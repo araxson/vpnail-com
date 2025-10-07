@@ -1,10 +1,10 @@
-import type { Metadata } from 'next'
-import { siteConfig } from '@/lib/config/site.config'
-import { getRandomGalleryImage } from '@/lib/seo/og-image'
+import { buildMetadata } from '@/lib/seo/metadata'
 
-export const areasMetadata: Metadata = {
+export const areasMetadata = buildMetadata({
   title: 'Calgary Service Areas | Victoria Park Nails & Spa',
-  description: 'Serving Victoria Park, Downtown, Beltline, Inglewood, Mission, and East Village with manicures, pedicures, nail art, extensions, massage, and waxing services.',
+  description:
+    'Serving Victoria Park, Downtown, Beltline, Inglewood, Mission, and East Village with manicures, pedicures, nail art, extensions, massage, and waxing services.',
+  path: '/areas',
   keywords: [
     'nail salon Victoria Park Calgary',
     'nail salon Downtown Calgary',
@@ -26,12 +26,6 @@ export const areasMetadata: Metadata = {
     'nail salon near me Calgary',
     'best nail salon Calgary',
   ],
-  alternates: {
-    canonical: `${siteConfig.url}/areas`,
-  },
-  openGraph: {
-    title: 'Calgary Service Areas | Victoria Park Nails & Spa',
-    description: 'Serving Victoria Park, Downtown, Beltline, Inglewood, Mission, and East Village with professional manicures, pedicures, nail art, extensions, massage, and waxing.',
-    images: [getRandomGalleryImage()],
-  },
-}
+  openGraphDescription:
+    'Serving Victoria Park, Downtown, Beltline, Inglewood, Mission, and East Village with professional manicures, pedicures, nail art, extensions, massage, and waxing.',
+})

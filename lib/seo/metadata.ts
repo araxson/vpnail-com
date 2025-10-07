@@ -1,74 +1,87 @@
 /**
  * SEO Metadata Utilities
- * Helper functions for generating consistent, optimized metadata across pages
+ * Provides helpers for building consistent meta information across pages
  */
 
 import type { Metadata } from 'next'
-import { siteConfig } from '@/lib/config/site.config'
+import {
+  SEO_AUTHORS,
+  SEO_BASE_URL,
+  SEO_BRAND_NAME,
+  SEO_DEFAULT_CREATOR,
+  SEO_DEFAULT_DESCRIPTION,
+  SEO_DEFAULT_KEYWORDS,
+  SEO_DEFAULT_OG_IMAGE,
+} from './constants'
+import { PageSEOConfig } from './types'
+import { getRandomGalleryImage } from './og-image'
 
-interface GenerateMetadataProps {
-  title: string
-  description: string
-  keywords?: string[]
-  image?: string
-  url?: string
-  type?: 'website' | 'article'
-  publishedTime?: string
-  modifiedTime?: string
-  authors?: Array<{ name: string; url?: string }>
-  noindex?: boolean
+const TITLE_MAX_LENGTH = 60
+const DESCRIPTION_MIN = 150
+const DESCRIPTION_MAX = 160
+
+function absoluteUrl(path: string): string {
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    return path
+  }
+
+  const normalized = path.startsWith('/') ? path : `/${path}`
+  return `${SEO_BASE_URL}${normalized === '/' ? '' : normalized}`
 }
 
-/**
- * Generate complete metadata object with OpenGraph, Twitter, and other SEO tags
- */
-export function generateMetadata({
+function formatTitle(title: string): string {
+  return optimizeTextLength(title, TITLE_MAX_LENGTH)
+}
+
+function formatDescription(description: string): string {
+  if (description.length >= DESCRIPTION_MIN && description.length <= DESCRIPTION_MAX) {
+    return description
+  }
+
+  if (description.length > DESCRIPTION_MAX) {
+    return optimizeTextLength(description, DESCRIPTION_MAX)
+  }
+
+  return description
+}
+
+function optimizeTextLength(value: string, maxLength: number): string {
+  if (value.length <= maxLength) {
+    return value
+  }
+
+  return `${value.slice(0, maxLength - 3)}...`
+}
+
+export function buildMetadata({
   title,
   description,
-  keywords = [],
-  image,
-  url,
+  path,
+  keywords,
+  ogImage,
   type = 'website',
+  noindex = false,
   publishedTime,
   modifiedTime,
-  authors,
-  noindex = false,
-}: GenerateMetadataProps): Metadata {
-  const pageUrl = url ? `${siteConfig.url}${url}` : siteConfig.url
-  const ogImage = image || siteConfig.ogImage
+  twitterDescription,
+  openGraphDescription,
+}: PageSEOConfig): Metadata {
+  const canonicalUrl = absoluteUrl(path)
+  const metaTitle = formatTitle(title)
+  const metaDescription = formatDescription(description)
+  const image = ogImage || getPrimaryOgImage()
+  const ogImageUrl = absoluteUrl(image)
+  const defaultKeywords = keywords && keywords.length > 0 ? keywords : SEO_DEFAULT_KEYWORDS
 
   return {
-    title,
-    description,
-    keywords: keywords.length > 0 ? keywords : [...siteConfig.keywords],
-    authors: authors || [...siteConfig.authors],
+    metadataBase: new URL(SEO_BASE_URL),
+    title: metaTitle,
+    description: metaDescription,
+    keywords: defaultKeywords,
+    authors: SEO_AUTHORS,
+    creator: SEO_DEFAULT_CREATOR,
     alternates: {
-      canonical: pageUrl,
-    },
-    openGraph: {
-      title,
-      description,
-      url: pageUrl,
-      siteName: siteConfig.name,
-      locale: 'en_CA',
-      type,
-      images: [
-        {
-          url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: title,
-        },
-      ],
-      ...(publishedTime && { publishedTime }),
-      ...(modifiedTime && { modifiedTime }),
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [ogImage],
-      creator: siteConfig.creator,
+      canonical: canonicalUrl,
     },
     robots: noindex
       ? {
@@ -86,166 +99,46 @@ export function generateMetadata({
             'max-snippet': -1,
           },
         },
-  }
-}
-
-/**
- * Generate JSON-LD breadcrumb schema
- */
-export function generateBreadcrumbSchema(items: Array<{ name: string; url: string }>) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: items.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.name,
-      item: `${siteConfig.url}${item.url}`,
-    })),
-  }
-}
-
-/**
- * Generate JSON-LD article schema
- */
-export function generateArticleSchema({
-  title,
-  description,
-  publishedTime,
-  modifiedTime,
-  authorName,
-  image,
-  url,
-}: {
-  title: string
-  description: string
-  publishedTime: string
-  modifiedTime?: string
-  authorName: string
-  image?: string
-  url: string
-}) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: title,
-    description,
-    image: image || siteConfig.ogImage,
-    datePublished: publishedTime,
-    dateModified: modifiedTime || publishedTime,
-    author: {
-      '@type': 'Person',
-      name: authorName,
+    openGraph: {
+      title: metaTitle,
+      description: openGraphDescription ? formatDescription(openGraphDescription) : metaDescription,
+      url: canonicalUrl,
+      siteName: SEO_BRAND_NAME,
+      locale: 'en_CA',
+      type,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: metaTitle,
+        },
+      ],
+      ...(publishedTime && { publishedTime }),
+      ...(modifiedTime && { modifiedTime }),
     },
-    publisher: {
-      '@type': 'Organization',
-      name: siteConfig.name,
-      logo: {
-        '@type': 'ImageObject',
-        url: `${siteConfig.url}/assets/images/brand/Victoria Park Nails and Spahealth-logo.png`,
-      },
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `${siteConfig.url}${url}`,
+    twitter: {
+      card: 'summary_large_image',
+      title: metaTitle,
+      description: twitterDescription ? formatDescription(twitterDescription) : metaDescription,
+      images: [ogImageUrl],
+      creator: SEO_DEFAULT_CREATOR,
     },
   }
 }
 
-/**
- * Generate JSON-LD FAQ schema
- */
-export function generateFAQSchema(faqs: Array<{ question: string; answer: string }>) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
+function getPrimaryOgImage(): string {
+  const images = getRandomGalleryImage()
+  if (images) {
+    return images
   }
+  return SEO_DEFAULT_OG_IMAGE
 }
 
-/**
- * Generate JSON-LD Service schema
- */
-export function generateServiceSchema({
-  name,
-  description,
-  price,
-  url,
-  areaServed = 'Calgary, Alberta',
-}: {
-  name: string
-  description: string
-  price?: string
-  url: string
-  areaServed?: string
-}) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name,
-    description,
-    provider: {
-      '@type': 'LocalBusiness',
-      name: siteConfig.name,
-      '@id': `${siteConfig.url}/#localbusiness`,
-    },
-    areaServed,
-    serviceType: name,
-    url: `${siteConfig.url}${url}`,
-    ...(price && {
-      offers: {
-        '@type': 'Offer',
-        price,
-        priceCurrency: 'CAD',
-        availability: 'https://schema.org/InStock',
-      },
-    }),
-  }
+export function optimizeTitle(value: string): string {
+  return formatTitle(value)
 }
 
-/**
- * Truncate text to specified length with ellipsis
- */
-export function truncateText(text: string, maxLength: number): string {
-  if (text.length <= maxLength) return text
-  return text.substring(0, maxLength - 3) + '...'
-}
-
-/**
- * Ensure meta description is within optimal length (150-160 chars)
- */
-export function optimizeMetaDescription(description: string): string {
-  const minLength = 150
-  const maxLength = 160
-
-  if (description.length >= minLength && description.length <= maxLength) {
-    return description
-  }
-
-  if (description.length > maxLength) {
-    return truncateText(description, maxLength)
-  }
-
-  // If too short, return as is (better to be short than padded)
-  return description
-}
-
-/**
- * Ensure title is within optimal length (50-60 chars)
- */
-export function optimizeTitle(title: string, includeBrand = true): string {
-  const maxLength = includeBrand ? 50 : 60 // Leave room for brand suffix
-
-  if (title.length <= maxLength) {
-    return title
-  }
-
-  return truncateText(title, maxLength)
+export function optimizeMetaDescription(value: string): string {
+  return formatDescription(value || SEO_DEFAULT_DESCRIPTION)
 }

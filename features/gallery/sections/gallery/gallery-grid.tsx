@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { Dialog, DialogContent } from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog'
 import type { GalleryImage } from '@/lib/gallery'
 
 interface GalleryGridProps {
@@ -36,14 +36,15 @@ export function GalleryGrid({ images }: GalleryGridProps) {
 
       <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
         <DialogContent className="max-w-5xl overflow-hidden p-0">
+          <DialogTitle className="sr-only">Gallery image preview</DialogTitle>
           {selectedImage && (
-            <div className="relative w-full aspect-square md:aspect-video">
+            <div className="relative h-[75vh] w-full bg-background">
               <Image
                 src={selectedImage.src}
                 alt={selectedImage.alt}
                 fill
                 className="object-contain"
-                sizes="(max-width: 768px) 100vw, 80vw"
+                sizes="(max-width: 768px) 100vw, 70vw"
                 priority
               />
             </div>

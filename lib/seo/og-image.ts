@@ -1,11 +1,13 @@
-import { galleryData } from '@/features/gallery/sections/gallery/gallery.data'
+import { getGalleryImages } from '@/lib/gallery'
+
+const FALLBACK_IMAGE = '/images/gallery/vpnail-gallery-00001.webp'
 
 export function getRandomGalleryImage(): string {
-  const defaultImage = galleryData.images[0]?.image || '/images/gallery/vpnail-gallery-00001.webp'
-  // Widen tuple type to a regular array for safe length/index ops
-  const list = Array.from(galleryData.images)
-  const n = list.length
-  if (n < 1) return defaultImage
-  const idx = Math.floor(Math.random() * n)
-  return list[idx]?.image || defaultImage
+  const images = getGalleryImages()
+  if (images.length === 0) {
+    return FALLBACK_IMAGE
+  }
+
+  const primary = images[0]
+  return primary?.src || FALLBACK_IMAGE
 }

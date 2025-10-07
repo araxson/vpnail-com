@@ -1,12 +1,10 @@
-import type { Metadata } from 'next'
-import { siteConfig } from '@/lib/config/site.config'
-import { defaultSEO } from '@/lib/config/seo.config'
-import { getRandomGalleryImage } from '@/lib/seo/og-image'
+import { buildMetadata } from '@/lib/seo/metadata'
 
-export const homeMetadata: Metadata = {
-  ...defaultSEO,
+export const homeMetadata = buildMetadata({
   title: 'Victoria Park Nails & Spa | Calgary Nail Salon',
-  description: 'Victoria Park nail salon for manicures, pedicures, gel/acrylic nails, custom nail art, massage, and waxing near the Calgary Stampede.',
+  description:
+    'Victoria Park nail salon for manicures, pedicures, gel and acrylic nails, custom nail art, massage, and waxing near the Calgary Stampede.',
+  path: '/',
   keywords: [
     'Victoria Park Nails and Spa',
     'best nail salon Calgary',
@@ -29,27 +27,8 @@ export const homeMetadata: Metadata = {
     'hot stone massage Calgary',
     'nail salon near me Calgary',
   ],
-  alternates: {
-    canonical: siteConfig.url,
-  },
-  openGraph: {
-    ...defaultSEO.openGraph,
-    title: 'Victoria Park Nails & Spa | Calgary Nail Salon',
-    description: 'Calgary nail salon in Victoria Park for manicures, pedicures, nail art, gel/acrylic extensions, massage, and waxing near the Stampede grounds.',
-    url: siteConfig.url,
-    images: [
-      {
-        url: getRandomGalleryImage(),
-        width: 1200,
-        height: 630,
-        alt: 'Victoria Park Nails and Spa - Calgary\'s Premier Nail Salon',
-      },
-    ],
-  },
-  twitter: {
-    ...defaultSEO.twitter,
-    title: 'Victoria Park Nails & Spa | Calgary Nail Salon',
-    description: 'Calgary nail salon for manicures, pedicures, gel/acrylic nails, extensions, nail art, massage, and waxing in Victoria Park.',
-    images: [getRandomGalleryImage()],
-  },
-}
+  openGraphDescription:
+    'Calgary nail salon in Victoria Park for manicures, pedicures, nail art, gel and acrylic extensions, massage, and waxing near the Stampede grounds.',
+  twitterDescription:
+    'Calgary nail salon for manicures, pedicures, gel and acrylic nails, extensions, nail art, massage, and waxing in Victoria Park.',
+})

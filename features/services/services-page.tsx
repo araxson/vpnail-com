@@ -5,7 +5,7 @@ import { TestimonialsSection } from './sections/testimonials'
 import { FaqsSection } from './sections/faqs'
 import { CtaSection } from './sections/cta'
 import { StructuredData } from '@/components/seo'
-import { generateFAQSchema } from '@/lib/seo/metadata'
+import { getFAQSchema } from '@/lib/seo/structured-data'
 import { faqsData } from './sections/faqs/faqs.data'
 
 export function ServicesPage() {
@@ -16,7 +16,7 @@ export function ServicesPage() {
   return (
     <main>
       {/* FAQPage JSON-LD for rich results */}
-      <StructuredData type="FAQPage" data={{ mainEntity: generateFAQSchema(mainEntity).mainEntity }} />
+      <StructuredData schema={getFAQSchema(mainEntity)} />
       <HeroSection />
       <CombinationsSection />
       <ServicesGridSection />

@@ -6,7 +6,7 @@ import { LocationSection } from './sections/location'
 import { FormSection } from './sections/form'
 import { FaqsSection } from './sections/faqs'
 import { StructuredData } from '@/components/seo'
-import { generateFAQSchema } from '@/lib/seo/metadata'
+import { getFAQSchema } from '@/lib/seo/structured-data'
 import { faqsData as contactFaqs } from './sections/faqs/faqs.data'
 
 export function ContactPage() {
@@ -15,7 +15,7 @@ export function ContactPage() {
   return (
     <main>
       {/* FAQPage JSON-LD for Contact page */}
-      <StructuredData type="FAQPage" data={{ mainEntity: generateFAQSchema(faqEntities).mainEntity }} />
+      <StructuredData schema={getFAQSchema(faqEntities)} />
       <HeroSection />
       <Section>
         <Container>

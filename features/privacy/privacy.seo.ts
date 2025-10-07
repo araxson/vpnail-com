@@ -1,12 +1,15 @@
-import type { Metadata } from 'next'
-import { siteConfig } from '@/lib/config/site.config'
-import { defaultSEO } from '@/lib/config/seo.config'
+import { buildMetadata } from '@/lib/seo/metadata'
 
-export const privacyMetadata: Metadata = {
-  ...defaultSEO,
+export const privacyMetadata = buildMetadata({
   title: 'Privacy Policy | Victoria Park Nails & Spa Calgary',
-  description: 'Read the privacy policy for Victoria Park Nails & Spa in Calgary, including how we collect, use, and protect your information.',
-  alternates: {
-    canonical: `${siteConfig.url}/privacy`,
-  },
-}
+  description:
+    'Understand how Victoria Park Nails & Spa in Calgary collects, uses, and protects personal information for salon guests and website visitors.',
+  path: '/privacy',
+  keywords: [
+    'Victoria Park Nails privacy policy',
+    'Calgary nail salon privacy',
+    'nail salon data protection',
+    'Victoria Park Nails terms',
+  ],
+  type: 'article',
+})

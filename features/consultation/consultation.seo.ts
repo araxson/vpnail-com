@@ -1,12 +1,10 @@
-import type { Metadata } from 'next'
-import { siteConfig } from '@/lib/config/site.config'
-import { defaultSEO } from '@/lib/config/seo.config'
-import { getRandomGalleryImage } from '@/lib/seo/og-image'
+import { buildMetadata } from '@/lib/seo/metadata'
 
-export const consultationMetadata: Metadata = {
-  ...defaultSEO,
+export const consultationMetadata = buildMetadata({
   title: 'Book Online | Victoria Park Nails & Spa Calgary',
-  description: 'Book Calgary manicures, pedicures, nail art, extensions, massage, and waxing online. Free parking & Victoria Park/Stampede CTrain. Walk-ins welcome.',
+  description:
+    'Book Calgary manicures, pedicures, nail art, extensions, massage, and waxing online. Free parking and Victoria Park/Stampede CTrain. Walk-ins welcome.',
+  path: '/consultation',
   keywords: [
     'book nail appointment Calgary',
     'online nail booking Calgary',
@@ -19,27 +17,8 @@ export const consultationMetadata: Metadata = {
     'same-day nail appointment Calgary',
     'book pedicure Calgary',
   ],
-  alternates: {
-    canonical: `${siteConfig.url}/consultation`,
-  },
-  openGraph: {
-    ...defaultSEO.openGraph,
-    title: 'Book Online | Victoria Park Nails & Spa Calgary',
-    description: 'Reserve Calgary manicures, pedicures, nail art, extensions, and spa services online. Free parking & Victoria Park/Stampede CTrain access.',
-    url: `${siteConfig.url}/consultation`,
-    images: [
-      {
-        url: getRandomGalleryImage(),
-        width: 1200,
-        height: 630,
-        alt: 'Book Appointment - Victoria Park Nails and Spa Calgary',
-      },
-    ],
-  },
-  twitter: {
-    ...defaultSEO.twitter,
-    title: 'Book Online | Victoria Park Nails & Spa Calgary',
-    description: 'Book Calgary manicures, pedicures, extensions, nail art, and spa appointments. Free parking & Victoria Park/Stampede CTrain. Walk-ins welcome.',
-    images: [getRandomGalleryImage()],
-  },
-}
+  openGraphDescription:
+    'Reserve Calgary manicures, pedicures, nail art, extensions, and spa services online. Free parking and Victoria Park/Stampede CTrain access.',
+  twitterDescription:
+    'Book Calgary manicures, pedicures, extensions, nail art, and spa appointments. Free parking and Victoria Park/Stampede CTrain. Walk-ins welcome.',
+})

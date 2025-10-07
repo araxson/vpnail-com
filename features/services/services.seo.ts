@@ -1,13 +1,10 @@
-import type { Metadata } from 'next'
-import { siteConfig } from '@/lib/config/site.config'
-import { defaultSEO } from '@/lib/config/seo.config'
-import { getRandomGalleryImage } from '@/lib/seo/og-image'
+import { buildMetadata } from '@/lib/seo/metadata'
 
-export const servicesMetadata: Metadata = {
-  ...defaultSEO,
+export const servicesMetadata = buildMetadata({
   title: 'Calgary Nail Services & Pricing | Victoria Park Nails & Spa',
   description:
-    'See pricing for manicures, pedicures, gel/acrylic nails, nail art, massage, and waxing at Victoria Park Nails & Spa in Victoria Park, Calgary.',
+    'See pricing for manicures, pedicures, gel and acrylic nails, nail art, massage, and waxing at Victoria Park Nails & Spa in Victoria Park, Calgary.',
+  path: '/services',
   keywords: [
     'nail services Calgary',
     'manicure Calgary',
@@ -34,14 +31,6 @@ export const servicesMetadata: Metadata = {
     'best manicure Calgary',
     'best pedicure Calgary',
   ],
-  alternates: {
-    canonical: `${siteConfig.url}/services`,
-  },
-  openGraph: {
-    ...defaultSEO.openGraph,
-    title: 'Calgary Nail Services & Pricing | Victoria Park Nails & Spa',
-    description:
-      'Service menu featuring manicures, pedicures, gel/acrylic extensions, custom nail art, massage therapy, and waxing in Victoria Park, Calgary.',
-    images: [getRandomGalleryImage()],
-  },
-}
+  openGraphDescription:
+    'Service menu featuring manicures, pedicures, gel and acrylic extensions, custom nail art, massage therapy, and waxing in Victoria Park, Calgary.',
+})

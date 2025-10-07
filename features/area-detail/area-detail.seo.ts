@@ -1,22 +1,23 @@
-import type { Metadata } from 'next'
-import { siteConfig } from '@/lib/config/site.config'
+import { buildMetadata } from '@/lib/seo/metadata'
 
-export function generateAreaMetadata(slug: string): Metadata {
-  const title = slug.replace(/-/g, ' ').split(' ').map(word =>
-    word.charAt(0).toUpperCase() + word.slice(1)
-  ).join(' ')
+export function generateAreaMetadata(slug: string) {
+  const formattedTitle = slug
+    .split('-')
+    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join(' ')
 
-  return {
-    title: `${title} | Victoria Park Nails & Spa Calgary`,
-    description: `Serving ${title} with manicures, pedicures, nail art, extensions, massage, and waxing from our Victoria Park studio in Calgary.`,
+  const path = `/areas/${slug}`
+
+  return buildMetadata({
+    title: `${formattedTitle} | Victoria Park Nails & Spa Calgary`,
+    description: `Serving ${formattedTitle} with manicures, pedicures, nail art, extensions, massage, and waxing from our Victoria Park studio in Calgary.`,
+    path,
     keywords: [
-      `${title} nail salon Calgary`,
-      `${title} manicure`,
-      `${title} pedicure`,
-      `${title} nail art Calgary`,
+      `${formattedTitle} nail salon Calgary`,
+      `${formattedTitle} manicure Calgary`,
+      `${formattedTitle} pedicure Calgary`,
+      `${formattedTitle} nail art Calgary`,
     ],
-    alternates: {
-      canonical: `${siteConfig.url}/areas/${slug}`,
-    },
-  }
+    openGraphDescription: `Professional manicures, pedicures, nail art, extensions, massage, and waxing for ${formattedTitle} from our Victoria Park salon in Calgary.`,
+  })
 }

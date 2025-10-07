@@ -1,12 +1,15 @@
-import type { Metadata } from 'next'
-import { siteConfig } from '@/lib/config/site.config'
-import { defaultSEO } from '@/lib/config/seo.config'
+import { buildMetadata } from '@/lib/seo/metadata'
 
-export const termsMetadata: Metadata = {
-  ...defaultSEO,
+export const termsMetadata = buildMetadata({
   title: 'Terms of Service | Victoria Park Nails & Spa Calgary',
-  description: 'Review the terms of service for Victoria Park Nails & Spa in Calgary, including booking policies and website use.',
-  alternates: {
-    canonical: `${siteConfig.url}/terms`,
-  },
-}
+  description:
+    'Review the terms of service for Victoria Park Nails & Spa in Calgary, including salon booking policies, cancellations, and website use.',
+  path: '/terms',
+  keywords: [
+    'Victoria Park Nails terms of service',
+    'Calgary nail salon policies',
+    'nail salon cancellation policy',
+    'Victoria Park Nails booking terms',
+  ],
+  type: 'article',
+})

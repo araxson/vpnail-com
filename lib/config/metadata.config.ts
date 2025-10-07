@@ -2,6 +2,15 @@ import type { Metadata } from 'next'
 import { siteConfig } from './site.config'
 import { getRandomGalleryImage } from '@/lib/seo/og-image'
 
+function getAbsoluteOgImage(): string {
+  const image = getRandomGalleryImage()
+  try {
+    return new URL(image, siteConfig.url).toString()
+  } catch {
+    return `${siteConfig.url}/images/gallery/vpnail-gallery-00001.webp`
+  }
+}
+
 const verification: Metadata['verification'] = {
   google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
   yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || undefined,
@@ -23,6 +32,35 @@ export const rootMetadata: Metadata = {
   keywords: [...siteConfig.keywords],
   authors: [...siteConfig.authors],
   creator: siteConfig.creator,
+  themeColor: '#ffffff',
+  manifest: '/favicons/manifest.json',
+  icons: {
+    icon: [
+      { url: '/favicons/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/favicons/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicons/favicon-96x96.png', type: 'image/png', sizes: '96x96' },
+      { url: '/favicons/android-icon-192x192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/favicons/favicon.ico' },
+    ],
+    apple: [
+      { url: '/favicons/apple-icon-180x180.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: ['/favicons/favicon.ico'],
+  },
+  other: {
+    'msapplication-TileColor': '#ffffff',
+    'msapplication-TileImage': '/favicons/ms-icon-144x144.png',
+  },
+  appleWebApp: {
+    capable: true,
+    title: siteConfig.name,
+    statusBarStyle: 'default',
+  },
+  formatDetection: {
+    telephone: true,
+    email: false,
+    address: false,
+  },
   openGraph: {
     type: 'website',
     locale: 'en_CA',
@@ -32,7 +70,7 @@ export const rootMetadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: getRandomGalleryImage(),
+        url: getAbsoluteOgImage(),
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -44,7 +82,7 @@ export const rootMetadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     creator: siteConfig.creator,
-    images: [getRandomGalleryImage()],
+    images: [getAbsoluteOgImage()],
   },
   robots: {
     index: true,
