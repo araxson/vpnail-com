@@ -1,5 +1,5 @@
-import { AnnouncementBanner } from '@/components/layouts'
 import { HeroSection } from './sections/hero'
+import { HomeGallerySection } from './sections/gallery'
 import { FeaturesSection } from './sections/features'
 import { ServicesSection } from './sections/services'
 import { TeamSection } from './sections/team'
@@ -27,10 +27,8 @@ export function HomePage() {
       {qa.length > 0 && (
         <StructuredData type="FAQPage" data={{ mainEntity: generateFAQSchema(qa).mainEntity }} />
       )}
-      <AnnouncementBanner
-        message="NEW! Reward & Redeem Points Program - Earn points with every visit - Ask us how to start earning today!"
-      />
       <HeroSection />
+      <HomeGallerySection />
       <FeaturesSection />
       <ServicesSection />
       <TeamSection />
