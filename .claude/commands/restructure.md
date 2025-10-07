@@ -228,7 +228,7 @@ After restructuring, verify:
 
 ### Before (Custom Styled):
 ```typescript
-<div className="hero-section bg-blue-500 p-8 rounded-lg shadow-xl">
+<div className="hero-section bg-blue-500 p-8 rounded-lg shadow-none">
   <h1 className="text-4xl font-bold text-white">Welcome</h1>
   <p className="text-lg text-gray-200">Description</p>
   <button className="px-6 py-3 bg-white text-blue-500 rounded-md hover:bg-gray-100">

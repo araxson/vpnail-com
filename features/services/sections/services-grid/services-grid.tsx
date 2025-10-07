@@ -59,7 +59,7 @@ export function ServicesGridSection() {
                   {/* Services Grid */}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-4 max-w-7xl mx-auto">
                     {subcategory.services.map((service) => (
-                      <Card key={service.id} className="border hover:border-primary/50 hover:shadow-sm transition-all duration-200 overflow-hidden p-4">
+                      <Card key={service.id} className="border hover:border-primary/50 hover:shadow-none transition-all duration-200 overflow-hidden p-4">
                         <div className="flex items-start justify-between gap-3 mb-2">
                           {/* Service Info */}
                           <div className="flex-1 min-w-0">

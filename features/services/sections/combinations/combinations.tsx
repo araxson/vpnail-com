@@ -43,7 +43,7 @@ export function CombinationsSection() {
                   className="pl-4 pr-4 basis-[calc(85%-1rem)] sm:basis-[calc(70%-1rem)] md:basis-1/2 lg:basis-1/3"
                 >
                   <div className="h-full">
-                    <Card className="h-full flex flex-col relative overflow-hidden group hover:shadow-lg transition-shadow">
+                    <Card className="h-full flex flex-col relative overflow-hidden group hover:shadow-none transition-shadow">
                       {pkg.popular && (
                         <div className="absolute top-0 right-0 left-0 h-1 bg-gradient-to-r from-primary via-primary/80 to-primary" />
                       )}

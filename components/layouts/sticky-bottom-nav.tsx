@@ -41,13 +41,13 @@ export function StickyBottomNav() {
         isVisible ? 'translate-y-0' : 'translate-y-full'
       }`}
     >
-      <div className="bg-background/95 backdrop-blur-sm border-t border-border shadow-lg">
+      <div className="bg-background/95 backdrop-blur-sm border-t border-border shadow-none">
         <div className="container max-w-screen-2xl mx-auto p-3">
           <div className="grid grid-cols-2 gap-3">
             <Button
               asChild
               size="lg"
-              className="w-full shadow-md hover:shadow-lg transition-shadow"
+              className="w-full shadow-none hover:shadow-none transition-shadow"
             >
               <Link href={ROUTES.SERVICES}>
                 <Calendar className="h-5 w-5 mr-2" />
@@ -58,7 +58,7 @@ export function StickyBottomNav() {
               asChild
               size="lg"
               variant="outline"
-              className="w-full shadow-md hover:shadow-lg transition-shadow"
+              className="w-full shadow-none hover:shadow-none transition-shadow"
             >
               <a href={siteConfig.social.phone}>
                 <Phone className="h-5 w-5 mr-2" />
