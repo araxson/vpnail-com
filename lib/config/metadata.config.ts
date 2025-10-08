@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { siteConfig } from './site.config'
 import { getRandomGalleryImage } from '@/lib/seo/og-image'
 
@@ -22,6 +22,10 @@ if (process.env.NEXT_PUBLIC_MSVALIDATE) {
   (verification.other as Record<string, string>)['msvalidate.01'] = process.env.NEXT_PUBLIC_MSVALIDATE
 }
 
+export const rootViewport: Viewport = {
+  themeColor: '#ffffff',
+}
+
 export const rootMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -32,7 +36,6 @@ export const rootMetadata: Metadata = {
   keywords: [...siteConfig.keywords],
   authors: [...siteConfig.authors],
   creator: siteConfig.creator,
-  themeColor: '#ffffff',
   manifest: '/favicons/manifest.json',
   icons: {
     icon: [

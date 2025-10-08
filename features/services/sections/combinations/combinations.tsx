@@ -2,15 +2,21 @@
 
 import * as React from 'react'
 import { Section, Container } from '@/components/layouts'
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Separator } from '@/components/ui/separator'
-import { Carousel, CarouselContent, CarouselItem, CarouselDots } from '@/components/ui/carousel'
-import { Check, Sparkles } from 'lucide-react'
+import { Carousel, CarouselContent, CarouselDots, CarouselItem } from '@/components/ui/carousel'
+import { Sparkles } from 'lucide-react'
 import Autoplay from 'embla-carousel-autoplay'
 import { combinationsData } from './combinations.data'
-import { H2, H4, Lead, P, Small } from '@/components/ui/typography'
+import { H2, Lead } from '@/components/ui/typography'
 
 export function CombinationsSection() {
   const plugin = React.useRef(Autoplay({ delay: 4000, stopOnInteraction: true }))
@@ -18,12 +24,12 @@ export function CombinationsSection() {
   return (
     <Section variant="muted" size="lg" id="packages">
       <Container noPaddingMobile>
-        <div className="text-center space-y-4 mb-16 px-4 md:px-0">
+        <div className="mb-16 space-y-4 px-4 text-center md:px-0">
           <Badge variant="outline" className="text-sm">
             {combinationsData.badge}
           </Badge>
           <H2>{combinationsData.title}</H2>
-          <Lead className="text-muted-foreground max-w-2xl mx-auto">
+          <Lead className="mx-auto max-w-2xl text-muted-foreground">
             {combinationsData.description}
           </Lead>
         </div>
@@ -40,70 +46,71 @@ export function CombinationsSection() {
               return (
                 <CarouselItem
                   key={pkg.name}
-                  className="pl-4 pr-4 basis-[calc(85%-1rem)] sm:basis-[calc(70%-1rem)] md:basis-1/2 lg:basis-1/3"
+                  className="basis-[calc(85%-1rem)] pl-4 pr-4 sm:basis-[calc(70%-1rem)] md:basis-1/2 lg:basis-1/3"
                 >
                   <div className="h-full">
-                    <Card className="h-full flex flex-col relative overflow-hidden group hover:shadow-none transition-shadow">
+                    <Card className="relative flex h-full flex-col gap-0 overflow-hidden rounded-xl border border-border/70 bg-background py-0">
                       {pkg.popular && (
-                        <div className="absolute top-0 right-0 left-0 h-1 bg-gradient-to-r from-primary via-primary/80 to-primary" />
+                        <>
+                          <div className="absolute inset-x-0 top-0 h-1 bg-primary" />
+                          <Badge
+                            variant="secondary"
+                            className="absolute right-6 top-6 gap-2 bg-primary/10 text-primary"
+                          >
+                            <Sparkles className="h-3 w-3" /> Popular
+                          </Badge>
+                        </>
                       )}
 
-                      <CardHeader className="space-y-6 pb-6">
-                        <div className="flex items-start justify-between">
+                      <CardHeader className="space-y-4 pb-4 pt-5">
+                        <div className="flex items-start gap-3">
                           <div className="flex items-center gap-3">
-                            <div className="p-2.5 rounded-xl bg-primary/10 text-primary">
+                            <span className="flex h-9 w-9 items-center justify-center rounded-md border border-primary/20 bg-primary/10 text-primary">
                               <Icon className="h-5 w-5" />
-                            </div>
-                            <div>
-                              <H4 className="text-lg font-semibold">{pkg.name}</H4>
-                              <Small className="text-muted-foreground text-xs sm:text-sm">
+                            </span>
+                            <div className="space-y-1">
+                              <CardTitle className="text-lg font-semibold tracking-tight">
+                                {pkg.name}
+                              </CardTitle>
+                              <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
                                 {pkg.duration}
-                              </Small>
+                              </p>
                             </div>
                           </div>
-                          {pkg.popular && (
-                            <Badge className="gap-1">
-                              <Sparkles className="h-3 w-3" />
-                              Popular
-                            </Badge>
-                          )}
                         </div>
 
-                        <div>
-                          <div className="flex items-baseline gap-2">
-                            <span className="text-4xl font-bold">${pkg.price}</span>
-                            <span className="text-lg text-muted-foreground line-through">
+                        <CardDescription className="text-sm leading-relaxed">
+                          {pkg.description}
+                        </CardDescription>
+                      </CardHeader>
+
+                      <CardContent className="flex-1 space-y-4 px-6 pb-4">
+                        <div className="text-center">
+                          <div className="mx-auto inline-flex flex-col items-center justify-center gap-2 px-5 py-4">
+                            <span className="text-4xl font-semibold leading-none text-emerald-600 sm:text-5xl">
+                              ${pkg.price}
+                            </span>
+                            <span className="text-sm text-muted-foreground line-through">
                               ${pkg.originalPrice}
                             </span>
                           </div>
                         </div>
 
-                        <P className="text-sm text-muted-foreground leading-relaxed">
-                          {pkg.description}
-                        </P>
-                      </CardHeader>
-
-                      <Separator />
-
-                      <CardContent className="flex-1 pt-6">
                         <div className="space-y-3">
-                          <Small className="text-muted-foreground font-semibold uppercase tracking-wide">
-                            Included Services
-                          </Small>
-                          <ul className="space-y-3">
+                          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                            What&apos;s Included
+                          </p>
+                          <ol className="list-decimal space-y-2 pl-4 text-sm leading-relaxed text-foreground marker:text-emerald-500 marker:font-medium">
                             {pkg.services.map((service, idx) => (
-                              <li key={idx} className="flex items-start gap-3">
-                                <span className="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
-                                  <Check className="h-3.5 w-3.5 text-primary" />
-                                </span>
-                                <P className="text-sm leading-relaxed mt-0">{service.name}</P>
+                              <li key={idx} className="text-sm leading-relaxed text-foreground">
+                                {service.name}
                               </li>
                             ))}
-                          </ul>
+                          </ol>
                         </div>
                       </CardContent>
 
-                      <CardFooter className="pt-6">
+                      <CardFooter className="border-t border-border/70 pb-5 pt-4">
                         <Button
                           asChild
                           className="w-full"

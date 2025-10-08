@@ -32,6 +32,23 @@ export function HeroSection() {
             />
           </div>
         </div>
+
+        <div className="mt-10 relative overflow-hidden rounded-lg">
+          <Image
+            src="/images/victoria-park-nails-street-shot.webp"
+            alt="Street view of Victoria Park Nails and Spa with free parking available"
+            width={1600}
+            height={900}
+            className="h-full w-full object-cover"
+            priority
+          />
+          <div className="absolute inset-x-4 bottom-4 md:bottom-6 md:left-6 md:right-auto">
+            <span className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/30">
+              <span className="inline-block h-2 w-2 rounded-full bg-primary-foreground/80" aria-hidden />
+              Free parking available
+            </span>
+          </div>
+        </div>
       </Container>
     </Section>
   )

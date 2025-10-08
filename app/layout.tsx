@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Lato, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
@@ -8,7 +9,7 @@ import { Footer } from '@/components/layouts/footer';
 import { StickyBottomNav } from '@/components/layouts/sticky-bottom-nav';
 import { GoogleAnalytics, GoogleTagManager, GoogleTagManagerNoScript } from '@/components/seo';
 import { StructuredData } from '@/components/seo';
-import { rootMetadata } from '@/lib/config/metadata.config';
+import { rootMetadata, rootViewport } from '@/lib/config/metadata.config';
 import { analyticsConfig } from '@/lib/config/analytics.config';
 
 const lato = Lato({
@@ -30,6 +31,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = rootMetadata;
+export const viewport = rootViewport;
 
 export default function RootLayout({
   children,
@@ -115,7 +117,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <ToastProvider>
             <div className="min-h-screen flex flex-col">
-              <AnalyticsEvents />
+              <Suspense fallback={null}>
+                <AnalyticsEvents />
+              </Suspense>
               <Header />
               <Breadcrumbs />
               <main id="main-content" className="flex-1 pb-20 lg:pb-0" tabIndex={-1}>{children}</main>
