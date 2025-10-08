@@ -5,10 +5,12 @@ import { siteConfig, CONTACT_INFO, SOCIAL_LINKS } from '@/lib/config/site.config
 import { footerNav } from '@/lib/config/nav.config'
 import { ROUTES } from '@/lib/constants/routes'
 
+import { Container } from './container'
+
 export function Footer({ id }: { id?: string }) {
   return (
     <footer id={id} className="border-t bg-muted/30">
-      <div className="container mx-auto px-4 py-12">
+      <Container className="py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Brand & Description */}
           <div className="lg:col-span-2">
@@ -113,7 +115,7 @@ export function Footer({ id }: { id?: string }) {
             </Link>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   )
 }

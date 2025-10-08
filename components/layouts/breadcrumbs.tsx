@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/breadcrumb"
 import { ROUTES } from "@/lib/constants/routes"
 
+import { Container } from "./container"
+
 interface BreadcrumbSegment {
   label: string
   href: string
@@ -81,7 +83,7 @@ export function Breadcrumbs() {
 
   return (
     <div className="border-b bg-background">
-      <div className="container mx-auto px-4 py-3">
+      <Container className="py-3">
         <Breadcrumb>
           <BreadcrumbList>
             {breadcrumbs.map((breadcrumb, index) => (
@@ -102,7 +104,7 @@ export function Breadcrumbs() {
             ))}
           </BreadcrumbList>
         </Breadcrumb>
-      </div>
+      </Container>
     </div>
   )
 }

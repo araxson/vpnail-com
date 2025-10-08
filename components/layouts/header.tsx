@@ -21,6 +21,8 @@ import {
   DrawerTitle,
   DrawerTrigger
 } from "@/components/ui/drawer"
+
+import { Container } from "./container"
 import {
   Accordion,
   AccordionContent,
@@ -75,8 +77,7 @@ export function Header({ items = primaryNav }: HeaderProps) {
       "sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-transform duration-300",
       !isVisible && "-translate-y-full"
     )}>
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
+      <Container className="flex h-16 items-center justify-between" noPaddingMobile>
           {/* Logo */}
           <Link
             href="/"
@@ -254,8 +255,7 @@ export function Header({ items = primaryNav }: HeaderProps) {
               </DrawerContent>
             </Drawer>
           </div>
-        </div>
-      </div>
+      </Container>
     </header>
   )
 }

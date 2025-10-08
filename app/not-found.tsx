@@ -1,12 +1,14 @@
 import Link from 'next/link';
+import { Home, Search, FileQuestion, MessageCircle } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Home, Search, FileQuestion, MessageCircle } from 'lucide-react';
+import { Section, Container } from '@/components/layouts';
 
 export default function NotFound() {
   return (
-    <div className="min-h-[calc(100vh-8rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
-      <div className="max-w-2xl w-full">
+    <Section className="min-h-[calc(100vh-8rem)] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <Container className="max-w-2xl">
         <Card className="border-blue-200 bg-blue-50/50 dark:border-blue-800 dark:bg-blue-950/30">
           <CardHeader className="text-center pb-6">
             <div className="flex justify-center mb-4">
@@ -102,7 +104,7 @@ export default function NotFound() {
             </div>
           </CardContent>
         </Card>
-      </div>
-    </div>
+      </Container>
+    </Section>
   );
 }

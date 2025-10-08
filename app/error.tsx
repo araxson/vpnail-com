@@ -1,10 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { AlertTriangle, Home, RefreshCw, MessageCircle, ChevronDown, ChevronUp } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { AlertTriangle, Home, RefreshCw, MessageCircle, ChevronDown, ChevronUp } from 'lucide-react';
-import Link from 'next/link';
+import { Section, Container } from '@/components/layouts';
 
 export default function Error({
   error,
@@ -52,8 +54,8 @@ export default function Error({
   };
 
   return (
-    <div className="min-h-[calc(100vh-8rem)] flex items-center justify-center py-12">
-      <div className="container max-w-2xl mx-auto px-4">
+    <Section className="min-h-[calc(100vh-8rem)] flex items-center justify-center py-12">
+      <Container className="max-w-2xl">
         <Card className="border-orange-200 bg-orange-50/50 dark:border-orange-800 dark:bg-orange-950/30">
           <CardHeader className="text-center pb-6">
             <div className="flex justify-center mb-4">
@@ -162,7 +164,7 @@ export default function Error({
             </div>
           </CardContent>
         </Card>
-      </div>
-    </div>
+      </Container>
+    </Section>
   );
 }

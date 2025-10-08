@@ -20,21 +20,36 @@ export function HomeGalleryGrid({ images }: HomeGalleryGridProps) {
     <>
       <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-5 lg:gap-4">
         {images.map((image) => (
-          <button
+          <figure
             key={image.filename}
-            type="button"
-            onClick={() => setSelected(image)}
-            className="group relative aspect-square overflow-hidden rounded-xl border bg-muted focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            itemScope
+            itemType="https://schema.org/ImageObject"
+            className="flex"
           >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-              sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw"
-            />
-            <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/15" />
-          </button>
+            <button
+              type="button"
+              onClick={() => setSelected(image)}
+              className="group relative aspect-square h-full w-full overflow-hidden rounded-xl border bg-muted focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              aria-label={image.alt}
+              title={image.title}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                title={image.title}
+                fill
+                itemProp="contentUrl"
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw"
+              />
+              <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/15" />
+            </button>
+            <figcaption className="sr-only" itemProp="caption">
+              {image.caption}
+            </figcaption>
+            <meta itemProp="name" content={image.title} />
+            <meta itemProp="description" content={image.description} />
+          </figure>
         ))}
       </div>
 
@@ -42,16 +57,27 @@ export function HomeGalleryGrid({ images }: HomeGalleryGridProps) {
         <DialogContent className="max-w-4xl overflow-hidden p-0">
           <DialogTitle className="sr-only">Gallery image preview</DialogTitle>
           {selected && (
-            <div className="relative h-[65vh] w-full bg-background">
+            <figure
+              className="relative h-[65vh] w-full bg-background"
+              itemScope
+              itemType="https://schema.org/ImageObject"
+            >
               <Image
                 src={selected.src}
                 alt={selected.alt}
+                title={selected.title}
                 fill
+                itemProp="contentUrl"
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, 60vw"
                 priority
               />
-            </div>
+              <figcaption className="sr-only" itemProp="caption">
+                {selected.caption}
+              </figcaption>
+              <meta itemProp="name" content={selected.title} />
+              <meta itemProp="description" content={selected.description} />
+            </figure>
           )}
         </DialogContent>
       </Dialog>

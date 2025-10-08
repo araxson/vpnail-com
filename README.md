@@ -58,7 +58,7 @@ This repo includes a workflow to create/link the Vercel project, set env vars, a
 2. Go to Actions → "Provision Vercel" → Run workflow
    - `project_name`: `vpnail-ca` (default)
    - `domain`: `vpnail.com` (default)
-3. Ensure the Vercel GitHub App is installed and has access to `araxson/vpnail.ca`.
+3. Ensure the Vercel GitHub App is installed and has access to `araxson/vpnail.com`.
 4. On push to `main`, Vercel will auto‑deploy and attach the domain.
 
 Alternatively, you can run the provisioning script locally:
@@ -68,7 +68,7 @@ export VERCEL_TOKEN=...          # required
 export VERCEL_TEAM_ID=team_...   # optional
 export VERCEL_PROJECT_NAME=vpnail-ca
 export VERCEL_DOMAIN=vpnail.com
-export GH_REPO=araxson/vpnail.ca
+export GH_REPO=araxson/vpnail.com
 export GTM_ID=GTM-PPQ6WBNQ
 export GSC_TOKEN=ui2QmsBUe9UxFkSEGhEoVgoy_V2K-qRywpR7hLEMZko
 node scripts/provision-vercel.mjs

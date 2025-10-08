@@ -1,6 +1,6 @@
 import { getGalleryImages } from '@/lib/gallery'
 
-const FALLBACK_IMAGE = '/images/gallery/vpnail-gallery-00001.webp'
+const FALLBACK_IMAGE = '/images/gallery/victoria-park-nails-calgary-luxury-gel-manicure-1.webp'
 
 export function getRandomGalleryImage(): string {
   const images = getGalleryImages()

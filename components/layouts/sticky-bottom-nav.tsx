@@ -1,11 +1,14 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 import { Calendar, Phone } from 'lucide-react'
+
+import { Button } from '@/components/ui/button'
 import { ROUTES } from '@/lib/constants/routes'
 import { siteConfig } from '@/lib/config/site.config'
-import Link from 'next/link'
+
+import { Container } from './container'
 
 export function StickyBottomNav() {
   const [isVisible, setIsVisible] = useState(true)
@@ -42,7 +45,7 @@ export function StickyBottomNav() {
       }`}
     >
       <div className="bg-background/95 backdrop-blur-sm border-t border-border shadow-none">
-        <div className="container max-w-screen-2xl mx-auto p-3">
+        <Container className="max-w-screen-2xl px-3 py-3 md:px-4" noPaddingMobile>
           <div className="grid grid-cols-2 gap-3">
             <Button
               asChild
@@ -67,7 +70,7 @@ export function StickyBottomNav() {
               </a>
             </Button>
           </div>
-        </div>
+        </Container>
       </div>
     </div>
   )

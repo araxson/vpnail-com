@@ -1,5 +1,6 @@
 import { AnnouncementBanner } from '@/components/layouts'
 import { HeroSection } from './sections/hero'
+import { CombinationsSection } from './sections/combinations'
 import { HomeGallerySection } from './sections/gallery'
 import { FeaturesSection } from './sections/features'
 import { ServicesSection } from './sections/services'
@@ -14,6 +15,7 @@ export function HomePage() {
         message="NEW! Reward & Redeem Points Program - Earn points with every visit - Ask us how to start earning today!"
       />
       <HeroSection />
+      <CombinationsSection />
       <HomeGallerySection />
       <FeaturesSection />
       <ServicesSection />

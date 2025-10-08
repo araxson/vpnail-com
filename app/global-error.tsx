@@ -1,10 +1,12 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
+import { AlertTriangle, Home, RefreshCw, MessageCircle } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { AlertTriangle, Home, RefreshCw, MessageCircle } from 'lucide-react';
-import Link from 'next/link';
+import { Section, Container } from '@/components/layouts';
 
 export default function GlobalError({
   error,
@@ -27,9 +29,9 @@ export default function GlobalError({
 
   return (
     <html>
-      <body>
-        <div className="min-h-screen bg-background flex items-center justify-center px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl w-full">
+      <body className="bg-background">
+        <Section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+          <Container className="max-w-2xl" noPaddingMobile>
             <Card className="border-destructive/20 bg-destructive/5">
               <CardHeader className="text-center pb-6">
                 <div className="flex justify-center mb-4">
@@ -105,8 +107,8 @@ export default function GlobalError({
                 </div>
               </CardContent>
             </Card>
-          </div>
-        </div>
+          </Container>
+        </Section>
       </body>
     </html>
   );

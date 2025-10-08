@@ -62,7 +62,7 @@ export const Lead = createComponent<HTMLParagraphElement>(
 
 export const P = createComponent<HTMLParagraphElement>(
   'p',
-  'font-[var(--font-lato)] leading-relaxed [&:not(:first-child)]:mt-6',
+  'font-[var(--font-lato)] leading-relaxed [&+&]:mt-6',
   'P'
 );
 
