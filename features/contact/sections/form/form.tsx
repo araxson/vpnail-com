@@ -36,6 +36,8 @@ export function FormSection() {
         service: formState.service || 'Not specified',
         message: formState.message,
         subject: `New Contact Form Submission from ${formState.name}`,
+        // Include recipient email to ensure proper delivery
+        to: formConfig.recipientEmail,
       }
 
       // Submit to Web3Forms
