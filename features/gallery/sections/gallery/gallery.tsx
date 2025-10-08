@@ -5,7 +5,7 @@ import { GalleryGrid } from './gallery-grid'
 import { getGalleryImages } from '@/lib/gallery'
 
 export function GallerySection() {
-  const images = getGalleryImages(30)
+  const images = getGalleryImages()
 
   return (
     <Section variant="muted">

@@ -13,7 +13,7 @@ interface GalleryGridProps {
   images: GalleryImage[]
 }
 
-const ITEMS_PER_PAGE = 18
+const ITEMS_PER_PAGE = 30
 
 export function GalleryGrid({ images }: GalleryGridProps) {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
