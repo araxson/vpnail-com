@@ -5,6 +5,20 @@ import { usePathname, useSearchParams } from 'next/navigation'
 import { analyticsConfig } from '@/lib/config/analytics.config'
 import { gtag } from '@/components/seo/google-analytics'
 
+type DataLayerEvent = Record<string, unknown>
+
+type DataLayerWindow = typeof window & {
+  [key: string]: Array<DataLayerEvent> | undefined
+}
+
+function ensureDataLayer(layerName: string): Array<DataLayerEvent> {
+  const win = window as unknown as DataLayerWindow
+  if (!win[layerName]) {
+    win[layerName] = []
+  }
+  return win[layerName] as Array<DataLayerEvent>
+}
+
 export function AnalyticsEvents() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -14,9 +28,7 @@ export function AnalyticsEvents() {
   useEffect(() => {
     if (!analyticsConfig.shouldLoadGtm) return
 
-    const w = window as Window & { [key: string]: Array<Record<string, unknown>> | undefined }
-    const layerName = analyticsConfig.dataLayerName
-    const dataLayer = w[layerName] || (w[layerName] = [])
+    const dataLayer = ensureDataLayer(analyticsConfig.dataLayerName)
 
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null
@@ -58,9 +70,7 @@ export function AnalyticsEvents() {
     const pagePath = search ? `${pathname}?${search}` : pathname
 
     if (analyticsConfig.shouldLoadGtm) {
-      const w = window as Window & { [key: string]: Array<Record<string, unknown>> | undefined }
-      const layerName = analyticsConfig.dataLayerName
-      const dataLayer = w[layerName] || (w[layerName] = [])
+      const dataLayer = ensureDataLayer(analyticsConfig.dataLayerName)
 
       dataLayer.push({
         event: 'page_view',
