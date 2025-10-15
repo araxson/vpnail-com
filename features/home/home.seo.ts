@@ -1,7 +1,7 @@
 import { buildMetadata } from '@/lib/seo/metadata'
 
 export const homeMetadata = buildMetadata({
-  title: 'Victoria Park Nails & Spa | Calgary Nail Salon',
+  title: 'Best Calgary Nail Salon ⭐ 4.9★ Victoria Park Nails & Spa',
   description:
     'Victoria Park nail salon for manicures, pedicures, gel and acrylic nails, custom nail art, massage, and waxing near the Calgary Stampede.',
   path: '/',

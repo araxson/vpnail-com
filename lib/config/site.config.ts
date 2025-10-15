@@ -6,7 +6,7 @@
 export const siteConfig = {
   name: 'Victoria Park Nails and Spa',
   description: 'Calgary nail salon in Victoria Park for manicures, pedicures, gel/acrylic nails, custom nail art, massage, and waxing. Near Stampede grounds. Est. 2015.',
-  url: 'https://vpnail.com',
+  url: 'https://www.vpnail.com',
   ogImage: '/images/gallery/vpnail-gallery-00001.webp',
   creator: '@victoriaparknails',
   keywords: [
@@ -59,7 +59,7 @@ export const siteConfig = {
   authors: [
     {
       name: 'Victoria Park Nails and Spa',
-      url: 'https://vpnail.com/about',
+      url: 'https://www.vpnail.com/about',
     },
   ],
   business: {
