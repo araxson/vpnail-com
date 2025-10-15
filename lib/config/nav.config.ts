@@ -28,8 +28,7 @@ export const primaryNav: NavLink[] = [
 // CTA button in header
 export const headerCTA: NavLink = {
   label: 'Book Now',
-  href: '/',
-  external: true,
+  href: ROUTES.SERVICES,
 }
 
 // Footer navigation sections
@@ -46,7 +45,7 @@ export const footerNav: NavSection[] = [
   {
     title: 'Book Online',
     links: [
-      { label: 'Book Appointment', href: '/', external: true },
+      { label: 'Book Appointment', href: ROUTES.SERVICES },
       { label: 'Call Us', href: 'tel:+14037193600', external: true },
     ],
   },

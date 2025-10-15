@@ -4,10 +4,10 @@ export const ctaData = {
   description: "Treat yourself to exceptional Calgary nail care and spa services at our Victoria Park studio. Book online for convenience or call to speak with a technician about availability.",
   primaryButton: {
     text: "Book an Appointment",
-    href: "https://victoriaparknailsspa.setmore.com/"
+    href: "/services"
   },
   secondaryButton: {
     text: "Contact Us",
-    href: "/contact"
+    href: "/services"
   }
 } as const

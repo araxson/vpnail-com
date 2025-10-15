@@ -10,9 +10,14 @@ type Props = {
 
 export async function generateStaticParams() {
   return [
-    { slug: 'mission-calgary' },
+    { slug: 'victoria-park-calgary' },
+    { slug: 'downtown-calgary' },
     { slug: 'beltline-calgary' },
-    { slug: 'mount-royal-calgary' }
+    { slug: 'mission-calgary' },
+    { slug: 'mount-royal-calgary' },
+    { slug: 'inglewood-calgary' },
+    { slug: 'east-village-calgary' },
+    { slug: 'erlton-calgary' }
   ]
 }
 

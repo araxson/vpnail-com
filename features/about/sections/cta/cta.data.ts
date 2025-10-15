@@ -3,7 +3,7 @@ export const ctaData = {
   subtitle: 'Your Consultation Awaits',
   description: 'Every transformation starts with a conversation. Book your complimentary consultation and discover how Victoria Park Nails and Spa can support your unique path to wellness and radiance.',
   cta: {
-    primary: { text: 'Book Consultation', href: '/contact' },
+    primary: { text: 'Book Consultation', href: '/services' },
     secondary: { text: 'View Services', href: '/services' },
   },
 } as const

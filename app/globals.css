@@ -129,14 +129,22 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    font-family: var(--font-lato), system-ui, -apple-system, sans-serif;
   }
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-lato), system-ui, -apple-system, sans-serif;
   }
+
+  /* Headings typography */
   h1,
   h2 {
     font-family: var(--font-playfair), Georgia, serif;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-lato), system-ui, -apple-system, sans-serif;
   }
 }

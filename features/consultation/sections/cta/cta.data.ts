@@ -5,7 +5,7 @@ export const ctaData = {
   cta: {
     primary: {
       text: 'Book an Appointment',
-      href: '/',
+      href: '/services',
     },
     secondary: {
       text: 'Contact Us',

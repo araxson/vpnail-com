@@ -68,7 +68,7 @@ export default function NotFound() {
                   </Link>
                 </Button>
                 <Button variant="ghost" size="sm" asChild className="justify-start">
-                  <Link href="/consultation">
+                  <Link href="/services">
                     Book Consultation
                   </Link>
                 </Button>

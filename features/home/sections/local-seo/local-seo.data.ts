@@ -1,36 +1,64 @@
 export const localSeoData = {
-  title: 'Downtown Calgary Nail Salon Near You',
-  subtitle: 'Serving Victoria Park, Beltline, Mission & Mount Royal',
+  title: 'Calgary Nail Salon Near You',
+  subtitle: 'Serving 8 Calgary Neighborhoods',
   description:
-    'Victoria Nails Calgary keeps downtown neighbourhoods polished. If you search for a nail salon near me around the Stampede grounds, our team is minutes away with free parking and C-Train access.',
+    'Victoria Park Nails & Spa proudly serves Victoria Park, Downtown, Beltline, Mission, Mount Royal, Inglewood, East Village, and Erlton with premium nail care and spa services. Minutes from the Stampede grounds with free parking and CTrain access.',
   areas: [
     {
-      id: 'beltline',
-      title: 'Beltline Nail Salon Near Stampede Park',
-      href: '/areas/beltline-calgary',
+      id: 'victoria-park',
+      title: 'Victoria Park - Your Neighborhood Nail Salon',
+      href: '/areas/victoria-park-calgary',
       copy:
-        'Same-day manicures, pedicures, gel and acrylic nail fixes for Beltline residents needing Victoria Nails Calgary expertise close to 17th Ave and 1st Street SE.',
-    },
-    {
-      id: 'mission',
-      title: 'Mission & Elbow River Clients',
-      href: '/areas/mission-calgary',
-      copy:
-        'From classic pedicures to custom art, Mission guests reach our Victoria Park nail salon in under five minutes for quick lunch-break appointments.',
-    },
-    {
-      id: 'mount-royal',
-      title: 'Upper & Lower Mount Royal Visits',
-      href: '/areas/mount-royal-calgary',
-      copy:
-        'Enjoy a destination spa experience with luxury nail art, Gel-X extensions and waxing backed by 4.9★ Victoria Nails Calgary reviews.',
+        'Walking distance from Victoria Park homes and the Stampede grounds. Premium manicures, pedicures, gel nails, acrylics, custom nail art, massage, and waxing with free parking and CTrain access.',
     },
     {
       id: 'downtown',
-      title: 'Downtown & East Village Professionals',
-      href: '/areas',
+      title: 'Downtown Calgary Professionals',
+      href: '/areas/downtown-calgary',
       copy:
-        'Book lunch-hour manicures, corporate event looks or quick gel fills when you need a nail salon near me in downtown Calgary or East Village.',
+        'Express lunchtime manicures and executive pedicures minutes from Stephen Avenue and downtown towers. Perfect for busy professionals needing quality nail care that fits your schedule.',
+    },
+    {
+      id: 'beltline',
+      title: 'Beltline Style & Convenience',
+      href: '/areas/beltline-calgary',
+      copy:
+        'Short walk from 17th Avenue with trending Gel-X extensions, dip powder, chrome nails, and bold nail art. Late hours perfect for Beltline nightlife and urban lifestyle.',
+    },
+    {
+      id: 'mission',
+      title: 'Mission Luxury Nail Care',
+      href: '/areas/mission-calgary',
+      copy:
+        'Minutes from 4th Street SW with personalized nail services, spa pedicures, custom designs, and family-friendly atmosphere. Same-day bookings available for Mission residents.',
+    },
+    {
+      id: 'mount-royal',
+      title: 'Mount Royal Elegance',
+      href: '/areas/mount-royal-calgary',
+      copy:
+        'Refined French manicures, luxury spa pedicures, and bridal party packages with private treatment spaces. Premium service for Mount Royal\'s elevated expectations.',
+    },
+    {
+      id: 'inglewood',
+      title: 'Inglewood Artistic Nail Designs',
+      href: '/areas/inglewood-calgary',
+      copy:
+        'Creative custom nail art and trending designs near 9th Avenue SE. Eco-friendly options and artistic flair reflecting Inglewood\'s unique culture and style.',
+    },
+    {
+      id: 'east-village',
+      title: 'East Village Modern Service',
+      href: '/areas/east-village-calgary',
+      copy:
+        'Contemporary nail care near Bow River pathways and National Music Centre. Modern services with flexible hours for East Village condo residents and urban professionals.',
+    },
+    {
+      id: 'erlton',
+      title: 'Erlton Neighborhood Care',
+      href: '/areas/erlton-calgary',
+      copy:
+        'Your trusted neighborhood nail salon just across from Erlton. Complete nail services, spa pedicures, and family-friendly atmosphere with quality results and welcoming service.',
     },
   ],
   cta: {

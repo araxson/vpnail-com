@@ -4,7 +4,7 @@ import { locationData } from './location.data'
 
 export function LocationSection() {
   return (
-    <Card className="flex flex-col">
+    <Card id="location" className="flex flex-col">
       <CardHeader className="flex-shrink-0">
         <CardTitle>{locationData.title}</CardTitle>
       </CardHeader>

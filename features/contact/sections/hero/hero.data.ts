@@ -5,7 +5,7 @@ export const heroData = {
   cta: {
     primary: {
       text: 'Book an Appointment',
-      href: '/',
+      href: '/services',
     },
     secondary: {
       text: 'Call Now',

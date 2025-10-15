@@ -10,7 +10,7 @@ export function AreasPage() {
         data={{
           title: 'Calgary Service Areas | Victoria Park Nails & Spa',
           description:
-            'Victoria Park Nails & Spa proudly serves Calgary communities including Victoria Park, Beltline, Mission, Downtown, Inglewood, East Village, and surrounding areas.',
+            'Victoria Park Nails & Spa proudly serves eight Calgary neighborhoods: Victoria Park, Downtown Calgary, Beltline, Mission, Mount Royal, Inglewood, East Village, and Erlton with professional manicures, pedicures, gel nails, acrylics, custom nail art, spa pedicures, massage, and waxing services.',
           url: '/areas',
           publishedTime: '2015-01-01T00:00:00Z',
           authorName: 'Victoria Park Nails and Spa',

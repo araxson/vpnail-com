@@ -74,16 +74,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // No individual service pages - all services listed on main services page
   const servicePages: MetadataRoute.Sitemap = [];
 
-  // Calgary area pages
+  // Calgary area pages - all 8 service areas
   const areaPages = [
-    'mission-calgary',
+    'victoria-park-calgary',
+    'downtown-calgary',
     'beltline-calgary',
+    'mission-calgary',
     'mount-royal-calgary',
+    'inglewood-calgary',
+    'east-village-calgary',
+    'erlton-calgary',
   ].map(area => ({
     url: `${baseUrl}/areas/${area}`,
     lastModified: currentDate,
     changeFrequency: 'monthly' as const,
-    priority: 0.5,
+    priority: 0.7,
   }));
 
   return [...staticPages, ...servicePages, ...areaPages];

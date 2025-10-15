@@ -31,7 +31,7 @@ export const methodsData = {
       title: 'Book Online',
       description: 'Schedule your appointment',
       contact: 'Online Booking System',
-      href: '/',
+      href: '/services',
       hours: '24/7 online booking',
     },
   ],

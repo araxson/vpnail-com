@@ -25,6 +25,9 @@ export function GalleryGrid({ images }: GalleryGridProps) {
   const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1)
   const disablePrevious = activePage === 1
   const disableNext = activePage === totalPages
+  const getPageHref = (page: number) => `/gallery?page=${page}`
+  const previousPageHref = getPageHref(Math.max(activePage - 1, 1))
+  const nextPageHref = getPageHref(Math.min(activePage + 1, totalPages))
 
   useEffect(() => {
     setActivePage(1)
@@ -94,7 +97,7 @@ export function GalleryGrid({ images }: GalleryGridProps) {
           <PaginationContent className="flex flex-wrap items-center justify-center gap-3">
             <PaginationItem>
               <PaginationPrevious
-                href="#"
+                href={previousPageHref}
                 onClick={handlePrevious}
                 aria-disabled={disablePrevious}
                 className={cn(disablePrevious && 'pointer-events-none opacity-50')}
@@ -118,7 +121,7 @@ export function GalleryGrid({ images }: GalleryGridProps) {
             </PaginationItem>
             <PaginationItem>
               <PaginationNext
-                href="#"
+                href={nextPageHref}
                 onClick={handleNext}
                 aria-disabled={disableNext}
                 className={cn(disableNext && 'pointer-events-none opacity-50')}
