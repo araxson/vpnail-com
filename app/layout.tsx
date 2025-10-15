@@ -70,7 +70,7 @@ export default function RootLayout({
         <StructuredData type="WebSite" data={{ inLanguage: 'en-CA' }} />
         {/* SiteNavigationElement structured data */}
         <StructuredData type="SiteNavigationElement" />
-        
+
         {/* Google Tag Manager - Handles all tracking including GA4 */}
         {analyticsConfig.shouldLoadGtm && analyticsConfig.gtmId && (
           <GoogleTagManager
