@@ -17,6 +17,17 @@ export function ServicesPage() {
     <main>
       {/* FAQPage JSON-LD for rich results */}
       <StructuredData schema={getFAQSchema(mainEntity)} />
+      {/* Service schema for professional nail services */}
+      <StructuredData
+        type="Service"
+        data={{
+          name: 'Professional Nail Services',
+          description:
+            'Expert nail care services in Calgary including manicures, pedicures, gel and acrylic nails, custom nail art, massage therapy, and waxing services',
+          url: '/services',
+          areaServed: 'Calgary, Alberta',
+        }}
+      />
       <HeroSection />
       <CombinationsSection />
       <ServicesGridSection />

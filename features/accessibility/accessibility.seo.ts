@@ -1,9 +1,9 @@
 import { buildMetadata } from '@/lib/seo/metadata'
 
 export const accessibilityMetadata = buildMetadata({
-  title: 'Accessibility Statement | Victoria Park Nails & Spa Calgary',
+  title: 'Accessibility | Victoria Park Nails & Spa Calgary',
   description:
-    'Accessibility statement for Victoria Park Nails & Spa, covering inclusive policies for our Calgary salon and website experience.',
+    'Accessibility statement for Victoria Park Nails & Spa in Calgary. Learn about our inclusive policies and accessible features for both our salon and website.',
   path: '/accessibility',
   keywords: [
     'Victoria Park Nails accessibility',
@@ -12,4 +12,5 @@ export const accessibilityMetadata = buildMetadata({
     'Victoria Park Nails ADA compliance',
   ],
   type: 'article',
+  noindex: true,
 })

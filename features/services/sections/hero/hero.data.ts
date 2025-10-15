@@ -1,6 +1,7 @@
 export const heroData = {
-  title: "Calgary Nail & Spa Services",
-  subtitle: "Premium Nail Care & Luxury Spa Treatments in Victoria Park, Calgary",
-  description: "From meticulous manicures and pedicures to stunning custom nail art, gel/acrylic and Gel‑X extensions, hot stone massage therapy, and professional waxing, explore a Calgary menu built to pamper you head to toe. Free parking and Victoria Park/Stampede CTrain access nearby.",
-  badge: "Since 2015",
+  title: 'Victoria Nails Calgary Menu & Pricing',
+  subtitle: 'Downtown nail salon near me for Beltline, Mission & Victoria Park.',
+  description:
+    'Explore manicure, pedicure, gel, acrylic, nail art, massage and waxing services from Victoria Nails Calgary just steps from Stampede Park with free parking and quick online booking.',
+  badge: 'Since 2015',
 } as const

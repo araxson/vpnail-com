@@ -4,6 +4,7 @@ import { HeroSection } from './sections/hero'
 import { CombinationsSection } from './sections/combinations'
 import { HomeGallerySection } from './sections/gallery'
 import { FeaturesSection } from './sections/features'
+import { LocalSeoSection } from './sections/local-seo'
 import { ServicesSection } from './sections/services'
 import { TeamSection } from './sections/team'
 import { TestimonialsSection } from './sections/testimonials'
@@ -26,6 +27,7 @@ export function HomePage() {
         <CombinationsSection />
         <HomeGallerySection />
         <FeaturesSection />
+        <LocalSeoSection />
         <ServicesSection />
         <TeamSection />
         <TestimonialsSection />

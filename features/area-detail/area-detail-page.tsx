@@ -40,6 +40,17 @@ export function AreaDetailPage({ slug }: AreaDetailPageProps) {
   return (
     <main>
       <StructuredData schema={getBreadcrumbSchema(breadcrumbs)} />
+      {/* Article schema for area page */}
+      <StructuredData
+        type="Article"
+        data={{
+          title: `${normalizedName} | Victoria Park Nails & Spa Calgary`,
+          description: content.intro,
+          url: `/areas/${slug}`,
+          publishedTime: '2015-01-01T00:00:00Z',
+          authorName: 'Victoria Park Nails and Spa',
+        }}
+      />
       <Section size="lg">
         <Container size="md" className="space-y-10">
           <header className="space-y-4 text-center">

@@ -12,4 +12,5 @@ export const privacyMetadata = buildMetadata({
     'Victoria Park Nails terms',
   ],
   type: 'article',
+  noindex: true,
 })

@@ -7,7 +7,7 @@ function getAbsoluteOgImage(): string {
   try {
     return new URL(image, siteConfig.url).toString()
   } catch {
-    return `${siteConfig.url}/images/gallery/vpnail-gallery-00001.webp`
+    return `${siteConfig.url}/images/gallery/victoria-park-nails-calgary-luxury-gel-manicure-1.webp`
   }
 }
 

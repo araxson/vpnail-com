@@ -1,7 +1,7 @@
 export const servicesData = {
   subtitle: 'Exceptional Treatments',
   title: 'Our Premium Services',
-  description: 'Premium Calgary nail care, spa treatments, and beauty services designed for wellness, relaxation, and radiance in Victoria Park.',
+  description: 'Victoria Nails Calgary delivers downtown nail salon near me care with spa treatments designed for wellness, relaxation, and radiance in Victoria Park.',
   categories: [
     {
       id: 'nail-services',

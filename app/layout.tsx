@@ -11,6 +11,7 @@ import { GoogleTagManager, GoogleTagManagerNoScript } from '@/components/seo';
 import { StructuredData } from '@/components/seo';
 import { rootMetadata, rootViewport } from '@/lib/config/metadata.config';
 import { analyticsConfig } from '@/lib/config/analytics.config';
+import { siteConfig } from '@/lib/config/site.config';
 
 const lato = Lato({
   subsets: ['latin'],
@@ -29,6 +30,66 @@ const playfair = Playfair_Display({
   preload: false,
   fallback: ['Georgia', 'serif'],
 });
+
+const localBusinessStructuredDataOverrides = {
+  areaServed: [
+    { '@type': 'Place', name: 'Victoria Park, Calgary' },
+    { '@type': 'Place', name: 'Beltline, Calgary' },
+    { '@type': 'Place', name: 'Mission, Calgary' },
+    { '@type': 'City', name: 'Calgary, Alberta' },
+  ],
+  serviceArea: {
+    '@type': 'GeoCircle',
+    geoMidpoint: {
+      '@type': 'GeoCoordinates',
+      latitude: '51.0447',
+      longitude: '-114.0719',
+    },
+    geoRadius: '6000',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Victoria Park Nails & Spa Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Manicures & Pedicures in Downtown Calgary',
+          url: `${siteConfig.url}/services#nail-services`,
+          areaServed: 'Calgary Beltline',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Gel, Acrylic & Gel-X Nail Enhancements',
+          url: `${siteConfig.url}/services#nail-services`,
+          areaServed: 'Victoria Park, Calgary',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Spa Massage & Relaxation Treatments',
+          url: `${siteConfig.url}/services#massage-spa`,
+          areaServed: 'Downtown Calgary & Mission',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Professional Waxing Services',
+          url: `${siteConfig.url}/services#waxing`,
+          areaServed: 'Calgary Stampede District',
+        },
+      },
+    ],
+  },
+} as const;
 
 export const metadata = rootMetadata;
 export const viewport = rootViewport;
@@ -63,7 +124,7 @@ export default function RootLayout({
         <meta name="ICBM" content="51.0447, -114.0719" />
         
         {/* Structured Data for Local Business */}
-        <StructuredData type="LocalBusiness" />
+        <StructuredData type="LocalBusiness" data={localBusinessStructuredDataOverrides} />
         {/* Structured Data for Organization */}
         <StructuredData type="Organization" />
         {/* WebSite structured data (enables richer understanding, sitelinks eligibility) */}

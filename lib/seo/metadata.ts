@@ -75,7 +75,7 @@ export function buildMetadata({
 
   return {
     metadataBase: new URL(SEO_BASE_URL),
-    title: metaTitle,
+    title: { absolute: metaTitle },
     description: metaDescription,
     keywords: defaultKeywords,
     authors: SEO_AUTHORS,

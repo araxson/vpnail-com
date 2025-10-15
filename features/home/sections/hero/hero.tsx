@@ -20,6 +20,20 @@ export function HeroSection() {
               <Button size="lg" className="rounded-full px-10 py-6 text-lg font-semibold" asChild>
                 <Link href={heroData.cta.primary.href}>{heroData.cta.primary.text}</Link>
               </Button>
+              {heroData.cta.secondary && (
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full px-10 py-6 text-lg font-semibold"
+                  asChild
+                >
+                  {heroData.cta.secondary.href.startsWith('/') ? (
+                    <Link href={heroData.cta.secondary.href}>{heroData.cta.secondary.text}</Link>
+                  ) : (
+                    <a href={heroData.cta.secondary.href}>{heroData.cta.secondary.text}</a>
+                  )}
+                </Button>
+              )}
             </div>
           </div>
           <div className="relative aspect-[3/2] rounded-lg overflow-hidden bg-muted">
@@ -40,7 +54,7 @@ export function HeroSection() {
             width={1600}
             height={900}
             className="h-full w-full object-cover"
-            priority
+            loading="lazy"
           />
           <div className="absolute inset-x-4 bottom-4 md:bottom-6 md:left-6 md:right-auto">
             <span className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground shadow-none shadow-primary/30">

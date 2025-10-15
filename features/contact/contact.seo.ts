@@ -3,7 +3,7 @@ import { buildMetadata } from '@/lib/seo/metadata'
 export const contactMetadata = buildMetadata({
   title: 'Contact Victoria Park Nails & Spa | Calgary Appointments',
   description:
-    'Book Calgary manicures, pedicures, nail art, extensions, massage, and waxing at 1411 1st Street SE. Free parking and Victoria Park/Stampede CTrain access. Call (403) 719-3600.',
+    'Book Calgary nail services at 1411 1st St SE. Free parking, CTrain access near Stampede. Manicures, pedicures, nail art. Call (403) 719-3600 today!',
   path: '/contact',
   keywords: [
     'contact Victoria Park Nails and Spa',

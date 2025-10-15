@@ -1,11 +1,12 @@
 import { buildMetadata } from '@/lib/seo/metadata'
 
 export const servicesMetadata = buildMetadata({
-  title: 'Calgary Nail Services & Pricing | Victoria Park Nails & Spa',
+  title: 'Victoria Nails Calgary Services & Pricing',
   description:
-    'See pricing for manicures, pedicures, gel and acrylic nails, nail art, massage, and waxing at Victoria Park Nails & Spa in Victoria Park, Calgary.',
+    'Victoria Nails Calgary pricing for manicures, pedicures, gel, acrylic near Stampede Park. Beltline, Mission, Downtown nail salon near me visits welcome.',
   path: '/services',
   keywords: [
+    'Victoria Nails Calgary',
     'nail services Calgary',
     'manicure Calgary',
     'pedicure Calgary',
@@ -25,6 +26,8 @@ export const servicesMetadata = buildMetadata({
     'facial waxing Calgary',
     'Brazilian waxing Calgary',
     'nail salon Victoria Park Calgary',
+    'nail salon near me Calgary',
+    'nail salon near me downtown Calgary',
     'professional nail care Calgary',
     'luxury nail salon Calgary',
     'nail salon pricing Calgary',
@@ -32,5 +35,5 @@ export const servicesMetadata = buildMetadata({
     'best pedicure Calgary',
   ],
   openGraphDescription:
-    'Service menu featuring manicures, pedicures, gel and acrylic extensions, custom nail art, massage therapy, and waxing in Victoria Park, Calgary.',
+    'Browse Victoria Nails Calgary services and pricing for manicures, pedicures, gel, acrylic, nail art and spa add-ons near Stampede Park.',
 })

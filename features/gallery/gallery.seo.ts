@@ -3,7 +3,7 @@ import { buildMetadata } from '@/lib/seo/metadata'
 export const galleryMetadata = buildMetadata({
   title: 'Calgary Nail Art Gallery | Victoria Park Nails & Spa',
   description:
-    'Explore Calgary nail art, manicures, pedicures, and custom designs from our Victoria Park studio near the Stampede. Free parking and CTrain access.',
+    'Calgary nail art gallery: manicures, pedicures, and custom designs from our Victoria Park studio near Stampede. Free parking and CTrain access. View our work!',
   path: '/gallery',
   keywords: [
     'nail art gallery Calgary',

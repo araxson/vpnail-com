@@ -2,6 +2,32 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
+  const url = request.nextUrl.clone();
+  const hostname = url.hostname.toLowerCase();
+  const isLocalLikeHost = hostname === 'localhost' || hostname.endsWith('.vercel.app');
+
+  if (!isLocalLikeHost) {
+    const forwardedProto = request.headers.get('x-forwarded-proto') ?? url.protocol.replace(':', '');
+
+    // Enforce HTTPS
+    if (forwardedProto !== 'https') {
+      url.protocol = 'https:';
+      return NextResponse.redirect(url, 308);
+    }
+
+    // Canonical host redirect to www.vpnail.com
+    if (hostname === 'vpnail.com') {
+      url.hostname = 'www.vpnail.com';
+      return NextResponse.redirect(url, 308);
+    }
+
+    // Trim trailing slash (except for root path)
+    if (url.pathname.length > 1 && url.pathname.endsWith('/')) {
+      url.pathname = url.pathname.replace(/\/+$/, '');
+      return NextResponse.redirect(url, 308);
+    }
+  }
+
   // Handle plural to singular redirects
   if (request.nextUrl.pathname === '/consultations') {
     return NextResponse.redirect(new URL('/consultation', request.url));
