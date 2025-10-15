@@ -1,0 +1,27 @@
+import { buildMetadata } from '@/lib/seo/metadata'
+
+export const galleryMetadata = buildMetadata({
+  title: 'Calgary Nail Art Gallery | Victoria Park Nails & Spa',
+  description:
+    'Explore Calgary nail art, manicures, pedicures, and custom designs from our Victoria Park studio near the Stampede. Free parking and CTrain access.',
+  path: '/gallery',
+  keywords: [
+    'nail art gallery Calgary',
+    'nail design gallery Calgary',
+    'manicure gallery Calgary',
+    'pedicure photos Calgary',
+    'custom nail art Calgary',
+    'nail transformation Calgary',
+    'Victoria Park Nails and Spa gallery',
+    'nail salon portfolio Calgary',
+    'bridal nails Calgary',
+    'wedding nails Calgary',
+    'Stampede nails Calgary',
+    'Gel-X nails Calgary',
+    'dip powder nails Calgary',
+  ],
+  openGraphDescription:
+    'See Calgary nail art, manicures, pedicures, and custom designs created at our Victoria Park studio near the Stampede with free parking and CTrain access.',
+  twitterDescription:
+    'Browse Calgary nail art and manicure inspiration from our Victoria Park studio near the Stampede.',
+})
