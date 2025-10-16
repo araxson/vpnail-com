@@ -1,5 +1,4 @@
 import { Suspense } from 'react';
-import { Lato, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { ThemeProvider, ToastProvider, AnalyticsEvents } from '@/components/providers';
@@ -12,24 +11,7 @@ import { StructuredData } from '@/components/seo';
 import { rootMetadata, rootViewport } from '@/lib/config/metadata.config';
 import { analyticsConfig } from '@/lib/config/analytics.config';
 import { siteConfig } from '@/lib/config/site.config';
-
-const lato = Lato({
-  subsets: ['latin'],
-  variable: '--font-lato',
-  weight: ['400', '700'], // Reduced to essential weights only
-  display: 'swap', // Add font-display
-  preload: true, // Preload critical font
-  fallback: ['system-ui', '-apple-system', 'sans-serif'],
-});
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  weight: ['400', '700'],
-  display: 'swap',
-  preload: false,
-  fallback: ['Georgia', 'serif'],
-});
+import { lato, playfair } from '@/lib/config/fonts.config';
 
 const localBusinessStructuredDataOverrides = {
   areaServed: [

@@ -3,7 +3,7 @@ import { buildMetadata } from '@/lib/seo/metadata'
 export const contactMetadata = buildMetadata({
   title: 'Contact Victoria Park Nails & Spa | Calgary Appointments',
   description:
-    'Book Calgary nail services at 1411 1st St SE. Free parking, CTrain access near Stampede. Manicures, pedicures, nail art. Call (403) 719-3600 today!',
+    'Call (403) 719-3600 or message our Victoria Park Calgary team for appointments, directions and parking tips. Free parking at 1411 1 St SE steps from Stampede.',
   path: '/contact',
   keywords: [
     'contact Victoria Park Nails and Spa',
@@ -23,7 +23,7 @@ export const contactMetadata = buildMetadata({
     'walk-in nail salon Calgary',
   ],
   openGraphDescription:
-    'Connect with us in Calgary for manicures, pedicures, nail art, extensions, massage, and waxing at 1411 1st Street SE near the Stampede with free parking and CTrain access.',
+    'Reach Victoria Park Nails & Spa for bookings, parking guidance, and same-day availability at our 1411 1 St SE Calgary studio with free client parking.',
   twitterDescription:
-    'Book Calgary manicures, pedicures, extensions, custom nail art, massage, and spa services. Free parking and Victoria Park/Stampede CTrain. Call (403) 719-3600.',
+    'Questions about availability? Call (403) 719-3600 for Victoria Park Nails & Spa - free parking, CTrain access, and friendly booking support.',
 })

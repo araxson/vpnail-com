@@ -94,7 +94,7 @@ export function generateAreaMetadata(slug: string) {
   const content = AREA_CONTENT[slug]
 
   const description = content
-    ? `${formattedTitle} nail salon - ${content.intro.substring(0, 155)}...`
+    ? content.metaDescription
     : `Serving ${formattedTitle} with professional manicures, pedicures, gel nails, acrylics, nail art, extensions, massage, and waxing from Victoria Park Nails & Spa in Calgary.`
 
   const keywords = AREA_SPECIFIC_KEYWORDS[slug] || [

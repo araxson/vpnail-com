@@ -75,10 +75,10 @@ export function AreaDetailPage({ slug }: AreaDetailPageProps) {
 
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
                 <Button size="lg" asChild>
-                  <Link href="/services">Book an Appointment</Link>
+                  <Link href="/consultation">Check Availability Online</Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link href="/services">Browse Services</Link>
+                  <a href="tel:+14037193600">Call (403) 719-3600</a>
                 </Button>
               </div>
             </CardContent>

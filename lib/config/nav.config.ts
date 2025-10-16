@@ -11,15 +11,61 @@ export type NavLink = {
   external?: boolean
 }
 
+export type NavChildItem = {
+  label: string
+  href: string
+  description?: string
+  serviceCount?: number
+  ctaLabel?: string
+}
+
+export type NavItem = {
+  label: string
+  href?: string
+  external?: boolean
+  meta?: string
+  children?: NavChildItem[]
+}
+
 export type NavSection = {
   title: string
   links: NavLink[]
 }
 
 // Primary navigation (header)
-export const primaryNav: NavLink[] = [
+export const primaryNav: NavItem[] = [
   { label: 'Home', href: ROUTES.HOME },
-  { label: 'Services', href: ROUTES.SERVICES },
+  {
+    label: 'Services',
+    href: ROUTES.SERVICES,
+    meta: '29 services',
+    children: [
+      {
+        label: 'Nail Services',
+        href: `${ROUTES.SERVICES}#nail-services`,
+        description:
+          'Classic manicures, resilient gel polish, intricate nail art, and sculpted extensions tailored to keep hands and feet photo-ready for any occasion.',
+        serviceCount: 7,
+        ctaLabel: 'View Details',
+      },
+      {
+        label: 'Massage & Spa',
+        href: `${ROUTES.SERVICES}#massage-spa`,
+        description:
+          'Reset between meetings with relaxation massage, hot stone therapy, and glow-boosting facials that melt away downtown stress.',
+        serviceCount: 10,
+        ctaLabel: 'View Details',
+      },
+      {
+        label: 'Waxing',
+        href: `${ROUTES.SERVICES}#waxing`,
+        description:
+          'Face and body waxing with gentle techniques, premium hard wax, and meticulous finishing so you can step out smooth and confident.',
+        serviceCount: 12,
+        ctaLabel: 'View Details',
+      },
+    ],
+  },
   { label: 'Gallery', href: ROUTES.GALLERY },
   { label: 'About', href: ROUTES.ABOUT },
   { label: 'Contact', href: ROUTES.CONTACT },

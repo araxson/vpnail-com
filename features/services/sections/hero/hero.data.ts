@@ -1,7 +1,7 @@
 export const heroData = {
-  title: 'Victoria Nails Calgary Menu & Pricing',
-  subtitle: 'Downtown nail salon near me for Beltline, Mission & Victoria Park.',
+  title: 'Services & Pricing Made Clear Before You Book',
+  subtitle: 'From express manicures to spa pedicures and massage add-ons, everything you need is listed with timing and cost.',
   description:
-    'Explore manicure, pedicure, gel, acrylic, nail art, massage and waxing services from Victoria Nails Calgary just steps from Stampede Park with free parking and quick online booking.',
-  badge: 'Since 2015',
+    'Scroll to compare manicures starting at $25, resilient gel upgrades, acrylic and Gel-X extensions, signature pedicures, waxing, and massage treatments. Every option includes transparent pricing, durations, and direct booking links so you can plan with confidence.',
+  badge: 'Manicures from $25 • Pedicures from $40',
 } as const

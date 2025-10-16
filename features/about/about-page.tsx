@@ -20,7 +20,7 @@ export function AboutPage() {
         data={{
           title: 'About Victoria Park Nails & Spa',
           description:
-            "Learn about Calgary's trusted nail salon since 2015. Discover our story, values, and commitment to excellence in nail care and spa services.",
+            "Discover the family-owned story behind Victoria Park Nails & Spa, our safety standards, and the values that keep Calgary guests returning since 2015.",
           url: '/about',
           publishedTime: '2015-01-01T00:00:00Z',
           authorName: 'Victoria Park Nails and Spa',

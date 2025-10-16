@@ -1,14 +1,15 @@
 export const heroData = {
-  title: 'Get In Touch or Book Your Visit',
-  subtitle: 'Find Us in Victoria Park, Calgary',
-  description: 'We\'re here to help you book Calgary manicures, pedicures, nail art, massage, and waxing. Secure your preferred time online for the fastest confirmation, or connect with our Victoria Park team using the form below.',
+  title: "Let's Plan Your Visit to Victoria Park Nails & Spa",
+  subtitle: 'Questions about timing, parking, or the right service? We are a message away.',
+  description:
+    "Reach out for real-time availability, parking directions, or help choosing the perfect manicure, pedicure, or spa treatment. Our team replies quickly during business hours.",
   cta: {
     primary: {
-      text: 'Book an Appointment',
-      href: '/services',
+      text: 'Check Live Availability',
+      href: '/consultation',
     },
     secondary: {
-      text: 'Call Now',
+      text: 'Call (403) 719-3600',
       href: 'tel:+14037193600',
     },
   },

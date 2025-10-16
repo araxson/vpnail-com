@@ -1,11 +1,32 @@
 export const featuresData = {
-  title: 'Why Choose Victoria Park Nails and Spa',
-  subtitle: 'A Passion for Pampering, A Commitment to Care',
-  description: 'Our commitment to Calgary guests is reflected in everything we do. These values are the heartbeat of our Victoria Park salon.',
+  title: 'What Makes 10,000+ Calgary Guests Choose Us',
+  subtitle: 'Thoughtful touches that turn a nail appointment into your favourite ritual',
+  description:
+    'From the greeting at the door to the final top coat, every step is designed to help you exhale, feel cared for, and leave with flawless nails that last.',
   features: [
-    { icon: 'Sparkles', title: 'Creative Artistry', description: 'As the Victoria Nails Calgary studio for custom nail design in Victoria Park, our talented technicians bring your vision to life.' },
-    { icon: 'Shield', title: 'Pristine Hygiene', description: 'Your health is paramount. We exceed industry standards with autoclaved tools and hospital-grade disinfectants for your peace of mind.' },
-    { icon: 'Award', title: 'Uncompromising Quality', description: 'We use industry-leading, professional-grade products to ensure your results are stunning, healthy, and long-lasting.' },
-    { icon: 'Heart', title: 'An Oasis of Relaxation', description: 'Our Victoria Park salon is designed to be your escape from the Calgary hustle. From the moment you arrive at 1411 1st Street SE, our friendly team makes every nail salon near me search worth the short trip.' },
+    {
+      icon: 'Sparkles',
+      title: 'Creative Artistry',
+      description:
+        'Bring in your inspiration photo and our design specialists translate it into hand-painted details, trending finishes, and colours that suit your style.',
+    },
+    {
+      icon: 'Shield',
+      title: 'Pristine Hygiene',
+      description:
+        'Every tool arrives in a freshly sealed pouch, stations are sanitized between guests, and our hospital-grade protocols keep your self-care worry-free.',
+    },
+    {
+      icon: 'Award',
+      title: 'Uncompromising Quality',
+      description:
+        'We invest in long-wear gel systems, strengthening overlays, and vegan spa formulas so your nails stay chip-resistant and healthy between visits.',
+    },
+    {
+      icon: 'Heart',
+      title: 'An Oasis of Relaxation',
+      description:
+        'Heated massage chairs, aromatherapy soaks, and a caring team create a calm escape from the downtown rush - no matter how busy your week looks.',
+    },
   ],
 } as const

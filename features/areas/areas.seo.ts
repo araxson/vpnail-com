@@ -3,7 +3,7 @@ import { buildMetadata } from '@/lib/seo/metadata'
 export const areasMetadata = buildMetadata({
   title: 'Calgary Service Areas | Victoria Park Nails & Spa',
   description:
-    'Serving Victoria Park, Downtown Calgary, Beltline, Mission, Mount Royal, Inglewood, East Village, and Erlton with professional manicures, pedicures, gel nails, acrylics, custom nail art, spa pedicures, massage, and waxing services. Conveniently located at 1411 1st Street SE with free parking and CTrain access.',
+    'Explore how Victoria Park Nails & Spa supports Victoria Park, Downtown, Beltline, Mission, Mount Royal, Inglewood, East Village, and Erlton with long-wear manicures, spa pedicures, extensions, massage, and waxing.',
   path: '/areas',
   keywords: [
     'nail salon Victoria Park Calgary',
@@ -29,7 +29,7 @@ export const areasMetadata = buildMetadata({
     'Victoria Park nail spa',
     'Calgary nail salon',
     'nail services Calgary',
-    'nail salon near me Calgary',
+    'nail salon Calgary SE',
     'best nail salon Calgary',
     'nail art Calgary',
     'spa pedicure Calgary',
@@ -40,5 +40,5 @@ export const areasMetadata = buildMetadata({
     'nail salon 4th Street SW Calgary',
   ],
   openGraphDescription:
-    'Victoria Park Nails & Spa serves 8 Calgary neighborhoods including Victoria Park, Downtown, Beltline, Mission, Mount Royal, Inglewood, East Village, and Erlton with premium manicures, pedicures, gel nails, acrylics, custom nail art, spa treatments, massage, and waxing. Book your appointment today!',
+    'Discover our Calgary service areas and what nearby guests love most about Victoria Park Nails & Spa - from Victoria Park locals to Beltline creatives and East Village professionals.',
 })

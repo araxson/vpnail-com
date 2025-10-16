@@ -5,11 +5,11 @@ export const heroData = {
   badge: 'Our Gallery',
   cta: {
     primary: {
-      text: 'Book an Appointment',
-      href: '/services',
+      text: 'Request a Design Consultation',
+      href: '/consultation',
     },
     secondary: {
-      text: 'View Services',
+      text: 'Browse Service Pricing',
       href: '/services',
     },
   },

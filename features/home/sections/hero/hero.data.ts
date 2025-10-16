@@ -1,10 +1,11 @@
 export const heroData = {
   badge: 'Victoria Park, Calgary | Since 2015',
-  title: 'Victoria Nails Calgary – Downtown Nail Salon & Spa',
-  subtitle: 'Nail salon near me for Beltline, Mission & Victoria Park guests.',
-  description: 'Searching for a nail salon near me in Calgary\'s Beltline, Mission, Victoria Park or Downtown? Since 2015 our Victoria Nails Calgary team has delivered custom art, gel and acrylic enhancements, spa pedicures, hot stone massage and waxing with free parking and Victoria Park/Stampede CTrain access at 1411 1st Street SE.',
+  title: 'Feel Confident in Nails That Last Longer',
+  subtitle: 'Where Victoria Park, Beltline & Mission Come for Nails That Last',
+  description:
+    'Tired of rushed appointments and polish that chips before the weekend? Our team pairs meticulous sanitation with custom artistry, gel upgrades, spa pedicures and waxing - plus free parking and quick Stampede station access.',
   cta: {
-    primary: { text: 'Book Online', href: '/services' },
-    secondary: { text: 'Call (403) 719-3600', href: 'tel:+14037193600' },
+    primary: { text: 'See Available Appointments', href: '/services' },
+    secondary: { text: 'Call for Same-Day Openings', href: 'tel:+14037193600' },
   },
 } as const

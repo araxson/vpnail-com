@@ -3,7 +3,7 @@ import { buildMetadata } from '@/lib/seo/metadata'
 export const consultationMetadata = buildMetadata({
   title: 'Book Online | Victoria Park Nails & Spa Calgary',
   description:
-    'Book Calgary manicures, pedicures, nail art, extensions, massage, and waxing online. Free parking and Victoria Park/Stampede CTrain. Walk-ins welcome.',
+    'Reserve manicures, pedicures, gel upgrades, massage, and waxing online in under a minute. See real-time availability, get instant confirmation, and arrive to free parking.',
   path: '/consultation',
   keywords: [
     'book nail appointment Calgary',
@@ -18,7 +18,7 @@ export const consultationMetadata = buildMetadata({
     'book pedicure Calgary',
   ],
   openGraphDescription:
-    'Reserve Calgary manicures, pedicures, nail art, extensions, and spa services online. Free parking and Victoria Park/Stampede CTrain access.',
+    'Skip the phone call - lock in your nail or spa appointment online with instant confirmation, helpful reminders, and directions to our free parking.',
   twitterDescription:
-    'Book Calgary manicures, pedicures, extensions, nail art, and spa appointments. Free parking and Victoria Park/Stampede CTrain. Walk-ins welcome.',
+    'Secure your spot at Victoria Park Nails & Spa in seconds. Online booking shows live availability and includes free parking details.',
 })

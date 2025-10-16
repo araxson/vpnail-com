@@ -1,7 +1,8 @@
 export const faqsData = {
-  title: "Frequently Asked Questions",
-  subtitle: "Everything You Need to Know",
-  description: "Find answers to common questions about our services, policies, and procedures. Can't find what you're looking for? Contact us directly.",
+  title: "Your Questions, Answered - No Appointment Needed",
+  subtitle: "Everything you want to know before you click book",
+  description:
+    "Browse the details on timing, pricing, safety, and policies so you can book with confidence. Still wondering about something? Call or text and we'll talk it through.",
   categories: [
     {
       id: "services",

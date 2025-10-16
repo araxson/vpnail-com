@@ -23,7 +23,11 @@ export function CtaSection() {
               </a>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link href={ctaData.cta.secondary.href}>{ctaData.cta.secondary.text}</Link>
+              {ctaData.cta.secondary.href.startsWith('/') ? (
+                <Link href={ctaData.cta.secondary.href}>{ctaData.cta.secondary.text}</Link>
+              ) : (
+                <a href={ctaData.cta.secondary.href}>{ctaData.cta.secondary.text}</a>
+              )}
             </Button>
           </div>
         </div>

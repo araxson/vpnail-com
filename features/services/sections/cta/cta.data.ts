@@ -1,13 +1,14 @@
 export const ctaData = {
-  title: "Ready to Experience the Difference?",
-  subtitle: "Book Your Appointment Today",
-  description: "Treat yourself to exceptional Calgary nail care and spa services at our Victoria Park studio. Book online for convenience or call to speak with a technician about availability.",
+  title: "4.9★ Reviews. Transparent Pricing. Zero Guesswork.",
+  subtitle: "Choose the time that fits - lunch-hour express or weekend escape",
+  description:
+    "Prime evening and Saturday slots fill quickly. Reserve online in minutes or reach out and we'll help you plan the perfect visit.",
   primaryButton: {
-    text: "Book an Appointment",
+    text: "Check Available Times",
     href: "/services"
   },
   secondaryButton: {
-    text: "Contact Us",
-    href: "/services"
+    text: "Call (403) 719-3600",
+    href: "tel:+14037193600"
   }
 } as const

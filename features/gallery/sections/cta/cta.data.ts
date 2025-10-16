@@ -1,15 +1,16 @@
 export const ctaData = {
-  title: 'Ready for Your Own Stunning Nails?',
-  subtitle: 'Book Your Appointment Today',
-  description: 'Join our Calgary gallery of satisfied clients and experience the artistry and care at our Victoria Park studio near the Stampede—free parking and CTrain access.',
+  title: 'Bring Your Pinterest Board to Life',
+  subtitle: "Tell us the vibe and we'll plan every colour, finish, and accent",
+  description:
+    'From Stampede chrome to wedding neutrals, our artists sketch your look in advance and keep notes for future visits. Secure your seat before prime evening slots fill up.',
   cta: {
     primary: {
-      text: 'Book an Appointment',
-      href: '/services',
+      text: 'Schedule Your Nail Art Session',
+      href: '/consultation',
     },
     secondary: {
-      text: 'View Services',
-      href: '/services',
+      text: 'Call (403) 719-3600',
+      href: 'tel:+14037193600',
     },
   },
 } as const

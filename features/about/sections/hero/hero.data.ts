@@ -1,10 +1,11 @@
 export const heroData = {
   badge: 'Since 2015 • Victoria Park, Calgary',
-  title: 'About Victoria Park Nails & Spa Calgary',
-  subtitle: 'A Trusted Haven for Beauty and Relaxation',
-  description: 'Victoria Park Nails and Spa was founded in 2015 with a clear mission: to create a trusted and elegant haven for beauty and relaxation in Victoria Park, Calgary. Located near the Calgary Stampede grounds with free parking and CTrain access, we deliver an experience where artistry, hygiene, and genuine customer care are the pillars of the business.',
+  title: "More Than a Nail Salon - It's Where Calgary Feels at Home",
+  subtitle: 'Family-owned, community-trusted, and rooted in Victoria Park since 2015',
+  description:
+    'We opened as a mother-and-daughter team determined to offer meticulous hygiene, heartfelt service, and custom artistry in a space that feels like home. Today our 4.9★-rated technicians still greet guests by name, remember favourite colours, and make every visit feel personal.',
   cta: {
-    primary: { text: 'Book an Appointment', href: '/services' },
-    secondary: { text: 'See Our Services', href: '/services' },
+    primary: { text: 'Plan Your First Visit', href: '/services' },
+    secondary: { text: 'See Our Story', href: '#our-story' },
   },
 } as const

@@ -1,143 +1,147 @@
-export const AREA_CONTENT: Record<string, {
-  headline: string
-  intro: string
-  highlights: string[]
-  closing: string
-}> = {
+export const AREA_CONTENT: Record<
+  string,
+  {
+    headline: string
+    intro: string
+    highlights: string[]
+    closing: string
+    metaDescription: string
+  }
+> = {
   'victoria-park-calgary': {
-    headline: 'Your neighborhood nail salon in the heart of Victoria Park, Calgary',
+    headline: 'Victoria Park neighbours for nails that last past Stampede week',
     intro:
-      "As your local Victoria Park nail salon at 1411 1st Street SE, we're perfectly positioned for residents and workers in the community. Just steps from the Calgary Stampede grounds and Scotiabank Saddledome, we offer premium manicures, pedicures, gel nails, acrylics, custom nail art, relaxing massages, and professional waxing services. With ample free parking, CTrain accessibility, and extended hours, we make luxury nail care effortless for Victoria Park locals.",
+      "Our 4.9★ studio sits on 1st Street SE between the Saddledome, Cowboys Casino, and Stampede Park, making pre-event touch-ups and post-work pampering effortless. Victoria Park locals drop in for gel manicures, spa pedicures, waxing, and massage with free client parking and evening hours tailored to the neighbourhood's energy.",
     highlights: [
-      'Walking distance from Victoria Park homes, condos, and the Stampede grounds',
-      'Full-service nail salon offering manicures, pedicures, gel nails, acrylics, and Gel-X extensions',
-      'Custom nail art designs perfect for concerts, Flames games, and Calgary events',
-      'Professional massage therapy and complete waxing services in one location',
-      'Free parking available with easy CTrain access from Victoria Park/Stampede station',
-      'Extended evening and weekend hours to fit your Victoria Park lifestyle',
-      'Licensed technicians using premium products and hospital-grade sanitation',
-      'Same-day appointments available for last-minute manicures and pedicures',
+      'Two-minute walk to Scotiabank Saddledome, BMO Centre, and the culture & entertainment district',
+      'Complimentary surface parking plus Victoria Park/Stampede CTrain access across the street',
+      'Long-wear gel colour, structured manicures, acrylic fills, and custom art ready for game nights and concerts',
+      'Hot stone and paraffin pedicures that revive feet after downtown commutes or festival days',
+      'Licensed technicians following sealed, hospital-grade sanitation for every guest',
+      'Same-day bookings and online waitlist for last-minute polish fixes before Stampede events',
     ],
     closing:
-      "Whether you're heading to a Flames game, enjoying Stampede week, or simply treating yourself to self-care, Victoria Park Nails & Spa is your trusted neighborhood destination. Book your appointment online or call us today to experience Calgary's premier nail salon right in your community.",
+      'Whether you are meeting friends on the Red Mile, hosting clients at the Saddledome, or craving quiet self-care, Victoria Park Nails & Spa keeps your nails on point without leaving the neighbourhood.',
+    metaDescription:
+      'Victoria Park Calgary residents rely on our 4.9★ nail team for gel manicures, spa pedicures, waxing, and massage steps from the Saddledome with free parking.',
   },
   'downtown-calgary': {
-    headline: 'Downtown Calgary nail salon with premium service and convenience',
+    headline: 'Downtown Calgary nail studio engineered for busy professionals',
     intro:
-      "Serving downtown Calgary professionals and residents with exceptional nail care just minutes from your office or condo. Located at 1411 1st Street SE near Stephen Avenue and the business district, we specialize in efficient lunchtime manicures, executive pedicures, long-lasting gel polish, and custom nail enhancements. Our downtown Calgary nail salon offers flexible scheduling, express services, and relaxing treatments that fit your busy urban lifestyle.",
+      'Just a five-minute drive or quick stroll from Stephen Avenue and the +15 network, our studio helps downtown professionals stay polished between meetings. Expect efficient manicures, executive pedicures, and chip-resistant gel enhancements delivered with quiet, professional service and flexible scheduling.',
     highlights: [
-      'Convenient location minutes from Stephen Avenue, Eau Claire, and downtown towers',
-      'Express manicure and pedicure services perfect for lunch breaks and after work',
-      'Professional gel manicures, shellac, dip powder, and acrylic nails that last',
-      'Custom nail art and designs for corporate events, galas, and special occasions',
-      'Relaxing massage services to relieve downtown work stress and tension',
-      'Comprehensive waxing services including brows, face, and body treatments',
-      'Easy parking with CTrain access from Centre Street, 1st Street, or City Hall stations',
-      'Online booking available for busy downtown schedules and same-day appointments',
+      'Express manicure and pedicure appointments timed for 30-45 minute lunch breaks',
+      'Structured gel manicures, Shellac, and dip powder that stay flawless through presentations and travel',
+      'Private pedicure chairs ideal for executives who want discreet grooming',
+      'Digital receipts, calendar reminders, and easy rescheduling for corporate lifestyles',
+      'After-work and pre-event availability so you can refresh before galas or client dinners',
+      'Complimentary parking and CTrain access from Centre Street, City Hall, and 1st Street stations',
     ],
     closing:
-      "From corporate professionals to downtown residents, Victoria Park Nails & Spa delivers polished results that match your downtown Calgary lifestyle. Schedule your appointment and discover why we're downtown's preferred nail salon for quality, convenience, and exceptional service.",
+      'Walk back to the office with photo-ready nails and the confidence that comes from meticulous detailing. Downtown Calgary trusts Victoria Park Nails & Spa when every handshake counts.',
+    metaDescription:
+      'Downtown Calgary professionals choose our 4.9★ nail salon for express manicures, gel polish, and executive pedicures near Stephen Avenue with free parking.',
   },
   'beltline-calgary': {
-    headline: 'Beltline Calgary nail salon trusted for bold style and quality service',
+    headline: 'Beltline Calgary nail artists for bold, trend-driven looks',
     intro:
-      "Life in the Beltline moves quickly, and your nail salon should keep up. Just a short walk or bike ride down 12th Avenue from the Beltline's vibrant core, we deliver precision manicures, resilient gel polish, creative nail art, and spa services that complement your dynamic urban lifestyle. Our Beltline clients choose us for our expert technicians, trending nail designs, premium products, and welcoming atmosphere with heated massage chairs.",
+      "A quick bike ride or walk down 12th Avenue brings Beltline creatives to our chair for statement nails that last through late nights and brunch plans. We blend structured manicures with runway-inspired art so your nails keep up with the neighbourhood's style.",
     highlights: [
-      'Quick walk or cycle from 17th Avenue SW, 10th Avenue, and Beltline neighborhoods',
-      'Express services and flexible scheduling perfect for Beltline professionals',
-      'Trending Gel-X extensions, dip powder, chrome nails, and ombre designs',
-      'Expert nail technicians specializing in precision fills and flawless shaping',
-      'Custom nail art inspired by Calgary arts, fashion, and Beltline culture',
-      'Luxury pedicures with heated massage chairs and premium callus treatments',
-      'Professional waxing and relaxing massage services to complete your spa day',
-      'Late evening and weekend availability for concerts, dates, and nightlife prep',
+      'Minutes from 17th Avenue SW, First Street Village, and Beltline condo towers',
+      'Gel-X extensions, acrylic sculpting, and dip powder designed for extra length and durability',
+      'Chrome, cat-eye, aura, and ombre finishes custom mixed to match your outfit or event',
+      'Luxury pedicures with callus resurfacing, hot stones, and seasonal scrubs for sandal season',
+      'Evening and Sunday appointments for concerts, photoshoots, or last-minute getaways',
+      'Complimentary parking and secure bike lock-ups so you can pop in between errands',
     ],
     closing:
-      "Whether you're prepping for a night on 17th Avenue, meeting friends for brunch, or simply maintaining your signature style, Victoria Park Nails & Spa keeps Beltline nails camera-ready. Book your chair today and experience Calgary's most trusted nail salon for bold, beautiful results.",
+      'From Pride celebrations to rooftop patios, Victoria Park Nails & Spa keeps Beltline nails camera-ready and unmistakably you.',
+    metaDescription:
+      'Beltline Calgary guests visit us for Gel-X extensions, bold nail art, and spa pedicures with evening availability minutes from 17th Avenue SW.',
   },
   'mission-calgary': {
-    headline: 'Mission Calgary luxury nail salon with personalized care and style',
+    headline: 'Mission Calgary nail salon with family-friendly service on 4th Street\'s doorstep',
     intro:
-      "Mission residents love our proximity, personalized service, and premium nail care. Located just minutes from 4th Street SW and Elbow Drive, we're your go-to Mission nail salon for pre-dinner manicures, polished pedicures, custom nail art, long-lasting gel enhancements, and spa treatments. With free parking, quick CTrain access, and a welcoming team of licensed technicians, we make luxury self-care effortless for Mission locals.",
+      'Only a few minutes north of 4th Street SW, we give Mission families and professionals a welcoming space for gentle manicures, long-wear gel polish, and restorative pedicures. Bring the kids for Little Princess services or schedule a relaxing treatment before brunch along the river.',
     highlights: [
-      'Short drive from Mission neighborhoods, 4th Street shops, and Elbow Drive',
-      'Same-day manicure and pedicure bookings perfect for Mission\'s active lifestyle',
-      'Custom nail designs inspired by 4th Street festivals, Lilac Festival, and local events',
-      'Premium gel manicures, acrylics, Gel-X extensions, and French polish that lasts',
-      'Relaxing spa pedicures with hot stones, aromatherapy, and callus treatments',
-      'Professional massage therapy and complete waxing services available',
-      'Family-friendly salon welcoming Mission residents of all ages',
-      'Free parking and CTrain-accessible location for easy Mission appointments',
+      'Easy access from 4th Street boutiques, Repsol Sport Centre, and Elbow River pathways',
+      'Gentle technicians experienced with sensitive skin and pregnancy-safe service adjustments',
+      'Little Princess manicures and pedicures that make spa days fun for ages eight and under',
+      'Gel polish, French finishes, and structured overlays tailored to busy family calendars',
+      'Hot stone pedicures and aromatherapy add-ons ideal after weekend runs or yoga',
+      'Free parking and quick rideshare pickup ensure stress-free arrivals with strollers or packages',
     ],
     closing:
-      "Whether you're getting ready for brunch on 4th Street, a riverside walk, or winding down after work, Victoria Park Nails & Spa keeps Mission nails flawless with meticulous sanitation, premium products, and welcoming service. Reserve your appointment today and join the Mission community we proudly serve.",
+      'Whether you are planning a mother-daughter date, a self-care hour between school drop-off and dinner, or a polished look for 4th Street dining, Mission neighbours feel at home with us.',
+    metaDescription:
+      'Mission Calgary families visit our warm nail studio for kid-friendly services, gel manicures, and hot stone pedicures minutes from 4th Street SW with free parking.',
   },
   'mount-royal-calgary': {
-    headline: 'Mount Royal Calgary nail salon offering elegance and luxury service',
+    headline: 'Mount Royal\'s luxury nail retreat with concierge-level care',
     intro:
-      "When Mount Royal residents seek impeccable nail care, they trust Victoria Park Nails & Spa for refined finishes, gentle techniques, and indulgent spa experiences. Our team delivers luxury detailing with approachable, personalized service, making every visit feel like a five-star retreat. From sophisticated French manicures to custom chrome details, hot-stone pedicures to bridal party packages, we cater to Mount Royal's elevated expectations.",
+      'When Mount Royal residents want refined finishes and attentive detail, they book our private-feeling studio just over the hill. From soft chrome French tips to bespoke bridal sets, every appointment includes extra time for consultation and meticulous sanitation.',
     highlights: [
-      'Easy access from Mount Royal, Lower Mount Royal, and surrounding communities',
-      'Refined French manicures, chrome nails, ombre designs, and bespoke nail art',
-      'Premium gel polish, dip powder, acrylics, and Gel-X extensions using luxury brands',
-      'Indulgent spa pedicures with hot stones, paraffin wax, and targeted callus care',
-      'Private treatment spaces ideal for bridal parties, special occasions, and groups',
-      'Experienced technicians trained in gentle techniques and luxury finishes',
-      'Comprehensive waxing and relaxing massage services for complete pampering',
-      'Flexible appointment scheduling including evenings and weekends for busy schedules',
+      'Short drive from Upper and Lower Mount Royal, Cliff Bungalow, and Rideau Park',
+      'Bespoke French, chrome, and sculpted designs crafted with premium gels and acrylics',
+      'Dedicated time for bridal parties, charity galas, and black-tie event nails',
+      'Heated massage chairs, paraffin, and collagen treatments for spa-level pedicures',
+      'Quiet weekday mornings and extended appointments for clients who prefer privacy',
+      'Complimentary refreshments, free parking, and assistance carrying garments or accessories',
     ],
     closing:
-      "Reserve your preferred time and experience why Victoria Park Nails & Spa is the trusted nail salon for Mount Royal and discerning Calgary clients. From everyday elegance to special event perfection, we deliver results that exceed expectations. Book your luxury nail appointment today.",
+      'Reserve your preferred time and enjoy luxury service without the downtown rush. Mount Royal\'s discerning guests rely on Victoria Park Nails & Spa for impeccable finish and hospitality.',
+    metaDescription:
+      'Mount Royal Calgary clients book our luxury nail retreat for bespoke French manicures, chrome finishes, and spa pedicures with private, unhurried service.',
   },
   'inglewood-calgary': {
-    headline: 'Inglewood Calgary nail salon blending artistry with neighborhood charm',
+    headline: 'Inglewood\'s creative nail studio inspired by local art',
     intro:
-      "Inglewood's creative community deserves a nail salon that matches their unique style. Just a quick drive or CTrain ride from 9th Avenue SE, we offer artistic nail designs, premium manicures and pedicures, trending gel extensions, and relaxing spa services. Our Inglewood clients appreciate our attention to detail, custom nail art capabilities, eco-conscious practices, and welcoming atmosphere that reflects Calgary's most eclectic neighborhood.",
+      'Artists, musicians, and vintage lovers from Inglewood head across the 9th Avenue bridge for nails as unique as their playlists. We specialise in hand-painted artwork, eco-conscious product options, and relaxing spa services after market days or studio sessions.',
     highlights: [
-      'Convenient location near Inglewood, Ramsay, and East Calgary neighborhoods',
-      'Custom nail art and creative designs inspired by Inglewood\'s artistic culture',
-      'Full nail services including manicures, pedicures, gel polish, acrylics, and extensions',
-      'Trending techniques like Gel-X, dip powder, chrome finishes, and hand-painted art',
-      'Eco-friendly product options and sustainable practices for conscious clients',
-      'Relaxing spa pedicures with massage chairs, aromatherapy, and premium treatments',
-      'Professional waxing and massage services to complete your self-care routine',
-      'Free parking and CTrain-accessible for easy Inglewood appointments',
+      'Minutes from 9th Avenue SE shops, the Music Mile, and Ramsay studios',
+      'Hand-painted nail art, negative-space designs, and mixed-media overlays that tell your story',
+      'Eco-forward gel and lacquer options plus low-odour services for sensitive guests',
+      'Gel-X, acrylic, and dip enhancements shaped to complement instruments or creative work',
+      'Pedicures with aromatherapy and callus care after full days exploring Inglewood markets',
+      'Free parking and quick access from Blackfoot Trail, 12 Street Bridge, and the CTrain',
     ],
     closing:
-      "Whether you're exploring Inglewood's vintage shops, enjoying the Esker Foundation, or meeting friends on 9th Avenue, keep your nails as unique as the neighborhood. Victoria Park Nails & Spa brings premium quality and creative flair to Inglewood's nail care. Book your appointment and let your nails tell your story.",
+      'From gallery openings to brewery tours, Victoria Park Nails & Spa keeps Inglewood hands camera-ready while honouring your individual style.',
+    metaDescription:
+      'Inglewood Calgary creatives choose our nail artists for custom hand-painted designs, eco-minded products, and spa pedicures just minutes from 9th Avenue SE.',
   },
   'east-village-calgary': {
-    headline: 'East Village Calgary nail salon with modern service and riverside convenience',
+    headline: 'East Village Calgary nail destination with modern, riverside convenience',
     intro:
-      "East Village's vibrant urban community relies on Victoria Park Nails & Spa for contemporary nail care, professional service, and convenient location. Just steps from the Bow River pathways, National Music Centre, and East Village condos, we provide modern manicures, spa pedicures, gel nails, acrylic extensions, custom nail art, and relaxing treatments. Our East Village clients value our quality work, flexible hours, and welcoming team.",
+      'East Village condo residents and NMC visitors love our quick ride over the 4th Street flyover for sleek, modern nail care. We blend structured manicures, durable gel polish, and restorative pedicures with flexible booking that fits condo living and Bow River plans.',
     highlights: [
-      'Prime location minutes from East Village, Bridgeland, and Bow River pathways',
-      'Modern nail services including gel manicures, acrylics, dip powder, and Gel-X',
-      'Custom nail designs perfect for concerts at Studio Bell and Calgary events',
-      'Luxury spa pedicures with heated massage chairs and premium foot treatments',
-      'Express services ideal for East Village condo residents and urban professionals',
-      'Professional massage and comprehensive waxing services available',
-      'Easy CTrain access from East Village station with free parking available',
-      'Online booking and flexible scheduling including evenings and weekends',
+      'Close to Studio Bell, Simmons Building, the RiverWalk, and new East Village towers',
+      'Sleek structured manicures, gel overlays, and minimalist nail art that pair with modern wardrobes',
+      'Express services before brunch or events, plus longer spa appointments for weekend resets',
+      'Massage and waxing add-ons so you can complete your self-care checklist in one stop',
+      'Evening and Saturday availability for residents balancing downtown commutes and condo life',
+      'Complimentary parking and quick CTrain connections from City Hall and Bridgeland stations',
     ],
     closing:
-      "From riverside walks to rooftop patios, National Music Centre visits to Simmons Building brunches, Victoria Park Nails & Spa keeps East Village looking polished. Experience Calgary's premier nail salon with the convenience your modern lifestyle demands. Schedule your East Village nail appointment today.",
+      'Head back to the RiverWalk with polished, chip-resistant nails and the calm that comes from attentive service. East Village neighbours stay fresh with Victoria Park Nails & Spa.',
+    metaDescription:
+      'East Village Calgary residents visit us for structured manicures, gel polish, and spa pedicures near Studio Bell with flexible evening and weekend booking.',
   },
   'erlton-calgary': {
-    headline: 'Erlton Calgary nail salon offering quality service and neighborhood care',
+    headline: 'Erlton neighbours choose us for warm, detailed nail care',
     intro:
-      "Serving the Erlton community with exceptional nail care and spa services since day one. Located just across from Erlton at 1411 1st Street SE, we're your neighborhood destination for professional manicures, pedicures, gel nails, acrylics, custom designs, massage, and waxing. Erlton residents appreciate our proximity, friendly service, quality results, and commitment to sanitation and safety in a relaxing environment.",
+      'Living just across from 25th Avenue SE means Erlton guests are minutes from a friendly team that treats every visit like catching up with neighbours. We blend meticulous manicures, relaxing pedicures, and wellness add-ons with a welcoming atmosphere for all ages.',
     highlights: [
-      'Neighborhood nail salon serving Erlton, Rideau Park, and surrounding communities',
-      'Complete nail services including manicures, pedicures, gel polish, and enhancements',
-      'Custom nail art, French tips, ombre designs, and seasonal nail trends',
-      'Spa pedicures with massage chairs, callus removal, and moisturizing treatments',
-      'Professional acrylic nails, Gel-X extensions, and dip powder in hundreds of colors',
-      'Relaxing massage services and full waxing menu for complete self-care',
-      'Free parking with easy access from Erlton and Macleod Trail',
-      'Family-friendly atmosphere welcoming Erlton neighbors of all ages',
+      'Two-minute drive or 10-minute walk from Erlton, Rideau Park, and Parkhill homes',
+      'Full menu of manicures, gel polish, acrylic fills, and Gel-X extensions tailored to everyday wear',
+      'Family-friendly vibe with technicians who remember your preferences and celebrate your milestones',
+      'Spa pedicures featuring hot stones, callus smoothing, and deep moisturising masks',
+      'Massage and waxing services available so you can complete your to-do list in one trip',
+      'Complimentary parking and easy access from Macleod Trail, Mission Road, and Erlton/Stampede station',
     ],
     closing:
-      "As your trusted Erlton nail salon, Victoria Park Nails & Spa combines neighborhood warmth with professional excellence. Whether it's your weekly manicure or a special occasion makeover, we're here for the Erlton community. Book your appointment and experience the difference of true neighborhood nail care.",
+      'From weekly touch-ups to special occasions, Erlton residents trust Victoria Park Nails & Spa for genuine hospitality and polished results that feel like home.',
+    metaDescription:
+      'Erlton Calgary neighbours rely on our welcoming nail salon for manicures, gel fills, pedicures, and spa services with free parking just across Macleod Trail.',
   },
 }
