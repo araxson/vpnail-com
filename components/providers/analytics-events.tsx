@@ -7,16 +7,21 @@ import { analyticsConfig } from '@/lib/config/analytics.config'
 type DataLayerEvent = Record<string, unknown>
 
 type DataLayerWindow = typeof window & {
-  [key: string]: Array<DataLayerEvent> | undefined
   gtag?: (...args: unknown[]) => void
+  [key: string]: unknown
 }
 
 function ensureDataLayer(layerName: string): Array<DataLayerEvent> {
   const win = window as unknown as DataLayerWindow
-  if (!win[layerName]) {
-    win[layerName] = []
+  const current = win[layerName]
+
+  if (Array.isArray(current)) {
+    return current as Array<DataLayerEvent>
   }
-  return win[layerName] as Array<DataLayerEvent>
+
+  const dataLayer: Array<DataLayerEvent> = []
+  win[layerName] = dataLayer
+  return dataLayer
 }
 
 function pushAnalyticsEvent(eventName: string, params: Record<string, unknown>) {
@@ -28,7 +33,10 @@ function pushAnalyticsEvent(eventName: string, params: Record<string, unknown>) 
   }
 
   const dataLayer = ensureDataLayer(analyticsConfig.dataLayerName)
-  dataLayer.push(['event', eventName, params])
+  dataLayer.push({
+    event: eventName,
+    ...params,
+  })
 }
 
 export function AnalyticsEvents() {
