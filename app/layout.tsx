@@ -6,7 +6,7 @@ import { Header } from '@/components/layouts/header';
 import { Breadcrumbs } from '@/components/layouts/breadcrumbs';
 import { Footer } from '@/components/layouts/footer';
 import { StickyBottomNav } from '@/components/layouts/sticky-bottom-nav';
-import { GoogleTagManager, GoogleTagManagerNoScript } from '@/components/seo';
+import { GoogleAnalytics } from '@/components/seo';
 import { StructuredData } from '@/components/seo';
 import { rootMetadata, rootViewport } from '@/lib/config/metadata.config';
 import { analyticsConfig } from '@/lib/config/analytics.config';
@@ -113,29 +113,15 @@ export default function RootLayout({
         <StructuredData type="WebSite" data={{ inLanguage: 'en-CA' }} />
         {/* SiteNavigationElement structured data */}
         <StructuredData type="SiteNavigationElement" />
-
-        {/* Google Tag Manager - Handles all tracking including GA4 */}
-        {analyticsConfig.shouldLoadGtm && analyticsConfig.gtmId && (
-          <GoogleTagManager
-            gtmId={analyticsConfig.gtmId}
-            dataLayerName={analyticsConfig.dataLayerName}
-            gtmAuth={analyticsConfig.gtmAuth}
-            gtmPreview={analyticsConfig.gtmPreview}
-          />
-        )}
       </head>
       <body className={cn(
         'min-h-screen bg-background antialiased',
         lato.variable,
         playfair.variable
       )}>
-        {/* Google Tag Manager (noscript) */}
-        {analyticsConfig.shouldLoadGtm && analyticsConfig.gtmId && (
-          <GoogleTagManagerNoScript
-            gtmId={analyticsConfig.gtmId}
-            gtmAuth={analyticsConfig.gtmAuth}
-            gtmPreview={analyticsConfig.gtmPreview}
-          />
+        {/* Google Analytics (gtag.js) */}
+        {analyticsConfig.shouldLoadAnalytics && analyticsConfig.measurementId && (
+          <GoogleAnalytics measurementId={analyticsConfig.measurementId} />
         )}
         
         {/* Skip Links */}

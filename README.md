@@ -35,16 +35,14 @@ Run `npm run build` and `npm run start` locally to smoke test.
 
 ## Analytics & Google Services
 
-Analytics configuration lives in `lib/config/analytics.config.ts`. Google Tag Manager and GA4 load only when the environment variables are present and the environment is production (or you opt in with `NEXT_PUBLIC_ENABLE_ANALYTICS=true`). Route changes automatically dispatch `page_view` events to both gtag and the GTM data layer, and click tracking for phone, email, booking, and map links is centralized in `components/providers/analytics-events.tsx`.
+Analytics configuration lives in `lib/config/analytics.config.ts`. The global site tag (`gtag.js`) loads only when the required environment variables are present and the app is running in production (or you opt in with `NEXT_PUBLIC_ENABLE_ANALYTICS=true`). Route changes automatically dispatch `page_view` events, and click tracking for phone, email, booking, and map links is centralized in `components/providers/analytics-events.tsx`.
 
 Set the following environment variables in `.env.local`:
 
-- `NEXT_PUBLIC_GTM_ID` (required for GTM)
-- `NEXT_PUBLIC_GA_ID` (optional for direct GA4 tagging when GTM is absent)
-- `NEXT_PUBLIC_GTM_AUTH` / `NEXT_PUBLIC_GTM_PREVIEW` (optional for GTM environments)
-- `NEXT_PUBLIC_GTM_DATALAYER` (optional custom dataLayer name)
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` (required GA4 measurement ID, e.g. `G-XXXXXXX`)
 - `NEXT_PUBLIC_ENABLE_ANALYTICS` (set to `true` to allow analytics outside production)
-- `NEXT_PUBLIC_LOAD_GA_DIRECT` (set to `true` to load GA alongside GTM if needed)
+- `NEXT_PUBLIC_GA_DEBUG_MODE` (optional, set to `true` to enable GA4 debug reports)
+- `NEXT_PUBLIC_GA_ANONYMIZE_IP` (optional, set to `true` to anonymize IP addresses)
 
 ### One‑click Vercel Provisioning (Automated)
 

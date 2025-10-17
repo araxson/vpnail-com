@@ -145,3 +145,5 @@ export const AREA_CONTENT: Record<
       'Erlton Calgary neighbours rely on our welcoming nail salon for manicures, gel fills, pedicures, and spa services with free parking just across Macleod Trail.',
   },
 }
+
+export const AREA_SLUGS = Object.keys(AREA_CONTENT)

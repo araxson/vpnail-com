@@ -8,6 +8,7 @@ type DataLayerEvent = Record<string, unknown>
 
 type DataLayerWindow = typeof window & {
   [key: string]: Array<DataLayerEvent> | undefined
+  gtag?: (...args: unknown[]) => void
 }
 
 function ensureDataLayer(layerName: string): Array<DataLayerEvent> {
@@ -18,16 +19,28 @@ function ensureDataLayer(layerName: string): Array<DataLayerEvent> {
   return win[layerName] as Array<DataLayerEvent>
 }
 
+function pushAnalyticsEvent(eventName: string, params: Record<string, unknown>) {
+  const win = window as unknown as DataLayerWindow
+
+  if (typeof win.gtag === 'function') {
+    win.gtag('event', eventName, params)
+    return
+  }
+
+  const dataLayer = ensureDataLayer(analyticsConfig.dataLayerName)
+  dataLayer.push(['event', eventName, params])
+}
+
 export function AnalyticsEvents() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const search = searchParams?.toString()
-  const analyticsActive = analyticsConfig.shouldLoadGtm
+  const analyticsActive = analyticsConfig.shouldLoadAnalytics
 
   useEffect(() => {
-    if (!analyticsConfig.shouldLoadGtm) return
+    if (!analyticsConfig.shouldLoadAnalytics) return
 
-    const dataLayer = ensureDataLayer(analyticsConfig.dataLayerName)
+    ensureDataLayer(analyticsConfig.dataLayerName)
 
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null
@@ -49,12 +62,12 @@ export function AnalyticsEvents() {
       else if (/maps\.google\.com/i.test(href) || href.startsWith('#location')) eventName = 'map_click'
 
       if (eventName) {
-        dataLayer.push({
-          event: eventName,
-          href,
+        pushAnalyticsEvent(eventName, {
+          link_url: href,
           link_text: text,
           page_path: pagePath,
           page_title: pageTitle,
+          page_location: window.location.href,
         })
       }
     }
@@ -67,10 +80,7 @@ export function AnalyticsEvents() {
     if (!analyticsActive) return
 
     const pagePath = search ? `${pathname}?${search}` : pathname
-    const dataLayer = ensureDataLayer(analyticsConfig.dataLayerName)
-
-    dataLayer.push({
-      event: 'page_view',
+    pushAnalyticsEvent('page_view', {
       page_path: pagePath,
       page_location: window.location.href,
       page_title: document.title,

@@ -1,32 +1,35 @@
 import type { Metadata } from 'next'
-import { AreaDetailPage, generateAreaMetadata } from '@/features/area-detail'
+import { notFound } from 'next/navigation'
+import { AreaDetailPage, AREA_SLUGS, generateAreaMetadata } from '@/features/area-detail'
 
 export const dynamic = 'force-static'
 export const revalidate = false
+export const dynamicParams = false
 
-type Props = {
-  params: Promise<{ slug: string }>
+type AreaPageProps = {
+  params: { slug: string }
 }
 
-export async function generateStaticParams() {
-  return [
-    { slug: 'victoria-park-calgary' },
-    { slug: 'downtown-calgary' },
-    { slug: 'beltline-calgary' },
-    { slug: 'mission-calgary' },
-    { slug: 'mount-royal-calgary' },
-    { slug: 'inglewood-calgary' },
-    { slug: 'east-village-calgary' },
-    { slug: 'erlton-calgary' }
-  ]
+const VALID_AREA_SLUGS = new Set(AREA_SLUGS)
+
+const resolveAreaSlug = (slug: string) => {
+  if (!VALID_AREA_SLUGS.has(slug)) {
+    notFound()
+  }
+
+  return slug
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params
+export function generateStaticParams() {
+  return AREA_SLUGS.map((slug) => ({ slug }))
+}
+
+export function generateMetadata({ params }: AreaPageProps): Metadata {
+  const slug = resolveAreaSlug(params.slug)
   return generateAreaMetadata(slug)
 }
 
-export default async function AreaRoute({ params }: Props) {
-  const { slug } = await params
+export default function AreaRoute({ params }: AreaPageProps) {
+  const slug = resolveAreaSlug(params.slug)
   return <AreaDetailPage slug={slug} />
 }

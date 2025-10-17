@@ -11,8 +11,10 @@ function getAbsoluteOgImage(): string {
   }
 }
 
+const defaultGoogleSiteVerification = 'ui2QmsBUe9UxFkSEGhEoVgoy_V2K-qRywpR7hLEMZko'
+
 const verification: Metadata['verification'] = {
-  google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
+  google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || defaultGoogleSiteVerification,
   yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || undefined,
   yahoo: process.env.NEXT_PUBLIC_YAHOO_VERIFICATION || undefined,
   other: {}

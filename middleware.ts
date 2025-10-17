@@ -1,6 +1,17 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
+const areaSlugRedirects: Record<string, string> = {
+  '/areas/victoria-park': '/areas/victoria-park-calgary',
+  '/areas/downtown': '/areas/downtown-calgary',
+  '/areas/beltline': '/areas/beltline-calgary',
+  '/areas/mission': '/areas/mission-calgary',
+  '/areas/mount-royal': '/areas/mount-royal-calgary',
+  '/areas/inglewood': '/areas/inglewood-calgary',
+  '/areas/east-village': '/areas/east-village-calgary',
+  '/areas/erlton': '/areas/erlton-calgary',
+};
+
 export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   const hostname = url.hostname.toLowerCase();
@@ -26,6 +37,12 @@ export function middleware(request: NextRequest) {
       url.pathname = url.pathname.replace(/\/+$/, '');
       return NextResponse.redirect(url, 308);
     }
+  }
+
+  const areaRedirectTarget = areaSlugRedirects[url.pathname];
+  if (areaRedirectTarget) {
+    url.pathname = areaRedirectTarget;
+    return NextResponse.redirect(url, 308);
   }
 
   // Handle plural to singular redirects

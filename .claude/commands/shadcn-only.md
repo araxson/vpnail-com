@@ -155,7 +155,6 @@ Before submitting any component, verify:
 |---------|-----------|
 | `<div className="py-16">` | `<Section>` |
 | `<div className="max-w-7xl mx-auto px-4">` | `<Container>` |
-| `<div className="space-y-8">` | `<Stack gap="xl">` |
 | `<div className="grid grid-cols-3 gap-6">` | `<Grid cols={{base:1, lg:3}} gap="md">` |
 | `<h1 className="text-4xl font-bold">` | `<H1>` |
 | `<p className="text-xl text-gray-600">` | `<Lead>` |

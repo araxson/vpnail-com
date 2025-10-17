@@ -10,7 +10,7 @@ import { Container } from './container'
 export function Footer({ id }: { id?: string }) {
   return (
     <footer id={id} className="border-t bg-muted/30">
-      <Container className="py-12">
+      <Container className="py-12 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Brand & Description */}
           <div className="lg:col-span-2">
@@ -101,8 +101,16 @@ export function Footer({ id }: { id?: string }) {
 
         {/* Bottom Bar */}
         <Separator className="my-8" />
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-muted-foreground">
+          <p className="text-center md:text-left">© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+          <a
+            href="https://zss.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-center md:text-left hover:text-primary transition-colors"
+          >
+            Website built by <span className="font-semibold text-primary">zss.ca</span>
+          </a>
           <div className="flex gap-4">
             <Link href={ROUTES.ACCESSIBILITY} className="hover:text-primary transition-colors">
               Accessibility

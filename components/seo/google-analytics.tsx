@@ -1,76 +1,38 @@
-'use client';
+'use client'
 
-import Script from 'next/script';
-import { analyticsConfig } from '@/lib/config/analytics.config';
+import Script from 'next/script'
+import { analyticsConfig } from '@/lib/config/analytics.config'
 
-interface GoogleTagManagerProps {
-  gtmId?: string;
-  dataLayerName?: string;
-  gtmAuth?: string;
-  gtmPreview?: string;
+interface GoogleAnalyticsProps {
+  measurementId?: string
 }
 
-export function GoogleTagManager({
-  gtmId,
-  dataLayerName = analyticsConfig.dataLayerName,
-  gtmAuth,
-  gtmPreview,
-}: GoogleTagManagerProps) {
-  const resolvedGtmId = gtmId?.trim() || analyticsConfig.gtmId;
-  if (!resolvedGtmId || !analyticsConfig.shouldLoadGtm) {
-    return null;
+export function GoogleAnalytics({ measurementId }: GoogleAnalyticsProps) {
+  const resolvedMeasurementId = measurementId?.trim() || analyticsConfig.measurementId
+  if (!resolvedMeasurementId || !analyticsConfig.shouldLoadAnalytics) {
+    return null
   }
 
-  const params = new URLSearchParams({ id: resolvedGtmId });
-  if (gtmAuth?.trim() && gtmPreview?.trim()) {
-    params.set('gtm_auth', gtmAuth.trim());
-    params.set('gtm_preview', gtmPreview.trim());
-    params.set('gtm_cookies_win', 'x');
-  }
+  const dataLayerName = analyticsConfig.dataLayerName
+  const configOptions = JSON.stringify(analyticsConfig.defaultConfig)
 
-  const gtmSrc = `https://www.googletagmanager.com/gtm.js?${params.toString()}`;
-  const gtmSnippet = `
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='${dataLayerName}'?'&l='+l:'';j.async=true;j.src='${gtmSrc}'+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','${dataLayerName}','${resolvedGtmId}');
-  `;
+  const initSnippet = `
+    window['${dataLayerName}'] = window['${dataLayerName}'] || [];
+    function gtag(){window['${dataLayerName}'].push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${resolvedMeasurementId}', ${configOptions});
+  `
 
   return (
     <>
-      <Script id="google-tag-manager" strategy="afterInteractive">
-        {gtmSnippet}
+      <Script
+        id="ga-gtag-src"
+        src={`https://www.googletagmanager.com/gtag/js?id=${resolvedMeasurementId}`}
+        strategy="afterInteractive"
+      />
+      <Script id="ga-gtag-init" strategy="afterInteractive">
+        {initSnippet}
       </Script>
     </>
-  );
-}
-
-export function GoogleTagManagerNoScript({
-  gtmId,
-  gtmAuth,
-  gtmPreview,
-}: GoogleTagManagerProps) {
-  const resolvedGtmId = gtmId?.trim() || analyticsConfig.gtmId;
-  if (!resolvedGtmId || !analyticsConfig.shouldLoadGtm) {
-    return null;
-  }
-
-  const params = new URLSearchParams({ id: resolvedGtmId });
-  if (gtmAuth?.trim() && gtmPreview?.trim()) {
-    params.set('gtm_auth', gtmAuth.trim());
-    params.set('gtm_preview', gtmPreview.trim());
-    params.set('gtm_cookies_win', 'x');
-  }
-
-  return (
-    <noscript>
-      <iframe
-        src={`https://www.googletagmanager.com/ns.html?${params.toString()}`}
-        height="0"
-        width="0"
-        style={{ display: 'none', visibility: 'hidden' }}
-        title="Google Tag Manager"
-      />
-    </noscript>
-  );
+  )
 }

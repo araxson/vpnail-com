@@ -44,8 +44,8 @@ export const primaryNav: NavItem[] = [
         label: 'Nail Services',
         href: `${ROUTES.SERVICES}#nail-services`,
         description:
-          'Classic manicures, resilient gel polish, intricate nail art, and sculpted extensions tailored to keep hands and feet photo-ready for any occasion.',
-        serviceCount: 7,
+          '29 services for the nails including classic manicures, resilient gel polish, intricate nail art, and sculpted enhancements that keep hands and feet photo-ready for any occasion.',
+        serviceCount: 29,
         ctaLabel: 'View Details',
       },
       {

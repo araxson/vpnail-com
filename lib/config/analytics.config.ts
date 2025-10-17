@@ -1,24 +1,34 @@
-// Google Tag Manager Configuration (GTM handles all tracking)
-const gtmId = process.env.NEXT_PUBLIC_GTM_ID ?? ''
-const gtmAuth = process.env.NEXT_PUBLIC_GTM_AUTH ?? ''
-const gtmPreview = process.env.NEXT_PUBLIC_GTM_PREVIEW ?? ''
-const dataLayerName = process.env.NEXT_PUBLIC_GTM_DATALAYER ?? 'dataLayer'
+// Google Analytics (gtag.js) configuration
+const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() ?? ''
+const dataLayerName = 'dataLayer'
 const allowInDevelopment = process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === 'true'
+const debugMode = process.env.NEXT_PUBLIC_GA_DEBUG_MODE === 'true'
+const anonymizeIp = process.env.NEXT_PUBLIC_GA_ANONYMIZE_IP === 'true'
 
 const isProduction = process.env.NODE_ENV === 'production'
-const analyticsEnabled = isProduction || allowInDevelopment
+const shouldLoadAnalytics = Boolean(measurementId) && (isProduction || allowInDevelopment)
 
-const shouldLoadGtm = Boolean(gtmId && analyticsEnabled)
+const defaultConfig: Record<string, unknown> = {
+  send_page_view: false,
+}
+
+if (debugMode) {
+  defaultConfig.debug_mode = true
+}
+
+if (anonymizeIp) {
+  defaultConfig.anonymize_ip = true
+}
 
 export const analyticsConfig = {
-  gtmId,
-  gtmAuth,
-  gtmPreview,
+  measurementId,
   dataLayerName,
   allowInDevelopment,
   isProduction,
-  analyticsEnabled,
-  shouldLoadGtm,
+  shouldLoadAnalytics,
+  debugMode,
+  anonymizeIp,
+  defaultConfig,
 } as const
 
 export type AnalyticsConfig = typeof analyticsConfig
