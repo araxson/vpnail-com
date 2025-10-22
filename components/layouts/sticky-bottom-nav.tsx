@@ -47,24 +47,21 @@ export function StickyBottomNav() {
       <div className="bg-background/95 backdrop-blur-sm border-t border-border shadow-none">
         <Container className="max-w-screen-2xl px-3 py-3 md:px-4" noPaddingMobile>
           <div className="grid grid-cols-2 gap-3">
-            <Button
-              asChild
-              size="lg"
-              className="w-full shadow-none hover:shadow-none transition-shadow"
-            >
-              <Link href={ROUTES.SERVICES}>
-                <Calendar className="h-5 w-5 mr-2" />
+            <Button asChild size="lg">
+              <Link
+                href={ROUTES.SERVICES}
+                className="flex w-full items-center justify-center gap-2"
+              >
+                <Calendar className="mr-2 h-5 w-5" />
                 <span className="font-semibold">Book Online</span>
               </Link>
             </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="w-full shadow-none hover:shadow-none transition-shadow"
-            >
-              <a href={siteConfig.social.phone}>
-                <Phone className="h-5 w-5 mr-2" />
+            <Button asChild size="lg" variant="outline">
+              <a
+                href={siteConfig.social.phone}
+                className="flex w-full items-center justify-center gap-2"
+              >
+                <Phone className="mr-2 h-5 w-5" />
                 <span className="font-semibold hidden sm:inline">Call Us</span>
                 <span className="font-semibold sm:hidden">{siteConfig.business.phone}</span>
               </a>

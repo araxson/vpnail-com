@@ -7,7 +7,7 @@ export const typesData = {
       description: 'Manicures, pedicures, nail extensions, and custom nail art. Choose from our full range of professional nail care treatments.',
       duration: 'Varies by service',
       includes: [
-        'Classic and Shellac manicures',
+        'Manicures and shellac upgrades',
         'Regular and deluxe pedicures',
         'Gel and acrylic extensions',
         'Custom nail art and designs',

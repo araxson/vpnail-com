@@ -1,6 +1,6 @@
 export const ctaData = {
   title: 'Your Best Nails Are Just One Appointment Away',
-  subtitle: 'Join thousands of Calgary guests who trust our 4.9★ team',
+  subtitle: 'Join thousands of Calgary guests who trust our top-rated team',
   description:
     'Reserve a time that fits your calendar, then arrive to sterilized tools, heated massage chairs, and technicians who remember your preferences. Same-day spots fill fast.',
   cta: {

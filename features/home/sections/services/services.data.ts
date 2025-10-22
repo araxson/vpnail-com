@@ -8,7 +8,7 @@ export const servicesData = {
       id: 'nail-services',
       title: 'Nail Services',
       description:
-        'Classic manicures, resilient gel polish, intricate nail art, and sculpted extensions - all tailored to keep your hands and feet photo-ready for workdays, weddings, and Stampede nights.',
+        'Manicures, resilient gel polish, intricate nail art, and sculpted extensions - all tailored to keep your hands and feet photo-ready for workdays, weddings, and Stampede nights.',
       serviceCount: 29,
       href: '/services#nail-services',
     },

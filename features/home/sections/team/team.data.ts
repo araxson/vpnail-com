@@ -32,7 +32,7 @@ export const teamData = {
       bio: 'Evon brings artistic flair and technical precision to every service. With 18+ years of extensive experience in Calgary salons, she is known for her gentle touch and attention to detail, creating beautiful, long-lasting results. She focuses on client satisfaction while keeping up with the latest industry trends.',
       image: '/avatar-placeholder.webp',
       specialties: [
-        'Classic Manicures',
+        'Manicures',
         'French Manicures',
         'Pedicures',
         'Cuticle Care',

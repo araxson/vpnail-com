@@ -175,29 +175,32 @@ function CarouselPrevious({
   className,
   variant = "outline",
   size = "icon",
-  ...props
+  ...buttonProps
 }: React.ComponentProps<typeof Button>) {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel()
 
   return (
-    <Button
-      data-slot="carousel-previous"
-      variant={variant}
-      size={size}
+    <div
       className={cn(
-        "absolute size-8 rounded-full",
+        "absolute",
         orientation === "horizontal"
           ? "top-1/2 -left-12 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
-      disabled={!canScrollPrev}
-      onClick={scrollPrev}
-      {...props}
     >
-      <ArrowLeft />
-      <span className="sr-only">Previous slide</span>
-    </Button>
+      <Button
+        data-slot="carousel-previous"
+        variant={variant}
+        size={size}
+        disabled={!canScrollPrev}
+        onClick={scrollPrev}
+        {...buttonProps}
+      >
+        <ArrowLeft className="h-4 w-4" />
+        <span className="sr-only">Previous slide</span>
+      </Button>
+    </div>
   )
 }
 
@@ -205,29 +208,32 @@ function CarouselNext({
   className,
   variant = "outline",
   size = "icon",
-  ...props
+  ...buttonProps
 }: React.ComponentProps<typeof Button>) {
   const { orientation, scrollNext, canScrollNext } = useCarousel()
 
   return (
-    <Button
-      data-slot="carousel-next"
-      variant={variant}
-      size={size}
+    <div
       className={cn(
-        "absolute size-8 rounded-full",
+        "absolute",
         orientation === "horizontal"
           ? "top-1/2 -right-12 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
-      disabled={!canScrollNext}
-      onClick={scrollNext}
-      {...props}
     >
-      <ArrowRight />
-      <span className="sr-only">Next slide</span>
-    </Button>
+      <Button
+        data-slot="carousel-next"
+        variant={variant}
+        size={size}
+        disabled={!canScrollNext}
+        onClick={scrollNext}
+        {...buttonProps}
+      >
+        <ArrowRight className="h-4 w-4" />
+        <span className="sr-only">Next slide</span>
+      </Button>
+    </div>
   )
 }
 

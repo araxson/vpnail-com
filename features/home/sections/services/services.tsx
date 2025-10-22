@@ -39,8 +39,8 @@ export function ServicesSection() {
                 </P>
               </CardContent>
               <CardFooter>
-                <Button asChild variant="outline" size="lg" className="w-full">
-                  <Link href={category.href} className="flex items-center justify-center">
+                <Button asChild variant="outline" size="lg">
+                  <Link href={category.href} className="flex w-full items-center justify-center">
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>

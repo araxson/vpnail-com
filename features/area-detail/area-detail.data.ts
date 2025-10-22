@@ -11,7 +11,7 @@ export const AREA_CONTENT: Record<
   'victoria-park-calgary': {
     headline: 'Victoria Park neighbours for nails that last past Stampede week',
     intro:
-      "Our 4.9★ studio sits on 1st Street SE between the Saddledome, Cowboys Casino, and Stampede Park, making pre-event touch-ups and post-work pampering effortless. Victoria Park locals drop in for gel manicures, spa pedicures, waxing, and massage with free client parking and evening hours tailored to the neighbourhood's energy.",
+      "Our top-rated studio sits on 1st Street SE between the Saddledome, Cowboys Casino, and Stampede Park, making pre-event touch-ups and post-work pampering effortless. Victoria Park locals drop in for gel manicures, spa pedicures, waxing, and massage with free client parking and evening hours tailored to the neighbourhood's energy.",
     highlights: [
       'Two-minute walk to Scotiabank Saddledome, BMO Centre, and the culture & entertainment district',
       'Complimentary surface parking plus Victoria Park/Stampede CTrain access across the street',
@@ -23,7 +23,7 @@ export const AREA_CONTENT: Record<
     closing:
       'Whether you are meeting friends on the Red Mile, hosting clients at the Saddledome, or craving quiet self-care, Victoria Park Nails & Spa keeps your nails on point without leaving the neighbourhood.',
     metaDescription:
-      'Victoria Park Calgary residents rely on our 4.9★ nail team for gel manicures, spa pedicures, waxing, and massage steps from the Saddledome with free parking.',
+      'Victoria Park Calgary residents rely on our top-rated nail team for gel manicures, spa pedicures, waxing, and massage steps from the Saddledome with free parking.',
   },
   'downtown-calgary': {
     headline: 'Downtown Calgary nail studio engineered for busy professionals',
@@ -40,7 +40,7 @@ export const AREA_CONTENT: Record<
     closing:
       'Walk back to the office with photo-ready nails and the confidence that comes from meticulous detailing. Downtown Calgary trusts Victoria Park Nails & Spa when every handshake counts.',
     metaDescription:
-      'Downtown Calgary professionals choose our 4.9★ nail salon for express manicures, gel polish, and executive pedicures near Stephen Avenue with free parking.',
+      'Downtown Calgary professionals choose our top-rated nail salon for express manicures, gel polish, and executive pedicures near Stephen Avenue with free parking.',
   },
   'beltline-calgary': {
     headline: 'Beltline Calgary nail artists for bold, trend-driven looks',

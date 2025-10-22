@@ -2,13 +2,13 @@
 
 import { Section, Container } from '@/components/layouts'
 import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import Link from 'next/link'
 import { Clock, ArrowRight } from 'lucide-react'
 import { servicesGridData } from './services-grid.data'
-import { H3, H4, Lead, P, Small } from '@/components/ui/typography'
+import { H3, Lead, Small } from '@/components/ui/typography'
 
 export function ServicesGridSection() {
   return (
@@ -59,17 +59,20 @@ export function ServicesGridSection() {
                   {/* Services Grid */}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-4 max-w-7xl mx-auto">
                     {subcategory.services.map((service) => (
-                      <Card key={service.id} className="border hover:border-primary/50 hover:shadow-none transition-all duration-200 overflow-hidden p-4">
-                        <div className="flex items-start justify-between gap-3 mb-2">
+                      <Card
+                        key={service.id}
+                        className="border hover:border-primary/50 transition-all duration-200 overflow-hidden"
+                      >
+                        <CardHeader className="flex items-start justify-between gap-3 pb-2">
                           {/* Service Info */}
                           <div className="flex-1 min-w-0">
-                            <H4 className="text-base leading-tight mb-1 font-semibold">
+                            <CardTitle className="text-base leading-tight">
                               {service.title}
-                            </H4>
+                            </CardTitle>
                             {service.description && (
-                              <P className="text-xs text-muted-foreground leading-snug">
+                              <CardDescription className="text-xs leading-snug">
                                 {service.description}
-                              </P>
+                              </CardDescription>
                             )}
                           </div>
 
@@ -85,25 +88,21 @@ export function ServicesGridSection() {
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </CardHeader>
 
-                        {/* Button */}
-                        <Button
-                          asChild
-                          variant="default"
-                          size="sm"
-                          className="w-full h-9"
-                        >
-                          <Link
-                            href={service.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-1.5"
-                          >
-                            <span className="text-xs font-medium">Book This Service</span>
-                            <ArrowRight className="h-3 w-3" />
-                          </Link>
-                        </Button>
+                        <CardContent className="pt-0">
+                          <Button asChild size="sm" className="w-full">
+                            <Link
+                              href={service.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center gap-1.5"
+                            >
+                              <span className="text-xs font-medium">Book This Service</span>
+                              <ArrowRight className="h-3 w-3" />
+                            </Link>
+                          </Button>
+                        </CardContent>
                       </Card>
                     ))}
                   </div>

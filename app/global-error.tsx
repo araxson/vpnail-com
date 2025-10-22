@@ -64,23 +64,22 @@ export default function GlobalError({
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <Button onClick={() => reset()} className="flex items-center gap-2">
-                    <RefreshCw className="h-4 w-4" />
+                  <Button onClick={() => reset()}>
+                    <RefreshCw className="mr-2 h-4 w-4" />
                     Try Again
                   </Button>
 
                   <Button
                     variant="outline"
                     onClick={handleReload}
-                    className="flex items-center gap-2"
                   >
-                    <RefreshCw className="h-4 w-4" />
+                    <RefreshCw className="mr-2 h-4 w-4" />
                     Reload Page
                   </Button>
 
-                  <Button variant="outline" asChild className="flex items-center gap-2">
+                  <Button variant="outline" asChild>
                     <Link href="/">
-                      <Home className="h-4 w-4" />
+                      <Home className="mr-2 h-4 w-4" />
                       Go Home
                     </Link>
                   </Button>
@@ -91,9 +90,9 @@ export default function GlobalError({
                   <p className="text-sm mb-3 text-muted-foreground">
                     If this error persists, please contact our support team:
                   </p>
-                  <Button variant="outline" size="sm" asChild className="flex items-center gap-2 mx-auto">
+                  <Button variant="outline" size="sm" asChild>
                     <Link href="/contact">
-                      <MessageCircle className="h-4 w-4" />
+                      <MessageCircle className="mr-2 h-4 w-4" />
                       Contact Support
                     </Link>
                   </Button>

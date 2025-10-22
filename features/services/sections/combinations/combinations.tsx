@@ -113,7 +113,6 @@ export function CombinationsSection() {
                       <CardFooter className="border-t border-border/70 pb-5 pt-4">
                         <Button
                           asChild
-                          className="w-full"
                           size="lg"
                           variant={pkg.popular ? 'default' : 'outline'}
                         >
@@ -121,6 +120,7 @@ export function CombinationsSection() {
                             href={pkg.bookingUrl}
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="block w-full text-center"
                           >
                             Book {pkg.name}
                           </a>

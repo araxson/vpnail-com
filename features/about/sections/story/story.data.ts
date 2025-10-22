@@ -2,7 +2,7 @@ export const storyData = {
   title: 'Our Story',
   founded: '2015',
   intro:
-    'Victoria Park Nails & Spa began as a mother-and-daughter dream to create a space where meticulous sanitation, heartfelt service, and beautiful artistry could coexist. What started with two treatment chairs in 2015 has grown into a 4.9★-rated Calgary favourite that still runs on family values.',
+    'Victoria Park Nails & Spa began as a mother-and-daughter dream to create a space where meticulous sanitation, heartfelt service, and beautiful artistry could coexist. What started with two treatment chairs in 2015 has grown into a top-rated Calgary favourite that still runs on family values.',
   sections: [
     {
       id: 'how-it-started',

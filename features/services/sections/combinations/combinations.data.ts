@@ -22,7 +22,7 @@ export const combinationsData = {
       description: 'Your ultimate spa retreat to melt away stress.',
     },
     {
-      name: 'Classic',
+      name: 'Refresh',
       price: '60',
       originalPrice: '65',
       duration: '1 hr 15 mins',
@@ -31,8 +31,8 @@ export const combinationsData = {
       bookingUrl:
         'https://victoriaparknailsspa.setmore.com/book?step=staff&products=d95a021e-d7ca-4e44-b065-f22a634955ea&type=service',
       services: [
-        { name: 'Classic Manicure with regular polish', included: true },
-        { name: 'Classic Pedicure with regular polish', included: true },
+        { name: 'Manicure with regular polish', included: true },
+        { name: 'Pedicure with regular polish', included: true },
       ],
       description: 'The essential for a timeless, elegant look.',
     },
@@ -47,7 +47,7 @@ export const combinationsData = {
         'https://victoriaparknailsspa.setmore.com/book?step=staff&products=e23a8336-3303-4193-a9dc-47025c307144&type=service',
       services: [
         { name: 'Shellac Manicure', included: true },
-        { name: 'Classic Pedicure with regular polish', included: true },
+        { name: 'Pedicure with regular polish', included: true },
       ],
       description: 'The smart choice for long-lasting hands and beautiful feet.',
     },

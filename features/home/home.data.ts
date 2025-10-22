@@ -27,7 +27,7 @@ export const homeFaqData = [
   {
     question: 'What makes Victoria Park Nails and Spa the best nail salon in Calgary?',
     answer:
-      "We're rated 4.9/5 stars with 127+ reviews, offer luxury treatments since 2015, use premium products, provide free parking, and are conveniently located near Calgary Stampede with C-Train access.",
+      "Guests rave about our Calgary nail studio with 127+ reviews, luxury treatments since 2015, premium products, free parking, and a convenient location near the Calgary Stampede with C-Train access.",
   },
   {
     question: 'How much do your nail services cost?',

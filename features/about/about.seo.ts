@@ -3,7 +3,7 @@ import { buildMetadata } from '@/lib/seo/metadata'
 export const aboutMetadata = buildMetadata({
   title: 'Our Story | Victoria Park Nails Calgary | Family-Owned Since 2015',
   description:
-    'Family-owned Calgary nail studio sharing the story behind our 4.9★ team, meticulous sanitation, and community-first service since 2015.',
+    'Family-owned Calgary nail studio sharing the story behind our top-rated team, meticulous sanitation, and community-first service since 2015.',
   path: '/about',
   keywords: [
     'about Victoria Park Nails and Spa',

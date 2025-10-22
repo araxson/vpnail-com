@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
 import type { GalleryImage } from '@/lib/gallery'
 
 interface HomeGalleryGridProps {
@@ -26,10 +27,11 @@ export function HomeGalleryGrid({ images }: HomeGalleryGridProps) {
             itemType="https://schema.org/ImageObject"
             className="flex"
           >
-            <button
+            <Button
               type="button"
               onClick={() => setSelected(image)}
-              className="group relative aspect-square h-full w-full overflow-hidden rounded-xl border bg-muted focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              variant="ghost"
+              className="group relative flex aspect-square h-full w-full overflow-hidden rounded-xl border bg-muted p-0 hover:bg-transparent"
               aria-label={image.alt}
               title={image.title}
             >
@@ -43,7 +45,7 @@ export function HomeGalleryGrid({ images }: HomeGalleryGridProps) {
                 sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw"
               />
               <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/15" />
-            </button>
+            </Button>
             <figcaption className="sr-only" itemProp="caption">
               {image.caption}
             </figcaption>
@@ -55,7 +57,10 @@ export function HomeGalleryGrid({ images }: HomeGalleryGridProps) {
 
       <Dialog open={!!selected} onOpenChange={(open) => !open && setSelected(null)}>
         <DialogContent className="max-w-4xl overflow-hidden p-0">
-          <DialogTitle className="sr-only">Gallery image preview</DialogTitle>
+          <DialogHeader className="sr-only">
+            <DialogTitle>Gallery image preview</DialogTitle>
+            <DialogDescription>Use escape to close the lightbox.</DialogDescription>
+          </DialogHeader>
           {selected && (
             <figure
               className="relative h-[65vh] w-full bg-background"

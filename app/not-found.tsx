@@ -31,15 +31,15 @@ export default function NotFound() {
           <CardContent className="space-y-6">
             {/* Quick Actions */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button asChild className="flex items-center gap-2">
-                <Link href="/">
+              <Button asChild>
+                <Link href="/" className="flex items-center gap-2">
                   <Home className="h-4 w-4" />
                   Go Home
                 </Link>
               </Button>
 
-              <Button variant="outline" asChild className="flex items-center gap-2">
-                <Link href="/services">
+              <Button variant="outline" asChild>
+                <Link href="/services" className="flex items-center gap-2">
                   <Search className="h-4 w-4" />
                   Browse Services
                 </Link>
@@ -52,23 +52,23 @@ export default function NotFound() {
                 Popular pages you might be looking for:
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <Button variant="ghost" size="sm" asChild className="justify-start">
-                  <Link href="/services">
+                <Button variant="ghost" size="sm" asChild>
+                  <Link href="/services" className="justify-start">
                     Services
                   </Link>
                 </Button>
-                <Button variant="ghost" size="sm" asChild className="justify-start">
-                  <Link href="/about">
+                <Button variant="ghost" size="sm" asChild>
+                  <Link href="/about" className="justify-start">
                     About Victoria Park Nails and Spa
                   </Link>
                 </Button>
-                <Button variant="ghost" size="sm" asChild className="justify-start">
-                  <Link href="/contact">
+                <Button variant="ghost" size="sm" asChild>
+                  <Link href="/contact" className="justify-start">
                     Contact Us
                   </Link>
                 </Button>
-                <Button variant="ghost" size="sm" asChild className="justify-start">
-                  <Link href="/services">
+                <Button variant="ghost" size="sm" asChild>
+                  <Link href="/services" className="justify-start">
                     Book Consultation
                   </Link>
                 </Button>
@@ -81,8 +81,8 @@ export default function NotFound() {
                 Still can&apos;t find what you&apos;re looking for?
               </p>
               <div className="flex flex-col sm:flex-row gap-2 justify-center">
-                <Button variant="outline" size="sm" asChild className="flex items-center gap-2">
-                  <Link href="/contact">
+                <Button variant="outline" size="sm" asChild>
+                  <Link href="/contact" className="flex items-center gap-2">
                     <MessageCircle className="h-4 w-4" />
                     Contact Support
                   </Link>

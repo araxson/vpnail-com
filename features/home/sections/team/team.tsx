@@ -119,17 +119,17 @@ export function TeamSection() {
                     </CardContent>
 
                     <CardFooter className="p-4 pt-2">
-                      <Link
-                        href={member.bookingUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full"
-                      >
-                        <Button variant="outline" size="lg" className="w-full">
-                          <Calendar className="h-4 w-4 mr-2" />
+                      <Button variant="outline" size="lg" asChild>
+                        <Link
+                          href={member.bookingUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex w-full items-center justify-center"
+                        >
+                          <Calendar className="mr-2 h-4 w-4" />
                           Book with {member.name}
-                        </Button>
-                      </Link>
+                        </Link>
+                      </Button>
                     </CardFooter>
                   </Card>
                 </CarouselItem>

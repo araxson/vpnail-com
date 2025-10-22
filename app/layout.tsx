@@ -12,6 +12,7 @@ import { rootMetadata, rootViewport } from '@/lib/config/metadata.config';
 import { analyticsConfig } from '@/lib/config/analytics.config';
 import { siteConfig } from '@/lib/config/site.config';
 import { lato, playfair } from '@/lib/config/fonts.config';
+import { buttonVariants } from '@/components/ui/button';
 
 const localBusinessStructuredDataOverrides = {
   areaServed: [
@@ -125,15 +126,21 @@ export default function RootLayout({
         )}
         
         {/* Skip Links */}
-        <a 
-          href="#main-content" 
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded-md z-[900] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+        <a
+          href="#main-content"
+          className={cn(
+            buttonVariants({ variant: 'default', size: 'sm' }),
+            'sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[900]'
+          )}
         >
           Skip to main content
         </a>
-        <a 
-          href="#footer" 
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-40 bg-primary text-primary-foreground px-4 py-2 rounded-md z-[900] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+        <a
+          href="#footer"
+          className={cn(
+            buttonVariants({ variant: 'default', size: 'sm' }),
+            'sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-40 z-[900]'
+          )}
         >
           Skip to footer
         </a>

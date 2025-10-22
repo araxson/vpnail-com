@@ -26,21 +26,21 @@ export function LocationMap({ className }: LocationMapProps) {
       </div>
 
       <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
-        <Button variant="outline" size="lg" className="text-sm w-full" asChild>
+        <Button variant="outline" size="lg" asChild>
           <a
             href="https://maps.app.goo.gl/Bybt5QQfCJKHycm86"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2"
+            className="flex w-full items-center justify-center gap-2 text-sm"
           >
             <MapPin className="h-4 w-4" />
             Get Directions
           </a>
         </Button>
-        <Button variant="outline" size="lg" className="text-sm w-full" asChild>
+        <Button variant="outline" size="lg" asChild>
           <a
             href={`tel:${siteConfig.business.phone}`}
-            className="flex items-center justify-center gap-2"
+            className="flex w-full items-center justify-center gap-2 text-sm"
           >
             <Phone className="h-4 w-4" />
             Call Us

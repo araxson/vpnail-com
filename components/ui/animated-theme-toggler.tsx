@@ -1,32 +1,21 @@
 "use client"
 
-import {
-  useCallback,
-  useEffect,
-  useState,
-  type MouseEvent,
-} from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { flushSync } from "react-dom"
 import { Moon, Sun } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
 
 type ViewTransition = {
   ready: Promise<void>
 }
 
-type StartViewTransition = (callback: () => void) => ViewTransition
+type DocumentWithViewTransition = Document & {
+  startViewTransition: (callback: () => void) => ViewTransition
+}
 
 type AnimatedThemeTogglerProps = React.ComponentProps<typeof Button> & {
   duration?: number
-}
-
-const getViewTransition = () => {
-  if (typeof document === "undefined") return null
-
-  return (document as unknown as { startViewTransition?: StartViewTransition })
-    .startViewTransition
 }
 
 export function AnimatedThemeToggler({
@@ -38,6 +27,7 @@ export function AnimatedThemeToggler({
   ...props
 }: AnimatedThemeTogglerProps) {
   const [isDark, setIsDark] = useState(false)
+  const buttonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     if (typeof document === "undefined") return
@@ -58,8 +48,9 @@ export function AnimatedThemeToggler({
   }, [])
 
   const toggleTheme = useCallback(
-    async (event: MouseEvent<HTMLButtonElement>) => {
-      const button = event.currentTarget
+    async (event: React.MouseEvent<HTMLButtonElement>) => {
+      if (!buttonRef.current) return
+
       const targetIsDark = !isDark
 
       const applyTheme = () => {
@@ -68,16 +59,15 @@ export function AnimatedThemeToggler({
         localStorage.setItem("theme", targetIsDark ? "dark" : "light")
       }
 
-      const startViewTransition = getViewTransition()
-
-      if (startViewTransition) {
+      // Check if browser supports View Transitions API
+      if (typeof document !== "undefined" && "startViewTransition" in document) {
         try {
-          const transition = startViewTransition(() => {
+          await (document as DocumentWithViewTransition).startViewTransition(() => {
             flushSync(applyTheme)
-          })
-          await transition.ready
+          }).ready
 
-          const { top, left, width, height } = button.getBoundingClientRect()
+          const { top, left, width, height } =
+            buttonRef.current.getBoundingClientRect()
           const x = left + width / 2
           const y = top + height / 2
           const maxRadius = Math.hypot(
@@ -99,9 +89,11 @@ export function AnimatedThemeToggler({
             }
           )
         } catch {
+          // Fallback if animation fails
           applyTheme()
         }
       } else {
+        // Fallback for browsers without View Transitions API
         applyTheme()
       }
 
@@ -112,10 +104,11 @@ export function AnimatedThemeToggler({
 
   return (
     <Button
+      ref={buttonRef}
       type="button"
       variant={variant}
       size={size}
-      className={cn("rounded-full", className)}
+      className={className}
       onClick={toggleTheme}
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       {...props}

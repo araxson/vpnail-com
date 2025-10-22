@@ -72,23 +72,22 @@ export default function Error({
           <CardContent className="space-y-6">
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button onClick={handleRetry} className="flex items-center gap-2">
-                <RefreshCw className="h-4 w-4" />
+              <Button onClick={handleRetry}>
+                <RefreshCw className="mr-2 h-4 w-4" />
                 Try Again {retryCount > 0 && `(${retryCount})`}
               </Button>
 
               <Button
                 variant="outline"
                 onClick={handleReload}
-                className="flex items-center gap-2"
               >
-                <RefreshCw className="h-4 w-4" />
+                <RefreshCw className="mr-2 h-4 w-4" />
                 Reload Page
               </Button>
 
-              <Button variant="outline" asChild className="flex items-center gap-2">
+              <Button variant="outline" asChild>
                 <Link href="/">
-                  <Home className="h-4 w-4" />
+                  <Home className="mr-2 h-4 w-4" />
                   Go Home
                 </Link>
               </Button>
@@ -96,24 +95,25 @@ export default function Error({
 
             {/* Error Details Toggle */}
             <div className="border-t border-orange-200 dark:border-orange-800 pt-4">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setShowDetails(!showDetails)}
-                className="flex items-center gap-2 mx-auto text-orange-700 dark:text-orange-300"
-              >
-                {showDetails ? (
-                  <>
-                    <ChevronUp className="h-4 w-4" />
-                    Hide Details
-                  </>
-                ) : (
-                  <>
-                    <ChevronDown className="h-4 w-4" />
-                    Show Error Details
-                  </>
-                )}
-              </Button>
+              <div className="flex justify-center text-orange-700 dark:text-orange-300">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setShowDetails(!showDetails)}
+                >
+                  {showDetails ? (
+                    <>
+                      <ChevronUp className="mr-2 h-4 w-4" />
+                      Hide Details
+                    </>
+                  ) : (
+                    <>
+                      <ChevronDown className="mr-2 h-4 w-4" />
+                      Show Error Details
+                    </>
+                  )}
+                </Button>
+              </div>
 
               {showDetails && (
                 <div className="mt-4 bg-orange-100/50 dark:bg-orange-900/20 rounded-lg p-4">
@@ -141,9 +141,9 @@ export default function Error({
                 Need help? Our support team is here to assist you.
               </p>
               <div className="flex flex-col sm:flex-row gap-2 justify-center">
-                <Button variant="outline" size="sm" asChild className="flex items-center gap-2">
+                <Button variant="outline" size="sm" asChild>
                   <Link href="/contact">
-                    <MessageCircle className="h-4 w-4" />
+                    <MessageCircle className="mr-2 h-4 w-4" />
                     Contact Support
                   </Link>
                 </Button>

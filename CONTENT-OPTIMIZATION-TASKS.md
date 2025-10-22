@@ -23,7 +23,7 @@
 
 ### Homepage Critical Fixes
 
-- [ ] **Rewrite homepage title tag** from "Victoria Nails Calgary | 4.9★ Victoria Park Nail Salon" to "Flawless Nails in Victoria Park Calgary | 4.9★ Rated | Free Parking"
+- [ ] **Rewrite homepage title tag** from "Victoria Nails Calgary | Victoria Park Nail Salon" to "Flawless Nails in Victoria Park Calgary | Top-Rated Nail Salon | Free Parking"
 - [ ] **Rewrite homepage meta description** to focus on benefits not keywords (158 characters max)
 - [ ] **Change hero subtitle** from "Nail salon near me for Beltline, Mission & Victoria Park guests" to "Where Victoria Park, Beltline & Mission Come for Nails That Last"
 - [ ] **Rewrite hero opening paragraph** to start with pain points and build trust (see report examples)
@@ -79,7 +79,7 @@
 
 - [ ] **Write "How It Started" section** with founder story and 2015 opening
 - [ ] **Write "What Makes Us Different" section** comparing to typical salons
-- [ ] **Write "The Numbers That Make Us Proud" section** with social proof (10,000+ guests, 4.9 stars)
+- [ ] **Write "The Numbers That Make Us Proud" section** with social proof (10,000+ guests, hundreds of five-star reviews)
 - [ ] **Write "Our Commitment to You" section** with 4 key promises (safety, style, time, convenience)
 - [ ] **Rewrite Values section** from generic bullet points to story-driven narratives
 - [ ] **Add "Hygiene You Can See" value story** with sanitation process details

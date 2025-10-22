@@ -31,7 +31,7 @@ export function LocalSeoSection() {
                 <P className="text-muted-foreground">{area.copy}</P>
               </CardContent>
               <CardFooter>
-                <Button asChild variant="link" className="p-0">
+                <Button asChild variant="link">
                   <Link href={area.href}>Plan your visit</Link>
                 </Button>
               </CardFooter>

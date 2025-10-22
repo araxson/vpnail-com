@@ -10,9 +10,9 @@ export const servicesGridData: ServicesGridData = {
           name: "Manicures",
           services: [
             {
-              id: "classic-manicure",
-              title: "Classic Manicure with regular polish",
-              description: "30-minute shape, cuticle care, and hydrating massage that gets you back to the office with polished confidence.",
+              id: "manicure",
+              title: "Manicure with regular polish",
+              description: "Fresh & polished look",
               price: "$25",
               duration: "30 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=0e19aa9b-86a5-4bd5-804a-26e9dabb3725&type=service"
@@ -20,7 +20,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "shellac-manicure",
               title: "Shellac Manicure",
-              description: "High-gloss gel polish that cures instantly and stays chip-free for up to 3 weeks - perfect for travel or event weeks.",
+              description: "Long-lasting shine",
               price: "$35",
               duration: "45 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=96dcf9ac-8f37-4c1d-bd12-7e7caafad618&type=service"
@@ -28,7 +28,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "shellac-gel-top",
               title: "Shellac Manicure with Gel Top",
-              description: "Adds a hard gel shield over your Shellac colour for extra strength, shine, and protection against chips.",
+              description: "Extra strength & protection",
               price: "$40",
               duration: "50 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=0bd9debc-a1f5-4487-bd99-c952afb44201&type=service"
@@ -36,18 +36,10 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "shellac-gel-overlay",
               title: "Shellac Manicure with Gel Overlay",
-              description: "Includes a sculpted gel overlay to reinforce natural nails while delivering long-wear colour and a flawless apex.",
+              description: "Maximum durability & glamour",
               price: "$45",
               duration: "60 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=379fedbf-35d8-4816-9098-ba8ba0a875e2&type=service"
-            },
-            {
-              id: "dip-powder-manicure",
-              title: "Dip Powder Manicure",
-              description: "Odourless, lightweight dip system with calcium-rich powders for durable colour without UV curing.",
-              price: "$By Quote",
-              duration: "Varies",
-              href: "https://victoriaparknailsspa.setmore.com/"
             }
           ]
         },
@@ -55,9 +47,9 @@ export const servicesGridData: ServicesGridData = {
           name: "Pedicures",
           services: [
             {
-              id: "classic-pedicure",
-              title: "Classic Pedicure with regular polish",
-              description: "Warm soak, callus softening, exfoliation, and polish to revive tired feet after long days on your feet.",
+              id: "pedicure",
+              title: "Pedicure with regular polish",
+              description: "Relaxing foot refresh",
               price: "$40",
               duration: "45 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=35658703-d882-4ca9-b970-e47bd2d187ac&type=service"
@@ -65,7 +57,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "spa-pedicure",
               title: "Spa Pedicure with Hot Stones",
-              description: "Includes hot stones, extended massage, and aromatherapy mask to melt away tension and leave skin baby-soft.",
+              description: "Ultimate relaxation experience",
               price: "$50",
               duration: "60 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=22ec16a1-b447-4bbe-a33f-a797a9740040&type=service"
@@ -73,7 +65,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "shellac-pedicure",
               title: "Shellac Pedicure",
-              description: "Chip-resistant gel polish for toes with precision shaping that stays flawless for sandals and vacations.",
+              description: "Long-lasting beautiful toes",
               price: "$45",
               duration: "50 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=177ec3cb-4941-441f-a651-75c530357458&type=service"
@@ -81,7 +73,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "deluxe-spa-pedicure",
               title: "Deluxe Spa Pedicure",
-              description: "A full ritual with exfoliation, hydrating mask, paraffin therapy, and a double massage for total leg and foot relief.",
+              description: "The ultimate foot indulgence",
               price: "$55",
               duration: "75 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=267056b5-9fdb-48e0-8c55-28b3c67d25d4&type=service"
@@ -94,7 +86,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "acrylic-new-set",
               title: "Acrylic New Set",
-              description: "Custom sculpted length and shape with durable acrylic for weeks of chip-resistant wear and balanced structure.",
+              description: "Beautiful acrylic extensions",
               price: "$60",
               duration: "90 mins",
               href: "https://victoriaparknailsspa.setmore.com/services/3cf5dc61-a989-46a6-b2ae-f7075266cb4a"
@@ -102,23 +94,15 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "gel-new-set",
               title: "Gel New Set",
-              description: "Lightweight hard gel enhancements with a glassy finish - ideal for sensitive clients who want flexible strength.",
+              description: "Stunning gel extensions",
               price: "$60",
               duration: "90 mins",
               href: "https://victoriaparknailsspa.setmore.com/services/3cf5dc61-a989-46a6-b2ae-f7075266cb4a"
             },
             {
-              id: "gel-x-extensions",
-              title: "Gel-X Extensions",
-              description: "Soft gel full-cover tips applied to the entire nail for ready-to-wear shapes that soak off easily when you want a change.",
-              price: "$By Quote",
-              duration: "Varies",
-              href: "https://victoriaparknailsspa.setmore.com/"
-            },
-            {
               id: "acrylic-refill",
               title: "Acrylic Refill",
-              description: "Freshen growth, rebalance your apex, and finish with impeccable polish so your set stays picture-ready.",
+              description: "Keep your nails always perfect",
               price: "$45",
               duration: "20 mins",
               href: "https://victoriaparknailsspa.setmore.com/services/cf9f0b27-3b4e-49b0-9f4d-faa1fa7e4183"
@@ -126,7 +110,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "gel-refill",
               title: "Gel Refill",
-              description: "Maintain your gel enhancements with gentle cuticle work, precise shaping, and a glossy new coat.",
+              description: "Keep your nails always perfect",
               price: "$45",
               duration: "20 mins",
               href: "https://victoriaparknailsspa.setmore.com/services/238fde8d-6edd-486d-9597-a7e6449ad4a8"
@@ -139,7 +123,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "hand-polish-change",
               title: "Hand Polish Change",
-              description: "Quick colour refresh with shaping and nourishing oil for tidy, ready-to-go hands.",
+              description: "Quick color refresh",
               price: "$15",
               duration: "15 mins",
               href: "https://victoriaparknailsspa.setmore.com/services/d2716f81-7773-4cee-afb9-faa6d37ba759"
@@ -147,7 +131,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "foot-polish-change",
               title: "Foot Polish Change",
-              description: "Speedy toe touch-up that keeps sandals and open-toe heels looking intentional.",
+              description: "Quick color refresh",
               price: "$20",
               duration: "15 mins",
               href: "https://victoriaparknailsspa.setmore.com/services/99698d3a-fc94-430d-8ef3-6a4dee18c3ed"
@@ -155,7 +139,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "hand-shellac-change",
               title: "Hand Shellac Polish Change",
-              description: "Professional soak-off and new Shellac shade with precise shaping and cuticle care.",
+              description: "Long-lasting color switch",
               price: "$30",
               duration: "20 mins",
               href: "https://victoriaparknailsspa.setmore.com/services/13c29f88-b561-4104-bdf4-65366ff9b528"
@@ -163,7 +147,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "foot-shellac-change",
               title: "Foot Shellac Polish Change",
-              description: "Swap to a fresh gel colour on toes with meticulous prep for four weeks of shine.",
+              description: "Long-lasting color switch",
               price: "$35",
               duration: "20 mins",
               href: "https://victoriaparknailsspa.setmore.com/services/473751a4-644d-40ef-ad10-9de8bdd8423d"
@@ -171,7 +155,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "hand-nail-trim-shape",
               title: "Hand Nail Trim & Shape",
-              description: "File, shape, and buff for tidy hands between full manicure appointments.",
+              description: "Quick nail maintenance",
               price: "$15",
               duration: "10 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=67a49dc4-0de6-44da-8d1d-cc30b7fda0f4&type=service"
@@ -179,7 +163,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "foot-nail-trim-shape",
               title: "Foot Nail Trim & Shape",
-              description: "Professional toenail trimming and shaping to maintain comfort between pedicures.",
+              description: "Toenail care made easy",
               price: "$25",
               duration: "15 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=1cea68ef-bc0d-4e47-aa39-bf725a438f11&type=service"
@@ -187,7 +171,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "shellac-removal",
               title: "Shellac Removal",
-              description: "Acetone wrap removal finished with nail rescue serum so natural nails stay healthy.",
+              description: "Gentle, professional removal",
               price: "$15",
               duration: "15 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=63d78b40-d53d-44fd-9ad2-df431c61423c&type=service"
@@ -195,7 +179,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "acrylic-gel-removal",
               title: "Acrylic/Gel Removal (up)",
-              description: "Gentle soak-off and buff to transition from enhancements back to natural nails safely.",
+              description: "Safe removal service",
               price: "$20+",
               duration: "20 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=87a3bd9a-9435-48e8-a448-1e0a9e13d7fc&type=service"
@@ -203,7 +187,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "paraffin-wax-hands",
               title: "Paraffin Wax Treatment - Hands",
-              description: "Warm paraffin seals in moisture and relieves stiffness - ideal for dry Calgary winters.",
+              description: "Deep moisture therapy for hands",
               price: "$15",
               duration: "15 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=88c89c89-7ffd-4611-84fd-cb903bbc65ea&type=service"
@@ -211,7 +195,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "paraffin-wax-feet",
               title: "Paraffin Wax Treatment - Feet",
-              description: "Heat therapy that softens heels, soothes aches, and locks in hydration post-pedicure.",
+              description: "Deep moisture therapy for feet",
               price: "$25",
               duration: "15 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=62e389f2-7cff-4b50-ae7b-96f55904c7b0&type=service"
@@ -219,7 +203,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "callus-removal",
               title: "Callus Removal",
-              description: "Targeted smoothing to soften thick calluses and leave soles comfortable again.",
+              description: "Smooth, comfortable feet",
               price: "$10",
               duration: "10 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=29b13cdf-35c9-40c9-aba5-e47c4d42ddca&type=service"
@@ -227,7 +211,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "nail-repair",
               title: "Nail Repair",
-              description: "Rebuild a cracked or chipped nail so it blends seamlessly with the rest of your set.",
+              description: "Fix broken nails instantly",
               price: "$5",
               duration: "10 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=69cd19e9-764a-492a-8ff7-f2d86430b10d&type=service"
@@ -235,7 +219,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "french-tip",
               title: "French Tip",
-              description: "Crisp, hand-painted smile lines for classic French or modern micro-French finishes.",
+              description: "Timeless elegance",
               price: "$10",
               duration: "15 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=f3eea388-d341-4603-9ab6-0bdd81fce4ca&type=service"
@@ -243,7 +227,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "chrome-cateye-ombre",
               title: "Chrome, Cateye or Ombre",
-              description: "Upgrade any manicure with trending chrome, cat-eye magnetics, or ombré blends.",
+              description: "Eye-catching metallic magic",
               price: "$15",
               duration: "10 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=c5d3c7de-4eeb-48e9-87b0-a85d91e06b4c&type=service"
@@ -251,7 +235,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "simple-nail-art",
               title: "Simple Nail Art",
-              description: "Accent details on up to two nails - think minimalist lines, hearts, or seasonal motifs.",
+              description: "Cute accent details (2 nails)",
               price: "$10",
               duration: "10 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=6d135edb-ab76-45d6-8e8a-0a5229e529a4&type=service"
@@ -259,7 +243,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "custom-nail-art",
               title: "Custom Nail Art",
-              description: "Hand-painted designs on up to four nails tailored to your outfit, event, or inspo pic.",
+              description: "Creative designs (2-4 nails)",
               price: "$15",
               duration: "20 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=b98b98d2-f2f0-4673-a6ac-64bc265cee8a&type=service"
@@ -267,7 +251,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "intricate-nail-art",
               title: "Intricate Nail Art",
-              description: "Full-set artistry featuring advanced techniques, encapsulation, and high-detail illustration.",
+              description: "One-of-a-kind masterpieces",
               price: "$By Quote",
               duration: "Varies",
               href: "https://victoriaparknailsspa.setmore.com"
@@ -280,7 +264,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "little-princess-manicure",
               title: "Little Princess Manicure",
-              description: "Sparkly polish, gentle massage, and nail art decals sized perfectly for ages eight and under.",
+              description: "Special treat for ages 8 & under",
               price: "$15",
               duration: "20 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=f107e0d7-a52e-4be7-bb06-1b8727113712&type=service"
@@ -288,7 +272,7 @@ export const servicesGridData: ServicesGridData = {
             {
               id: "little-princess-pedicure",
               title: "Little Princess Pedicure",
-              description: "Bubble soak, sugar scrub, and shimmer polish for a kid-approved spa moment.",
+              description: "Bubbly fun for tiny toes",
               price: "$25",
               duration: "30 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=37a14e1c-a55e-4826-9b1c-3d6f8fb2c984&type=service"

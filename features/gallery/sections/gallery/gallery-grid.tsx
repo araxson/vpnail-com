@@ -2,12 +2,11 @@
 
 import { useEffect, useState, type MouseEvent } from 'react'
 import Image from 'next/image'
-import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import type { GalleryImage } from '@/lib/gallery'
-import { Pagination, PaginationContent, PaginationItem, PaginationNext, PaginationPrevious } from '@/components/ui/pagination'
-import { ButtonGroup } from '@/components/ui/button-group'
-import { Button } from '@/components/ui/button'
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination'
 import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
 
 interface GalleryGridProps {
   images: GalleryImage[]
@@ -64,10 +63,11 @@ export function GalleryGrid({ images }: GalleryGridProps) {
             itemType="https://schema.org/ImageObject"
             className="flex"
           >
-            <button
+            <Button
               type="button"
               onClick={() => setSelectedImage(image)}
-              className="group relative aspect-square h-full w-full cursor-pointer overflow-hidden rounded-lg border bg-muted focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              variant="ghost"
+              className="group relative flex aspect-square h-full w-full cursor-pointer overflow-hidden rounded-lg border bg-muted p-0 hover:bg-transparent"
               aria-label={image.alt}
               title={image.title}
             >
@@ -82,7 +82,7 @@ export function GalleryGrid({ images }: GalleryGridProps) {
                 priority={false}
               />
               <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/20" />
-            </button>
+            </Button>
             <figcaption className="sr-only" itemProp="caption">
               {image.caption}
             </figcaption>
@@ -103,22 +103,24 @@ export function GalleryGrid({ images }: GalleryGridProps) {
                 className={cn(disablePrevious && 'pointer-events-none opacity-50')}
               />
             </PaginationItem>
-            <PaginationItem>
-              <ButtonGroup className="bg-background">
-                {pageNumbers.map((pageNumber) => (
-                  <Button
-                    key={pageNumber}
-                    type="button"
-                    size="lg"
-                    variant={pageNumber === activePage ? 'default' : 'ghost'}
-                    onClick={() => handlePageChange(pageNumber)}
-                    aria-current={pageNumber === activePage ? 'page' : undefined}
-                  >
-                    {pageNumber}
-                  </Button>
-                ))}
-              </ButtonGroup>
-            </PaginationItem>
+            {pageNumbers.map((pageNumber) => (
+              <PaginationItem key={pageNumber}>
+                <PaginationLink
+                  href={getPageHref(pageNumber)}
+                  isActive={pageNumber === activePage}
+                  size="default"
+                  className="min-w-10 justify-center"
+                  onClick={(event) => {
+                    event.preventDefault()
+                    if (pageNumber !== activePage) {
+                      handlePageChange(pageNumber)
+                    }
+                  }}
+                >
+                  {pageNumber}
+                </PaginationLink>
+              </PaginationItem>
+            ))}
             <PaginationItem>
               <PaginationNext
                 href={nextPageHref}
@@ -133,7 +135,10 @@ export function GalleryGrid({ images }: GalleryGridProps) {
 
       <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
         <DialogContent className="max-w-5xl overflow-hidden p-0">
-          <DialogTitle className="sr-only">Gallery image preview</DialogTitle>
+          <DialogHeader className="sr-only">
+            <DialogTitle>Gallery image preview</DialogTitle>
+            <DialogDescription>Use escape to close the lightbox.</DialogDescription>
+          </DialogHeader>
           {selectedImage && (
             <figure
               className="relative h-[75vh] w-full bg-background"

@@ -47,7 +47,6 @@ export function Header({ items = primaryNav }: HeaderProps) {
   React.useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-
       if (currentScrollY < 10) {
         setIsVisible(true)
       } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
@@ -129,7 +128,6 @@ export function Header({ items = primaryNav }: HeaderProps) {
                         href={item.href || "#"}
                         className={cn(
                           navigationMenuTriggerStyle(),
-                          "px-3 py-2 text-sm font-medium transition-colors",
                           pathname === item.href && "bg-accent text-accent-foreground"
                         )}
                       >
@@ -145,7 +143,7 @@ export function Header({ items = primaryNav }: HeaderProps) {
 
         {/* Desktop Actions */}
         <div className="hidden lg:flex items-center gap-2">
-          <AnimatedThemeToggler />
+          <AnimatedThemeToggler variant="secondary" />
           <Button asChild>
             <Link href={headerCTA.href}>
               {headerCTA.label}
@@ -155,13 +153,12 @@ export function Header({ items = primaryNav }: HeaderProps) {
 
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-2 lg:hidden">
-          <AnimatedThemeToggler />
+          <AnimatedThemeToggler variant="secondary" />
           <Drawer open={isDrawerOpen} onOpenChange={setIsDrawerOpen} direction="right">
             <DrawerTrigger asChild>
               <Button
                 variant="secondary"
                 size="sm"
-                className="px-3 py-2 h-auto touch-manipulation hover:bg-accent transition-colors"
                 aria-expanded={isDrawerOpen}
                 aria-label={isDrawerOpen ? "Close menu" : "Open menu"}
               >
@@ -178,9 +175,8 @@ export function Header({ items = primaryNav }: HeaderProps) {
                   </div>
                   <Button
                     variant="ghost"
-                    size="sm"
+                    size="icon"
                     onClick={() => setIsDrawerOpen(false)}
-                    className="h-8 w-8 p-0 hover:bg-accent"
                     aria-label="Close menu"
                   >
                     <svg
@@ -252,10 +248,12 @@ export function Header({ items = primaryNav }: HeaderProps) {
                 <div className="border-t border-border/50 p-6">
                   <Button
                     asChild
-                    className="w-full"
                     onClick={() => setIsDrawerOpen(false)}
                   >
-                    <Link href={headerCTA.href}>
+                    <Link
+                      href={headerCTA.href}
+                      className="block w-full text-center"
+                    >
                       {headerCTA.label}
                     </Link>
                   </Button>
