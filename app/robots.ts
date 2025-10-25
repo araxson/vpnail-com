@@ -9,32 +9,22 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/_next/',
-          '/private/',
-          '*.json$',
-        ],
+        disallow: ['/api/', '/_next/', '*.json$'],
       },
       // Special rules for Google bot
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/private/',
-        ],
+        disallow: ['/api/'],
       },
       // Special rules for Googlebot Image
       {
         userAgent: 'Googlebot-Image',
         allow: '/',
-        disallow: [
-          '/private/',
-        ],
+        disallow: [],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
+    host: new URL(baseUrl).host,
   }
 }

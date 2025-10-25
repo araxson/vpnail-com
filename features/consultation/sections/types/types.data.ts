@@ -7,9 +7,9 @@ export const typesData = {
       description: 'Manicures, pedicures, nail extensions, and custom nail art. Choose from our full range of professional nail care treatments.',
       duration: 'Varies by service',
       includes: [
-        'Manicures and shellac upgrades',
-        'Regular and deluxe pedicures',
-        'Gel and acrylic extensions',
+        'Manicures with Shellac upgrades',
+        'Regular and Deluxe Spa Pedicures',
+        'Gel and acrylic new sets',
         'Custom nail art and designs',
       ],
     },
@@ -21,7 +21,7 @@ export const typesData = {
         'Massage therapy',
         'Facial treatments',
         'Full body and facial waxing',
-        'Specialty spa packages',
+        'Shellac Manicure + Deluxe Spa Pedicure combinations',
       ],
     },
     {
@@ -30,7 +30,7 @@ export const typesData = {
       duration: 'Same day service',
       includes: [
         'Quick polish changes',
-        'Express manicures',
+        'Manicures with regular polish',
         'Same-day nail repairs',
         'Last-minute appointments',
       ],

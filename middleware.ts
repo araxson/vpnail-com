@@ -47,7 +47,9 @@ export function middleware(request: NextRequest) {
 
   // Handle plural to singular redirects
   if (request.nextUrl.pathname === '/consultations') {
-    return NextResponse.redirect(new URL('/consultation', request.url));
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname = '/consultation';
+    return NextResponse.redirect(redirectUrl, 308);
   }
 
   const response = NextResponse.next();

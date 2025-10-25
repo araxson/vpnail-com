@@ -47,7 +47,7 @@ const localBusinessStructuredDataOverrides = {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Gel, Acrylic & Gel-X Nail Enhancements',
+          name: 'Gel & Acrylic Nail Enhancements',
           url: `${siteConfig.url}/services#nail-services`,
           areaServed: 'Victoria Park, Calgary',
         },

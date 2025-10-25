@@ -89,12 +89,12 @@ export const faqsData = {
         {
           id: "pricing-range",
           question: "What are your service prices?",
-          answer: "Regular manicures start at $30, shellac manicures $40, basic pedicures $45-$50, spa pedicures $50-$60, acrylic new sets $60, and UV gel new sets $65. Massage services range from $120-$240. We offer competitive pricing for professional nail services in Calgary. Contact us for a complete price list."
+          answer: "Manicures with regular polish start at $25, Shellac manicures range from $35-$45, pedicures start at $40, Spa Pedicures with Hot Stones are $50, Deluxe Spa Pedicures are $55, and both Acrylic and Gel New Sets are $60. Massage sessions run from $120-$250 and waxing begins at $12. View our services page for the full menu."
         },
         {
           id: "group-discounts",
           question: "Do you offer group discounts?",
-          answer: "Yes! We offer special rates for groups of 4 or more, bridal parties, Calgary Stampede groups, and special events. Perfect for corporate events, bachelorette parties, or any celebration. Contact us to discuss group packages and pricing. Advanced booking required."
+          answer: "Yes! We offer special rates for groups of 4 or more, bridal parties, Calgary Stampede gatherings, and special events. We build custom pricing using our regular service menu—like Shellac Manicure and Deluxe Spa Pedicure combinations—so everyone enjoys the treatments they need. Contact us to plan your group booking. Advanced booking required."
         },
         {
           id: "cancellation-policy",
