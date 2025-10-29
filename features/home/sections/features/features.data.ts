@@ -26,7 +26,7 @@ export const featuresData = {
       icon: 'Heart',
       title: 'An Oasis of Relaxation',
       description:
-        'Heated massage chairs, aromatherapy soaks, and a caring team create a calm escape from the downtown rush - no matter how busy your week looks.',
+        'Heated massage chairs, Spa Pedicures with Hot Stones, and a caring team create a calm escape from the downtown rush - no matter how busy your week looks.',
     },
   ],
 } as const

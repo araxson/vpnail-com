@@ -17,8 +17,8 @@ export const galleryMetadata = buildMetadata({
     'bridal nails Calgary',
     'wedding nails Calgary',
     'Stampede nails Calgary',
-    'Gel-X nails Calgary',
-    'dip powder nails Calgary',
+    'gel nail extensions Calgary',
+    'shellac nail art Calgary',
   ],
   openGraphDescription:
     'See Calgary nail art, manicures, pedicures, and custom designs created at our Victoria Park studio near the Stampede with free parking and CTrain access.',

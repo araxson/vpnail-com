@@ -16,14 +16,14 @@ export const localSeoData = {
       title: 'Downtown Calgary Professionals',
       href: '/areas/downtown-calgary',
       copy:
-        'Express lunchtime manicures and executive pedicures minutes from Stephen Avenue and downtown towers. Perfect for busy professionals needing quality nail care that fits your schedule.',
+        'Manicures with regular polish and executive pedicures minutes from Stephen Avenue and downtown towers. Perfect for busy professionals needing quality nail care that fits your schedule.',
     },
     {
       id: 'beltline',
       title: 'Beltline Style & Convenience',
       href: '/areas/beltline-calgary',
       copy:
-        'Short walk from 17th Avenue with trending Gel-X extensions, dip powder, chrome nails, and bold nail art. Late hours perfect for Beltline nightlife and urban lifestyle.',
+        'Short walk from 17th Avenue with Gel New Sets, Acrylic New Sets, chrome finishes, and bold custom nail art. Late hours perfect for Beltline nightlife and urban lifestyle.',
     },
     {
       id: 'mission',
@@ -37,7 +37,7 @@ export const localSeoData = {
       title: 'Mount Royal Elegance',
       href: '/areas/mount-royal-calgary',
       copy:
-        'Refined French manicures, luxury spa pedicures, and bridal party packages with private treatment spaces. Premium service for Mount Royal\'s elevated expectations.',
+        'Refined French manicures, Deluxe Spa Pedicures, and curated group bookings featuring Shellac Manicure + Deluxe Spa Pedicure combinations. Premium service for Mount Royal\'s elevated expectations.',
     },
     {
       id: 'inglewood',

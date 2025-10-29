@@ -98,7 +98,7 @@ export function ServicesGridSection() {
                               rel="noopener noreferrer"
                               className="flex items-center justify-center gap-1.5"
                             >
-                              <span className="text-xs font-medium">Book This Service</span>
+                              <span className="font-medium">Book This Service</span>
                               <ArrowRight className="h-3 w-3" />
                             </Link>
                           </Button>

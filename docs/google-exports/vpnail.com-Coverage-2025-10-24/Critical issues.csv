@@ -1,0 +1,5 @@
+Reason,Source,Validation,Pages
+Page with redirect,Website,Failed,2
+Not found (404),Website,Not Started,1
+Crawled - currently not indexed,Google systems,Not Started,1
+Alternate page with proper canonical tag,Website,Started,5

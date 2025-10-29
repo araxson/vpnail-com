@@ -25,7 +25,7 @@ export const faqsData = {
     },
     {
       question: 'Do you offer group discounts?',
-      answer: 'Yes! We offer special rates for groups of 4 or more, bridal parties, Calgary Stampede groups, and special events. Perfect for corporate events, bachelorette parties, or any celebration. Contact us to discuss group packages and pricing. Advanced booking required.',
+      answer: 'Yes! We offer special rates for groups of 4 or more, bridal parties, Calgary Stampede groups, and special events. We customize pricing using our regular service menu—like Shellac Manicure and Deluxe Spa Pedicure combinations—so every guest receives the treatments they want. Contact us to arrange your group booking. Advanced booking required.',
     },
     {
       question: 'What\'s your cancellation policy?',

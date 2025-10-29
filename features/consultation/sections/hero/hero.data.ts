@@ -1,6 +1,6 @@
 export const heroData = {
   title: 'Lock In Your Spot in Under a Minute',
-  subtitle: 'Real-time booking for manicures, pedicures, gel upgrades, and spa add-ons',
+  subtitle: 'Real-time booking for manicures, pedicures, gel upgrades, and spa services',
   description:
     'Choose your service, add notes for inspiration, and receive instant confirmation via email and text. If you need help pairing services or booking a group, our team is a quick call away.',
   badge: 'Online Booking',

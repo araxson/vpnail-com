@@ -1,81 +1,45 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/config/site.config';
+
+function getLastModified(...segments: string[]) {
+  try {
+    const targetPath = path.join(process.cwd(), ...segments);
+    const stats = fs.statSync(targetPath);
+    return stats.mtime.toISOString();
+  } catch {
+    return undefined;
+  }
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
 
-  // Get current date for lastModified
-  const currentDate = new Date().toISOString();
+  const staticContentSources: Record<string, string[]> = {
+    '/': ['features', 'home', 'home-page.tsx'],
+    '/about': ['features', 'about', 'about-page.tsx'],
+    '/services': ['features', 'services', 'services-page.tsx'],
+    '/consultation': ['features', 'consultation', 'consultation-page.tsx'],
+    '/contact': ['features', 'contact', 'contact-page.tsx'],
+    '/gallery': ['features', 'gallery', 'gallery-page.tsx'],
+    '/areas': ['features', 'areas', 'areas-page.tsx'],
+  };
 
-  // Static pages with enhanced priority for key Calgary pages
-  const staticPages = [
-    {
-      url: baseUrl,
-      lastModified: currentDate,
-      changeFrequency: 'daily' as const,
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/consultation`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/gallery`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/areas`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly' as const,
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly' as const,
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/accessibility`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly' as const,
-      priority: 0.3,
-    },
-  ];
+  const staticPages: MetadataRoute.Sitemap = Object.entries(staticContentSources).map(
+    ([route, source]) => {
+      const lastModified = getLastModified(...source);
+      return {
+        url: route === '/' ? baseUrl : `${baseUrl}${route}`,
+        ...(lastModified ? { lastModified } : {}),
+      };
+    }
+  );
 
-  // No individual service pages - all services listed on main services page
-  const servicePages: MetadataRoute.Sitemap = [];
+  const areaContentSource = ['features', 'area-detail', 'area-detail.data.ts'];
+  const areaLastModified = getLastModified(...areaContentSource);
 
-  // Calgary area pages - all 8 service areas
-  const areaPages = [
+  const areaPages: MetadataRoute.Sitemap = [
     'victoria-park-calgary',
     'downtown-calgary',
     'beltline-calgary',
@@ -84,12 +48,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'inglewood-calgary',
     'east-village-calgary',
     'erlton-calgary',
-  ].map(area => ({
+  ].map((area) => ({
     url: `${baseUrl}/areas/${area}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    ...(areaLastModified ? { lastModified: areaLastModified } : {}),
   }));
 
-  return [...staticPages, ...servicePages, ...areaPages];
+  return [...staticPages, ...areaPages];
 }

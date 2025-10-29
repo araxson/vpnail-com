@@ -32,12 +32,12 @@ export const homeFaqData = [
   {
     question: 'How much do your nail services cost?',
     answer:
-      'Our prices are competitive and vary by service. Manicures start from $30, pedicures from $45, gel nails from $50, and acrylic sets from $60. Contact us for detailed pricing on specific services and packages.',
+      'Our pricing is transparent and listed online. Manicures with regular polish start at $25, Shellac manicures from $35, pedicures from $40, Spa Pedicures with Hot Stones are $50, Deluxe Spa Pedicures are $55, and both Acrylic New Sets and Gel New Sets are $60. Massage therapy ranges from $120-$250 and waxing starts at $12.',
   },
   {
     question: 'Do you offer gel nails and acrylic nails in Calgary?',
     answer:
-      'Yes! We specialize in both gel and acrylic nails. We offer gel manicures, Gel-X extensions, acrylic full sets, acrylic fills, and custom nail designs with both gel and acrylic options.',
+      'Yes! We specialize in both gel and acrylic services. Choose from Shellac manicures, Gel New Sets, Acrylic New Sets, gel and acrylic refills, and custom nail art tailored to your look.',
   },
   {
     question: 'Is parking available at your nail salon?',

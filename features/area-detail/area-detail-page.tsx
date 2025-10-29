@@ -12,7 +12,7 @@ const DEFAULT_AREA_CONTENT = {
   intro:
     'Visit Victoria Park Nails & Spa for manicures, pedicures, and custom nail art delivered with meticulous sanitation, welcoming service, and easy parking.',
   highlights: [
-    'Same-day bookings for manicures, pedicures, and Gel-X enhancements',
+    'Same-day bookings for manicures, pedicures, and Gel or Acrylic New Sets',
     'Custom nail art inspired by downtown Calgary events',
     'Massage and waxing services to complete your self-care visit',
   ],

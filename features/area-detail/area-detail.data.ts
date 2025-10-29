@@ -30,8 +30,8 @@ export const AREA_CONTENT: Record<
     intro:
       'Just a five-minute drive or quick stroll from Stephen Avenue and the +15 network, our studio helps downtown professionals stay polished between meetings. Expect efficient manicures, executive pedicures, and chip-resistant gel enhancements delivered with quiet, professional service and flexible scheduling.',
     highlights: [
-      'Express manicure and pedicure appointments timed for 30-45 minute lunch breaks',
-      'Structured gel manicures, Shellac, and dip powder that stay flawless through presentations and travel',
+      'Manicure with regular polish and pedicure appointments timed for 30-45 minute lunch breaks',
+      'Structured gel manicures, Shellac finishes, and Gel New Sets that stay flawless through presentations and travel',
       'Private pedicure chairs ideal for executives who want discreet grooming',
       'Digital receipts, calendar reminders, and easy rescheduling for corporate lifestyles',
       'After-work and pre-event availability so you can refresh before galas or client dinners',
@@ -48,7 +48,7 @@ export const AREA_CONTENT: Record<
       "A quick bike ride or walk down 12th Avenue brings Beltline creatives to our chair for statement nails that last through late nights and brunch plans. We blend structured manicures with runway-inspired art so your nails keep up with the neighbourhood's style.",
     highlights: [
       'Minutes from 17th Avenue SW, First Street Village, and Beltline condo towers',
-      'Gel-X extensions, acrylic sculpting, and dip powder designed for extra length and durability',
+      'Gel New Sets, Acrylic New Sets, and Shellac overlays designed for extra length and durability',
       'Chrome, cat-eye, aura, and ombre finishes custom mixed to match your outfit or event',
       'Luxury pedicures with callus resurfacing, hot stones, and seasonal scrubs for sandal season',
       'Evening and Sunday appointments for concerts, photoshoots, or last-minute getaways',
@@ -57,18 +57,18 @@ export const AREA_CONTENT: Record<
     closing:
       'From Pride celebrations to rooftop patios, Victoria Park Nails & Spa keeps Beltline nails camera-ready and unmistakably you.',
     metaDescription:
-      'Beltline Calgary guests visit us for Gel-X extensions, bold nail art, and spa pedicures with evening availability minutes from 17th Avenue SW.',
+      'Beltline Calgary guests visit us for gel and acrylic extensions, bold nail art, and spa pedicures with evening availability minutes from 17th Avenue SW.',
   },
   'mission-calgary': {
     headline: 'Mission Calgary nail salon with family-friendly service on 4th Street\'s doorstep',
     intro:
-      'Only a few minutes north of 4th Street SW, we give Mission families and professionals a welcoming space for gentle manicures, long-wear gel polish, and restorative pedicures. Bring the kids for Little Princess services or schedule a relaxing treatment before brunch along the river.',
+      'Only a few minutes north of 4th Street SW, we give Mission families and professionals a welcoming space for gentle manicures, long-wear gel polish, and restorative pedicures. Bring the kids for Little Princess Manicure and Pedicure services or schedule a relaxing treatment before brunch along the river.',
     highlights: [
       'Easy access from 4th Street boutiques, Repsol Sport Centre, and Elbow River pathways',
       'Gentle technicians experienced with sensitive skin and pregnancy-safe service adjustments',
       'Little Princess manicures and pedicures that make spa days fun for ages eight and under',
       'Gel polish, French finishes, and structured overlays tailored to busy family calendars',
-      'Hot stone pedicures and aromatherapy add-ons ideal after weekend runs or yoga',
+      'Spa Pedicures with Hot Stones and paraffin treatments ideal after weekend runs or yoga',
       'Free parking and quick rideshare pickup ensure stress-free arrivals with strollers or packages',
     ],
     closing:
@@ -84,7 +84,7 @@ export const AREA_CONTENT: Record<
       'Short drive from Upper and Lower Mount Royal, Cliff Bungalow, and Rideau Park',
       'Bespoke French, chrome, and sculpted designs crafted with premium gels and acrylics',
       'Dedicated time for bridal parties, charity galas, and black-tie event nails',
-      'Heated massage chairs, paraffin, and collagen treatments for spa-level pedicures',
+      'Heated massage chairs, paraffin treatments, and Deluxe Spa Pedicures for spa-level pampering',
       'Quiet weekday mornings and extended appointments for clients who prefer privacy',
       'Complimentary refreshments, free parking, and assistance carrying garments or accessories',
     ],
@@ -101,8 +101,8 @@ export const AREA_CONTENT: Record<
       'Minutes from 9th Avenue SE shops, the Music Mile, and Ramsay studios',
       'Hand-painted nail art, negative-space designs, and mixed-media overlays that tell your story',
       'Eco-forward gel and lacquer options plus low-odour services for sensitive guests',
-      'Gel-X, acrylic, and dip enhancements shaped to complement instruments or creative work',
-      'Pedicures with aromatherapy and callus care after full days exploring Inglewood markets',
+      'Gel New Sets, Acrylic New Sets, and Shellac overlays shaped to complement instruments or creative work',
+      'Deluxe Spa Pedicures with callus care after full days exploring Inglewood markets',
       'Free parking and quick access from Blackfoot Trail, 12 Street Bridge, and the CTrain',
     ],
     closing:
@@ -117,8 +117,8 @@ export const AREA_CONTENT: Record<
     highlights: [
       'Close to Studio Bell, Simmons Building, the RiverWalk, and new East Village towers',
       'Sleek structured manicures, gel overlays, and minimalist nail art that pair with modern wardrobes',
-      'Express services before brunch or events, plus longer spa appointments for weekend resets',
-      'Massage and waxing add-ons so you can complete your self-care checklist in one stop',
+      'Quick manicure and pedicure appointments before brunch or events, plus longer spa appointments for weekend resets',
+      'Massage therapy and waxing services so you can complete your self-care checklist in one stop',
       'Evening and Saturday availability for residents balancing downtown commutes and condo life',
       'Complimentary parking and quick CTrain connections from City Hall and Bridgeland stations',
     ],
@@ -130,10 +130,10 @@ export const AREA_CONTENT: Record<
   'erlton-calgary': {
     headline: 'Erlton neighbours choose us for warm, detailed nail care',
     intro:
-      'Living just across from 25th Avenue SE means Erlton guests are minutes from a friendly team that treats every visit like catching up with neighbours. We blend meticulous manicures, relaxing pedicures, and wellness add-ons with a welcoming atmosphere for all ages.',
+      'Living just across from 25th Avenue SE means Erlton guests are minutes from a friendly team that treats every visit like catching up with neighbours. We blend meticulous manicures, relaxing pedicures, and wellness services with a welcoming atmosphere for all ages.',
     highlights: [
       'Two-minute drive or 10-minute walk from Erlton, Rideau Park, and Parkhill homes',
-      'Full menu of manicures, gel polish, acrylic fills, and Gel-X extensions tailored to everyday wear',
+      'Full menu of manicures, gel polish, acrylic fills, and Gel New Sets tailored to everyday wear',
       'Family-friendly vibe with technicians who remember your preferences and celebrate your milestones',
       'Spa pedicures featuring hot stones, callus smoothing, and deep moisturising masks',
       'Massage and waxing services available so you can complete your to-do list in one trip',
