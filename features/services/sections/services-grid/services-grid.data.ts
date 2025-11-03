@@ -226,8 +226,8 @@ export const servicesGridData: ServicesGridData = {
             },
             {
               id: "chrome-ombre",
-              title: "Chrome Ombre",
-              description: "Specialty nail finish that combines chrome powder application with ombre gradient blending technique for a luxurious, shimmering nail appearance.",
+              title: "Chrome or Ombre",
+              description: "Choose from a chrome powder finish for a luxurious metallic mirror effect, or an ombre gradient blend for a smooth color transition. Both available as specialty nail finishes.",
               price: "$15",
               duration: "15 mins",
               href: "https://victoriaparknailsspa.setmore.com/book?step=staff&products=c5d3c7de-4eeb-48e9-87b0-a85d91e06b4c&type=service"
