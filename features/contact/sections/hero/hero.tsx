@@ -14,7 +14,7 @@ export function HeroSection() {
             <Clock className="h-4 w-4 text-primary" />
             <AlertDescription className="text-sm">
               <strong>Response Time:</strong> We typically respond to all inquiries within 24 hours during business days.
-              For urgent matters, please call us directly at (250) 423-1400.
+              For urgent matters, please call us directly at +1 (403) 510-3050.
             </AlertDescription>
           </Alert>
 

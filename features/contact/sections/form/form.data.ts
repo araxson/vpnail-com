@@ -15,7 +15,7 @@ export const formData = {
     },
     phone: {
       label: 'Phone',
-      placeholder: '(250) 423-1400',
+      placeholder: '(403) 719-3600',
       required: false,
     },
     service: {
