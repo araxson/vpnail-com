@@ -61,18 +61,22 @@ export function middleware(request: NextRequest) {
   response.headers.set('Referrer-Policy', 'origin-when-cross-origin');
   response.headers.set('X-XSS-Protection', '1; mode=block');
 
-  // Content Security Policy
+  // Content Security Policy - mirror next.config.ts for consistency
   const csp = [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://fonts.googleapis.com",
+    "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://tagmanager.google.com",
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-    "font-src 'self' https://fonts.gstatic.com",
-    "img-src 'self' data: https:",
-    "connect-src 'self'",
-    "frame-src 'self' https://www.google.com",
+    "img-src 'self' data: blob: https: http:",
+    "font-src 'self' data: https://fonts.gstatic.com",
+    "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://tagmanager.google.com https://api.web3forms.com",
+    "frame-src 'self' https://www.google.com https://www.googletagmanager.com https://tagmanager.google.com",
+    "object-src 'none'",
+    "base-uri 'self'",
+    "form-action 'self' https://api.web3forms.com",
     "frame-ancestors 'none'",
+    "upgrade-insecure-requests",
   ].join('; ');
-  
+
   response.headers.set('Content-Security-Policy', csp);
 
   // Performance headers

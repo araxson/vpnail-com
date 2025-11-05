@@ -8,7 +8,7 @@ export const contactInfoData = {
       icon: 'Phone',
       label: 'Phone',
       value: siteConfig.business.phone,
-      href: `tel:${siteConfig.business.phone}`,
+      href: siteConfig.links.phone,
     },
     {
       icon: 'Mail',
